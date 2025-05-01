@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
+import { Renderer, Program, Mesh, Color, Triangle, AttributeMap } from "ogl";
 
 const VERT = `#version 300 es
 in vec2 position;
@@ -159,7 +159,7 @@ export default function Aurora(props: AuroraProps) {
     const geometry = new Triangle(gl);
     if (geometry.attributes.uv) {
       // TypeScript may require a type assertion here.
-      delete (geometry.attributes as any).uv;
+      delete (geometry.attributes as AttributeMap).uv;
     }
 
     const colorStopsArray = colorStops.map((hex) => {
@@ -210,7 +210,7 @@ export default function Aurora(props: AuroraProps) {
       }
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
-  }, [amplitude]);
+  }, [amplitude, blend, colorStops]);
 
   return <div ref={ctnDom} className="w-full h-full" />;
 }
