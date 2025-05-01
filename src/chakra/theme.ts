@@ -1,18 +1,7 @@
-import { createSystem, defaultConfig, defineConfig, defineRecipe } from "@chakra-ui/react";
+import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
+import { buttonRecipe } from "./button";
 
-const buttonRecipe = defineRecipe({
-  variants: {
-      link: {
-        true: {
-            border: "2px solid white",
-            background: "rgba(0, 0, 0, 0.2)",
-            color: "white"
-        }
-      }
-  }  
-})
-
-const customConfig = defineConfig({
+const customConfig = defineConfig({ 
     theme: {
         recipes: {
             button: buttonRecipe
