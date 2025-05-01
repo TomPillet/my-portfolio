@@ -9,17 +9,17 @@ export default function Header() {
     const [showAurora, setShowAurora] = React.useState(false)
 
   return (
-    <Flex h="480px" w="full" pos="relative">
-        <Box h="full" w="full" pos="absolute" top={"1/5"} opacity={ showAurora ? "1" : "0" }>
+    <Flex h="360px" w="full" pos="relative">
+        <Box h="full" w="full" pos="absolute" opacity={ showAurora ? "1" : "0" }>
             <Aurora
                 colorStops={["#2C5E4C", "#1E5631", "#164A20"]}
                 blend={0.6}
-                amplitude={0.2}
-                speed={1.2}
+                amplitude={0.4}
+                speed={1.6}
             />
         </Box>
 
-        <Flex h="1/5" w="full" justifyContent="space-around" pos="relative" zIndex={1}>
+        <Flex h="1/4" w="full" justifyContent="space-around" pos="relative" zIndex={1}>
             <Link href="/" style={{ height: "100%", width: "100%" }}>
                 <Button w="full" link cursor={"pointer"}>Accueil</Button>
             </Link>
