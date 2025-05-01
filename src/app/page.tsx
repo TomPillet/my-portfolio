@@ -1,11 +1,9 @@
-import Header from "@/components/ui/Header";
-import Aurora from "@/reactbits/backgrounds/Aurora/Aurora";
 import { Button, Box, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
-import Link from "next/link";
 
 export default function Home() {
   return (
-    <Flex h="100dvh">
+    <Flex>
+      Accueil
         {/* <Grid templateColumns="repeat(2, 1fr)" border="2px solid #c3c3c3" rounded="32px" overflow={"hidden"}>
           <GridItem h="full" bg="#131313">
           </GridItem>
