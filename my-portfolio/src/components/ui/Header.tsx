@@ -31,7 +31,7 @@ export default function Header() {
             </Link>
         </Flex>
 
-        <Button pos="absolute" bottom="20px" left="20px" onClick={() => setShowAurora(!showAurora)}>Toggle Aurora</Button>
+        <Button pos="absolute" top="20px" left="20px" zIndex={10} onClick={() => setShowAurora(!showAurora)}>A</Button>
     </Flex>
   )
 }
