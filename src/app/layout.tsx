@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { Ubuntu } from "next/font/google";
 import { Provider } from "@/chakra/provider";
 import "./globals.css";
 import Header from "@/components/ui/Header";
 
-const nunito = Nunito({
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+const ubuntu = Ubuntu({
+  weight: ["300", "400", "500", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
 })
@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${nunito.className} antialiased`}
+        className={`${ubuntu.className} antialiased`}
       >
         <Provider>  
           <Header />
