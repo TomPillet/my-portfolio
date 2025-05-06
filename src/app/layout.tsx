@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import { Provider } from "@/chakra/provider";
 import "./globals.css";
-import Header from "@/components/ui/Header";
+import Header from "@/components/layout/Header";
 
 const ubuntu = Ubuntu({
   weight: ["300", "400", "500", "700"],

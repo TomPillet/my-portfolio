@@ -14,8 +14,8 @@ export default function Header() {
             <Aurora
                 colorStops={["#2C5E4C", "#1E5631", "#164A20"]}
                 blend={0.6}
-                amplitude={0.4}
-                speed={1.6}
+                amplitude={0.6}
+                speed={1.2}
             />
         </Box>
 
