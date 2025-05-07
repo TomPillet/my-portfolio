@@ -24,3 +24,12 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.sapin-color {
+  color: #2C5E4C !important;
+}
+
+.shiny-text-hovered {
+  color: #b2b2b2 !important;
+  transition: all 0.4s ease-in-out;
+}

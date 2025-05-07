@@ -1,27 +1,74 @@
 "use client";
-import SplitText from "@/reactbits/text-animations/SplitText/SplitText";
-import { Box, Flex, Grid, GridItem } from "@chakra-ui/react";
+import React from "react";
+import ShinyText from "@/reactbits/text-animations/ShinyText/ShinyText";
+import { Box, Flex, Grid, GridItem, Heading, HStack, Separator, Text} from "@chakra-ui/react";
+import Image from "next/image";
+import Link from "next/link";
+
+const CustomBox = ({ children, onHover, onOut, ...props }: { children: React.ReactNode, onHover?: () => void, onOut?: () => void }) => (
+  <Box {...props}
+    border={"1px solid rgba(255,255,255,0.4)"}
+    borderRadius={"10px"}
+    px={"20px"} py={"12px"}
+    width={"fit"} bg={"#101010"}
+    transition={"all 0.3s ease-in-out"}
+    _hover={{
+      background: "#161616",
+      border: "1px solid #2C5E4C",
+      boxShadow: "0px 0px 4px #1E5631",
+      scale: "1.05",
+    }}
+    onMouseOver={onHover}
+    onMouseOut={onOut}
+  >
+    {children}
+  </Box>
+);
 
 export default function Home() {
+  const keySkills = [
+    "React", "Nest", "PHP", "Wordpress", "Java",
+  ];
+  const [isMoreSkillsHover, setIsMoreSkillsHover] = React.useState(false);
+
   return (
-    <Flex fontSize={"5rem"} letterSpacing={"-2px"} w="full" justifyContent="center" alignItems="center" flexDir={"column"}>
-      <SplitText
-        text="Tom Pillet-Gaulon"
-        className="text-2xl font-semibold text-center"
-        delay={80}
-        animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-        animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-        threshold={0.2}
-        easing={(t) => t}
-        rootMargin="-50px"
-        onLetterAnimationComplete={() => {console.log('complete')}}
-      />
-      <Grid h={"400px"} w={"1/2"} 
-      templateRows="repeat(2, 1fr)" templateColumns={"repeat(2, 1fr)"}>
-        <GridItem rowSpan={2} bg={"red"}></GridItem>
-        <GridItem bg={"blue"}></GridItem>
-        <GridItem bg={"green"}></GridItem>
-      </Grid>
+    <Flex w="full" justifyContent="center" alignItems="center" flexDir={"column"}>
+      <Flex h={"400px"} w={"1/2"} >
+        <Flex flexDir={"column"} w={"1/2"} gap={12} justifyContent={"center"}>
+          <Heading as="h1" fontSize={"6xl"} textAlign={"center"}>Tom Pillet-Gaulon</Heading>    
+          <Heading as="h2" fontSize={"3xl"} textAlign={"center"} fontStyle={"italic"} fontWeight={"400"}>
+            <ShinyText text="Développeur fullstack" speed={2} className="sapin-color"/>
+          </Heading>
+          <Text fontSize={"xl"} fontWeight={"300"}>Je texte un peu sur moi. C'est cool d'avoir un site web ! :) J'espère que vous y trouverez ce que vous cherchez ! Bonne journée ! 👋 </Text>
+        </Flex>
+        <Flex w={"1/2"} justifyContent={"center"}>
+          <Box m="auto" h="4/5" w="1/2" pos={"relative"} _before={{ content: '""', position: "absolute", display: "block", height: "100%", width: "100%", top: "20px", left:"20px", border: "2px solid white", borderRadius: "10px", background: "#101010" }}>
+            <Image src="/photo-portfolio.jpg" alt="Tom" fill style={{ objectFit: "cover", filter: "saturate(.8)", borderRadius: "10px" }} />
+          </Box>
+        </Flex>
+      </Flex> 
+
+      <HStack w={"3/5"} mb={"80px"} mt={"40px"}>
+        <Separator flex="1" variant="dashed" />
+        <Heading flexShrink="0" as="h2" fontSize={"2xl"} fontWeight={"400"}>Compétences clés</Heading>
+        <Separator flex="1" variant="dashed" />
+      </HStack>
+
+      <Flex w={"1/2"} justifyContent={"space-around"} flexWrap={"wrap"} gap={"20px"}>
+        {keySkills.map((competence, index) => {
+          const [isHover, setIsHover] = React.useState(false);
+          return (
+            <CustomBox key={index} onHover={() => setIsHover(true)} onOut={() => setIsHover(false)}>
+              <ShinyText text={competence} speed={2} className={isHover ? "shiny-text-hovered" : ""}/>
+            </CustomBox>
+          );
+        })}
+        <Link href="/competences" style={{ display: "block", height: "fit-content", width: "fit-content" }}>
+          <CustomBox onHover={() => setIsMoreSkillsHover(true)} onOut={() => setIsMoreSkillsHover(false)}>
+            <ShinyText text="Voir plus 👉" speed={2} className={isMoreSkillsHover ? "shiny-text-hovered" : ""}/>
+          </CustomBox>
+        </Link>
+      </Flex>
     </Flex>
   );
 }
