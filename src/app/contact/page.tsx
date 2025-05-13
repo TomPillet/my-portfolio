@@ -10,6 +10,7 @@ export default function Contact () {
       title: formData.get('title'),
       firstname: formData.get('firstname'),
       lastname: formData.get('lastname'),
+      entreprise: formData.get('entreprise'),
       email: formData.get('email'),
       phone: formData.get('phone'),
       message: formData.get('message'),
