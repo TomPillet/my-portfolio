@@ -4,6 +4,8 @@ import emailjs from '@emailjs/browser';
 import { Button, Container, Field, Flex, Grid, Heading, Input, Textarea } from '@chakra-ui/react';
 import Form from 'next/form';
 
+import { GetStaticProps } from 'next';
+
 export default function Contact () {
   const sendEmail = (formData: FormData) => {
     const templateParams = {
@@ -17,8 +19,8 @@ export default function Contact () {
     };
 
     emailjs
-      .send('service_94dg8m5', 'template_mstdggg', templateParams, {
-        publicKey: '79eGu4w7eGN0JF2uk',
+      .send(process?.env?.EMAILJS_CONTACT_SERVICE_ID as string, process?.env?.EMAILJS_CONTACT_TEMPLATE_ID as string, templateParams, {
+        publicKey: process.env.EMAILJS_PUBLIC_KEY,
       })
       .then(
         () => {
