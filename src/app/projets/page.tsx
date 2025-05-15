@@ -5,3 +5,11 @@ export default function Projets() {
     <div>Projets</div>
   )
 }
+
+export interface Projet {
+  title: string,
+  slut: string,
+  description: string,
+  image: string,
+  link: string,
+}
