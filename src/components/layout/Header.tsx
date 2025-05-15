@@ -9,7 +9,7 @@ export default function Header() {
     const [showAurora, setShowAurora] = React.useState(false)
 
   return (
-    <Flex h="200px" w="full" pos="relative">
+    <Flex h="200px" w="full" pos="absolute">
         <Box h="full" w="full" pos="absolute" opacity={ showAurora ? ".6" : "0" }>
             <Aurora
                 colorStops={["#2C5E4C", "#1E5631", "#164A20"]}

@@ -33,7 +33,7 @@ export default function Contact () {
   };
 
   return (
-    <Container maxW="container.xl">
+    <Container maxW="container.xl" pt="120px">
       <Flex h="fit" w="full" justifyContent="center" alignItems="center" flexDir={"column"} gap={12}>
         <Heading as="h1" fontSize={"6xl"} textAlign={"center"}>Contactez-moi</Heading>
         <Form action={sendEmail}>
