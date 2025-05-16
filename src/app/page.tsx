@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import ShinyText from "@/reactbits/text-animations/ShinyText/ShinyText";
-import { Box, Flex, Grid, GridItem, Heading, HStack, Separator, Text} from "@chakra-ui/react";
+import { Box, Container, Flex, Grid, GridItem, Heading, HStack, Separator, Text} from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -32,43 +32,48 @@ export default function Home() {
   const [isMoreSkillsHover, setIsMoreSkillsHover] = React.useState(false);
 
   return (
-    <Flex w="full" justifyContent="center" alignItems="center" flexDir={"column"}>
-      <Flex h={"400px"} w={"1/2"} >
-        <Flex flexDir={"column"} w={"1/2"} gap={12} justifyContent={"center"}>
-          <Heading as="h1" fontSize={"6xl"} textAlign={"center"}>Tom Pillet-Gaulon</Heading>    
-          <Heading as="h2" fontSize={"3xl"} textAlign={"center"} fontStyle={"italic"} fontWeight={"400"}>
-            <ShinyText text="Développeur fullstack" speed={2} className="sapin-color"/>
-          </Heading>
-          <Text fontSize={"xl"} fontWeight={"300"}>Je texte un peu sur moi. C'est cool d'avoir un site web ! :) J'espère que vous y trouverez ce que vous cherchez ! Bonne journée ! 👋 </Text>
-        </Flex>
-        <Flex w={"1/2"} justifyContent={"center"}>
-          <Box m="auto" h="4/5" w="1/2" pos={"relative"} _before={{ content: '""', position: "absolute", display: "block", height: "100%", width: "100%", top: "20px", left:"20px", border: "2px solid white", borderRadius: "10px", background: "#101010" }}>
-            <Image src="/photo-portfolio.jpg" alt="Tom" fill style={{ objectFit: "cover", filter: "saturate(.8)", borderRadius: "10px" }} />
-          </Box>
-        </Flex>
-      </Flex> 
+    <Container maxW="8xl" pt="120px">
+      <Flex w="full" justifyContent="center" alignItems="center" flexDir={"column"}>
+        <Flex h={"400px"} w={"1/2"} >
+          <Flex flexDir={"column"} w={"full"} gap={8} justifyContent={"center"}>
+            <Heading as="h1" fontSize={"6xl"} textAlign={"center"} display={"flex"} flexDir={"column"} gap={8}>
+              <Text>Tom</Text>
+              <Text>PILLET-GAULON</Text>  
+            </Heading>    
+            <Heading as="h2" fontSize={"3xl"} textAlign={"center"} fontStyle={"italic"} fontWeight={"400"}>
+              <ShinyText text="Développeur fullstack" speed={2} className="sapin-color"/>
+            </Heading>
+            <Text fontSize={"xl"} fontWeight={"300"}>Je texte un peu sur moi. C'est cool d'avoir un site web ! :) J'espère que vous y trouverez ce que vous cherchez ! Bonne journée ! 👋 </Text>
+          </Flex>
+          <Flex w={"1/2"} justifyContent={"center"}>
+            <Box m="auto" h="4/5" w="1/2" pos={"relative"} _before={{ content: '""', position: "absolute", display: "block", height: "100%", width: "100%", top: "20px", left:"20px", border: "2px solid white", borderRadius: "10px", background: "#101010" }}>
+              <Image src="/photo-portfolio.jpg" alt="Tom" fill style={{ objectFit: "cover", filter: "saturate(.8)", borderRadius: "10px" }} />
+            </Box>
+          </Flex>
+        </Flex> 
 
-      <HStack w={"3/5"} mb={"80px"} mt={"40px"}>
-        <Separator flex="1" variant="dashed" />
-        <Heading flexShrink="0" as="h2" fontSize={"2xl"} fontWeight={"400"}>Compétences clés</Heading>
-        <Separator flex="1" variant="dashed" />
-      </HStack>
+        <HStack w={"3/5"} mb={"80px"} mt={"40px"}>
+          <Separator flex="1" variant="dashed" />
+          <Heading flexShrink="0" as="h2" fontSize={"2xl"} fontWeight={"400"}>Compétences clés</Heading>
+          <Separator flex="1" variant="dashed" />
+        </HStack>
 
-      <Flex w={"1/2"} justifyContent={"space-around"} flexWrap={"wrap"} gap={"20px"}>
-        {keySkills.map((competence, index) => {
-          const [isHover, setIsHover] = React.useState(false);
-          return (
-            <CustomBox key={index} onHover={() => setIsHover(true)} onOut={() => setIsHover(false)}>
-              <ShinyText text={competence} speed={2} className={isHover ? "shiny-text-hovered" : ""}/>
+        <Flex w={"1/2"} justifyContent={"space-around"} flexWrap={"wrap"} gap={"20px"}>
+          {keySkills.map((competence, index) => {
+            const [isHover, setIsHover] = React.useState(false);
+            return (
+              <CustomBox key={index} onHover={() => setIsHover(true)} onOut={() => setIsHover(false)}>
+                <ShinyText text={competence} speed={2} className={isHover ? "shiny-text-hovered" : ""}/>
+              </CustomBox>
+            );
+          })}
+          <Link href="/competences" style={{ display: "block", height: "fit-content", width: "fit-content" }}>
+            <CustomBox onHover={() => setIsMoreSkillsHover(true)} onOut={() => setIsMoreSkillsHover(false)}>
+              <ShinyText text="Voir plus 👉" speed={2} className={isMoreSkillsHover ? "shiny-text-hovered" : ""}/>
             </CustomBox>
-          );
-        })}
-        <Link href="/competences" style={{ display: "block", height: "fit-content", width: "fit-content" }}>
-          <CustomBox onHover={() => setIsMoreSkillsHover(true)} onOut={() => setIsMoreSkillsHover(false)}>
-            <ShinyText text="Voir plus 👉" speed={2} className={isMoreSkillsHover ? "shiny-text-hovered" : ""}/>
-          </CustomBox>
-        </Link>
-      </Flex>
+          </Link>
+        </Flex>
     </Flex>
+    </Container>
   );
 }
