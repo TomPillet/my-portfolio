@@ -17,221 +17,214 @@ enum SkillType {
 }
 
 export interface Skill {
-  title: string,
-  slug: string,
-  type: SkillType,
-  level: SkillLevel,
-  projets: Projet[],
-  logo: string
+  title: string;
+  slug: string;
+  type: SkillType;
+  level: SkillLevel;
+  projets: Projet[];
+  logo: string;
 }
 
+// TODO : exports from API
 export const skills: Skill[] = [
-    {
-      title: "Typescript",
-      slug: "typescript",
-      type: SkillType.FRONT,
-      level: SkillLevel.INTERMEDIATE,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "PHP",
-      slug: "php",
-      type: SkillType.FRONT,
-      level: SkillLevel.INTERMEDIATE,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "Java",
-      slug: "java",
-      type: SkillType.FRONT,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "SQL",
-      slug: "sql",
-      type: SkillType.FRONT,
-      level: SkillLevel.INTERMEDIATE,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "Angular",
-      slug: "angular",
-      type: SkillType.FRONT,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "Vue",
-      slug: "vue",
-      type: SkillType.FRONT,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "React",
-      slug: "react",
-      type: SkillType.FRONT,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "React Native",
-      slug: "react-native",
-      type: SkillType.FRONT,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "NextJS",
-      slug: "nextjs",
-      type: SkillType.FRONT,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "Tailwind",
-      slug: "tailwind",
-      type: SkillType.FRONT,
-      level: SkillLevel.INTERMEDIATE,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "Nest",
-      slug: "nest",
-      type: SkillType.BACK,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "Laravel",
-      slug: "laravel",
-      type: SkillType.BACK,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "Sylius",
-      slug: "sylius",
-      type: SkillType.BACK,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "MySQL",
-      slug: "mysql",
-      type: SkillType.BACK,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "Spring Boot",
-      slug: "spring-boot",
-      type: SkillType.BACK,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "JUnit",
-      slug: "junit",
-      type: SkillType.TESTING,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "Git",
-      slug: "git",
-      type: SkillType.DEVOPS,
-      level: SkillLevel.INTERMEDIATE,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "Jenkins",
-      slug: "jenkins",
-      type: SkillType.DEVOPS,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "Docker",
-      slug: "docker",
-      type: SkillType.DEVOPS,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "Kubernetes",
-      slug: "kubernetes",
-      type: SkillType.DEVOPS,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "CapRover",
-      slug: "caprover",
-      type: SkillType.INFRASTRUCTURE,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "OVH",
-      slug: "ovh",
-      type: SkillType.INFRASTRUCTURE,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "Postman",
-      slug: "postman",
-      type: SkillType.DEVOPS,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "WSL2",
-      slug: "wsl2",
-      type: SkillType.DEVOPS,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "Figma",
-      slug: "figma",
-      type: SkillType.DESIGN,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
-    {
-      title: "Wordpress",
-      slug: "wordpress",
-      type: SkillType.CMS,
-      level: SkillLevel.JUNIOR,
-      projets: [],
-      logo: ""
-    },
+  {
+    title: "Typescript",
+    slug: "typescript",
+    type: SkillType.FRONT,
+    level: SkillLevel.INTERMEDIATE,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "PHP",
+    slug: "php",
+    type: SkillType.FRONT,
+    level: SkillLevel.INTERMEDIATE,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "Java",
+    slug: "java",
+    type: SkillType.FRONT,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "SQL",
+    slug: "sql",
+    type: SkillType.FRONT,
+    level: SkillLevel.INTERMEDIATE,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "Angular",
+    slug: "angular",
+    type: SkillType.FRONT,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "Vue",
+    slug: "vue",
+    type: SkillType.FRONT,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "React",
+    slug: "react",
+    type: SkillType.FRONT,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "React Native",
+    slug: "react-native",
+    type: SkillType.FRONT,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "NextJS",
+    slug: "nextjs",
+    type: SkillType.FRONT,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "Tailwind",
+    slug: "tailwind",
+    type: SkillType.FRONT,
+    level: SkillLevel.INTERMEDIATE,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "Nest",
+    slug: "nest",
+    type: SkillType.BACK,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "Laravel",
+    slug: "laravel",
+    type: SkillType.BACK,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "Sylius",
+    slug: "sylius",
+    type: SkillType.BACK,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "MySQL",
+    slug: "mysql",
+    type: SkillType.BACK,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "Spring Boot",
+    slug: "spring-boot",
+    type: SkillType.BACK,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "JUnit",
+    slug: "junit",
+    type: SkillType.TESTING,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "Git",
+    slug: "git",
+    type: SkillType.DEVOPS,
+    level: SkillLevel.INTERMEDIATE,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "Jenkins",
+    slug: "jenkins",
+    type: SkillType.DEVOPS,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "Docker",
+    slug: "docker",
+    type: SkillType.DEVOPS,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "Kubernetes",
+    slug: "kubernetes",
+    type: SkillType.DEVOPS,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "CapRover",
+    slug: "caprover",
+    type: SkillType.INFRASTRUCTURE,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "Postman",
+    slug: "postman",
+    type: SkillType.DEVOPS,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "WSL2",
+    slug: "wsl2",
+    type: SkillType.DEVOPS,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "Figma",
+    slug: "figma",
+    type: SkillType.DESIGN,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
+  {
+    title: "Wordpress",
+    slug: "wordpress",
+    type: SkillType.CMS,
+    level: SkillLevel.JUNIOR,
+    projets: [],
+    logo: "",
+  },
 ];
