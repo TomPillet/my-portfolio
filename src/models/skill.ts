@@ -1,4 +1,4 @@
-import { Projet } from "@/app/projets/page";
+import { Projet } from "./projet";
 
 enum SkillLevel {
   JUNIOR = "junior",
@@ -32,7 +32,36 @@ export const skills: Skill[] = [
     slug: "typescript",
     type: SkillType.FRONT,
     level: SkillLevel.INTERMEDIATE,
-    projets: [],
+    projets: [
+      {
+        title: "Nest",
+        slug: "nest",
+        description: "",
+        image: "",
+        link: "",
+      },
+      {
+        title: "Cadcom",
+        slug: "cadcom",
+        description: "",
+        image: "",
+        link: "",
+      },
+      {
+        title: "The Hive",
+        slug: "the-hive",
+        description: "",
+        image: "",
+        link: "",
+      },
+      {
+        title: "Profusion",
+        slug: "profusion",
+        description: "",
+        image: "",
+        link: "",
+      },
+    ],
     logo: "",
   },
   {
