@@ -1,15 +1,13 @@
-import React from 'react'
+import React from "react";
 
 export default function Projets() {
-  return (
-    <div>Projets</div>
-  )
+  return <div>Projets</div>;
 }
 
 export interface Projet {
-  title: string,
-  slut: string,
-  description: string,
-  image: string,
-  link: string,
+  title: string;
+  slug: string;
+  description: string;
+  image: string;
+  link: string;
 }
