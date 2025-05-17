@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Design System du portfolio
 
-## Getting Started
+## Couleurs primaires et de fond
 
-First, run the development server:
+### Fond
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Fond principal** : `#131313` ou `#fcf8e8`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Texte
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Texte principal** : `#fcf8e8` ou `#131313`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Couleur primaire et variations
 
-## Learn More
+- **Couleur de mise en avant** : `#2c5e4c`
+  - **Survol** : `#3a7a62`
+  - **Focus** : `#1e4a3a`
+  - **Pressé** : `#163a2c`
 
-To learn more about Next.js, take a look at the following resources:
+### Couleurs secondaires et variations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Couleur secondaire 1** : `#1E5631`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+  - **Survol** : `#287242`
+  - **Focus** : `#164226`
+  - **Pressé** : `#0e2e1b`
 
-## Deploy on Vercel
+- **Couleur secondaire 2** : `#164A20`
+  - **Survol** : `#1f622a`
+  - **Focus** : `#103a1a`
+  - **Pressé** : `#0a2a12`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Niveaux de Compétences
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Junior
+
+- **Couleur** : `#A3E4D7`
+- **Description** : Début de l'apprentissage.
+- **Expérience** : 0 à 2 années.
+
+### Intermédiaire
+
+- **Couleur** : `#F5B7B1`
+- **Description** : Compétence en développement.
+- **Expérience** : 2 à 5 années.
+
+### Confirmé
+
+- **Couleur** : `#D7BDE2`
+- **Description** : Compétence solide.
+- **Expérience** : 5 à 10 années.
+
+### Expert
+
+- **Couleur** : `#5D4037`
+- **Description** : Expertise et connaissance approfondie.
+- **Expérience** : 10 années et plus.
+
+_Même si les niveaux Confirmé et Expert ne sont pas atteints, j'ai pensé qu'il restait utile (pour l'avenir notamment) de les définir malgré tout._
