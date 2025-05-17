@@ -1,10 +1,28 @@
 import { Projet } from "./projet";
 
-enum SkillLevel {
-  JUNIOR = "junior",
-  INTERMEDIATE = "intermédiaire",
-  CONFIRMED = "confirmé",
-}
+const SkillLevel = {
+  JUNIOR: {
+    value: "junior",
+    label: "Junior",
+    color: "#b8e2a1",
+  },
+  INTERMEDIATE: {
+    value: "intermediate",
+    label: "Intermédiaire",
+    color: "#A3E4D7",
+  },
+  CONFIRMED: {
+    value: "confirmed",
+    label: "Confirmé",
+    color: "#F5B7B1",
+  },
+  EXPERT: {
+    value: "expert",
+    label: "Expert",
+    color: "#D7BDE2",
+  },
+};
+export type SkillLevelType = (typeof SkillLevel)[keyof typeof SkillLevel];
 
 enum SkillType {
   FRONT = "frontend",
@@ -20,7 +38,7 @@ export interface Skill {
   title: string;
   slug: string;
   type: SkillType;
-  level: SkillLevel;
+  level: SkillLevelType;
   projets: Projet[];
   logo: string;
 }
@@ -31,7 +49,7 @@ export const skills: Skill[] = [
     title: "Typescript",
     slug: "typescript",
     type: SkillType.FRONT,
-    level: SkillLevel.INTERMEDIATE,
+    level: SkillLevel.EXPERT,
     projets: [
       {
         title: "Nest",
@@ -62,7 +80,7 @@ export const skills: Skill[] = [
         link: "",
       },
     ],
-    logo: "",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg",
   },
   {
     title: "PHP",
@@ -70,7 +88,7 @@ export const skills: Skill[] = [
     type: SkillType.FRONT,
     level: SkillLevel.INTERMEDIATE,
     projets: [],
-    logo: "",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-plain.svg",
   },
   {
     title: "Java",
@@ -78,15 +96,15 @@ export const skills: Skill[] = [
     type: SkillType.FRONT,
     level: SkillLevel.JUNIOR,
     projets: [],
-    logo: "",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-plain.svg",
   },
   {
     title: "SQL",
     slug: "sql",
     type: SkillType.FRONT,
-    level: SkillLevel.INTERMEDIATE,
+    level: SkillLevel.CONFIRMED,
     projets: [],
-    logo: "",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg",
   },
   {
     title: "Angular",
