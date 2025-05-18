@@ -1,27 +1,23 @@
-import React, { useEffect } from "react";
-import { Skill, SkillLevel } from "@prisma/client";
+import React from "react";
+import { Project, Skill, SkillLevel } from "@prisma/client";
 import Image from "next/image";
 import { Box, Flex, Heading, Highlight, Text } from "@chakra-ui/react";
-import { getSkillLevelById } from "@/app/services/skillLevel";
 
 interface CompetenceCardProps {
-  skill: Skill;
   width: string;
   height: string;
+  skill: Skill;
+  skillLevel: SkillLevel;
+  projets?: Project[];
 }
 
-export function CompetenceCard({ skill, width, height }: CompetenceCardProps) {
-  const [skillLevel, setSkillLevel] = React.useState<SkillLevel | null>(null);
-
-  useEffect(() => {
-    getSkillLevelById(skill.levelId)
-      .then((res) => {
-        console.log(res);
-        setSkillLevel(res);
-      })
-      .catch(console.error);
-  }, [skill.levelId]);
-
+export function CompetenceCard({
+  width,
+  height,
+  skill,
+  skillLevel,
+  projets,
+}: CompetenceCardProps) {
   return (
     <Flex
       pos={"relative"}
@@ -67,21 +63,23 @@ export function CompetenceCard({ skill, width, height }: CompetenceCardProps) {
             {skill?.type}
           </Text>
         </Flex>
-        {/* <Flex flexDir={"column"}>
-          <Heading as="h3" fontSize={"lg"} w={"full"}>
-            Projets :
-          </Heading>
-          <Flex flexWrap={"wrap"} lineHeight={1.1}>
-            {skill?.projets?.map((projet, index) => {
-              return (
-                <Text key={index} mr={1}>
-                  {projet?.title}
-                  {index !== skill?.projets?.length - 1 && ","}
-                </Text>
-              );
-            })}
+        {projets && (
+          <Flex flexDir={"column"}>
+            <Heading as="h3" fontSize={"lg"} w={"full"}>
+              Projets :
+            </Heading>
+            <Flex flexWrap={"wrap"} lineHeight={1.1}>
+              {projets.map((projet, index) => {
+                return (
+                  <Text key={index} mr={1}>
+                    {projet.title}
+                    {index !== projets.length - 1 && ","}
+                  </Text>
+                );
+              })}
+            </Flex>
           </Flex>
-        </Flex> */}
+        )}
         {skillLevel && (
           <Highlight
             query={skillLevel.label}

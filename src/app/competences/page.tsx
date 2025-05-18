@@ -1,24 +1,49 @@
 "use client";
 import { Container, Grid, GridItem, Heading } from "@chakra-ui/react";
 import React, { useEffect } from "react";
-import { Skill } from "@prisma/client";
+import { Skill, SkillLevel } from "@prisma/client";
 import TiltedCard from "@/reactbits/components/TiltedCard/TiltedCard";
 import { CompetenceCard } from "@/components/layout/CompetenceCard";
 import { getSkills } from "../services/skills";
+import { getSkillLevelById } from "@/app/services/skillLevel";
 
 const competenceCardHeight = "260px";
 const competenceCardWidth = "240px";
 
 export default function Competences() {
   const [skills, setSkills] = React.useState<Skill[]>([]);
+  const [skillLevels, setSkillLevels] = React.useState<
+    Record<number, SkillLevel>
+  >({});
   const [selectedLevel, setSelectedLevel] = React.useState<string | null>(null);
   const [selectedType, setSelectedType] = React.useState<string | null>(null);
 
+  // Fetch skills
   useEffect(() => {
     getSkills()
       .then((res: Skill[]) => setSkills(res))
       .catch(console.error);
   }, []);
+
+  // Fetch skill levels
+  useEffect(() => {
+    // Get unique level IDs from all skills
+    const levelIds = [...new Set(skills.map((skill) => skill.levelId))];
+
+    // Fetch each unique level only once
+    levelIds.forEach((levelId) => {
+      if (!skillLevels[levelId]) {
+        getSkillLevelById(levelId)
+          .then((res) => {
+            setSkillLevels((prev) => ({
+              ...prev,
+              [levelId]: res,
+            }));
+          })
+          .catch(console.error);
+      }
+    });
+  }, [skills, skillLevels]);
 
   return (
     <Container maxW={"conatiner.xl"} pt="120px">
@@ -64,9 +89,10 @@ export default function Competences() {
                 displayOverlayContent={true}
                 overlayContent={
                   <CompetenceCard
-                    skill={skill}
                     width={competenceCardWidth}
                     height={competenceCardHeight}
+                    skill={skill}
+                    skillLevel={skillLevels[skill.levelId]}
                   />
                 }
               ></TiltedCard>
