@@ -1,0 +1,62 @@
+datasource db {
+    provider    = "mysql"
+    url         = env("DB_URL")
+}
+
+generator client {
+    provider    = "prisma-client-js"
+}
+
+model Skill {
+    id          Int         @id @default(autoincrement())
+    slug        String      @unique
+    title       String
+    logoUrl     String
+    type        SkillType     
+
+    level       SkillLevel  @relation(fields: [levelId], references: [id])
+    levelId     Int
+
+    projects    SkillsOnProjects[]
+}
+
+enum SkillType {
+    FRONT           @map("frontend")
+    BACK            @map("backend")
+    MOBILE          @map("mobile")
+    SOFTWARE        @map("logiciel")
+    CMS             @map("cms")
+    TESTING         @map("testing")
+    DEVOPS          @map("devops")
+    DESIGN          @map("design")
+    INFRASTRUCTURE  @map("infrastructure")
+}
+
+model SkillLevel {
+    id      Int     @id @default(autoincrement())
+    slug    String  @unique
+    label   String
+    color   String
+    skills  Skill[]
+}
+
+model Project {
+    id          Int         @id @default(autoincrement())
+    slug        String      @unique
+    title       String
+    description String      @db.Text
+    imageUrl    String
+    gitLink     String
+    date        DateTime    @db.Date
+
+    skills      SkillsOnProjects[]
+}
+
+model SkillsOnProjects {
+    project     Project     @relation(fields: [projectId], references: [id])
+    projectId   Int
+    skill       Skill       @relation(fields: [skillId], references: [id])
+    skillId     Int
+
+    @@id([projectId, skillId])
+}
