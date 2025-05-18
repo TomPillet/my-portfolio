@@ -21,15 +21,15 @@ model Skill {
 }
 
 enum SkillType {
-    FRONT           @map("frontend")
-    BACK            @map("backend")
-    MOBILE          @map("mobile")
-    SOFTWARE        @map("logiciel")
-    CMS             @map("cms")
-    TESTING         @map("testing")
-    DEVOPS          @map("devops")
-    DESIGN          @map("design")
-    INFRASTRUCTURE  @map("infrastructure")
+    FRONT         
+    BACK          
+    MOBILE        
+    SOFTWARE      
+    CMS           
+    TESTING       
+    DEVOPS        
+    DESIGN        
+    INFRASTRUCTURE
 }
 
 model SkillLevel {
