@@ -1,0 +1,96 @@
+import React, { useEffect } from "react";
+import { Skill, SkillLevel } from "@prisma/client";
+import Image from "next/image";
+import { Box, Flex, Heading, Highlight, Text } from "@chakra-ui/react";
+import { getSkillLevelById } from "@/app/services/skillLevel";
+
+interface CompetenceCardProps {
+  skill: Skill;
+  width: string;
+  height: string;
+}
+
+export function CompetenceCard({ skill, width, height }: CompetenceCardProps) {
+  const [skillLevel, setSkillLevel] = React.useState<SkillLevel | null>(null);
+
+  useEffect(() => {
+    getSkillLevelById(skill.levelId)
+      .then((res) => {
+        console.log(res);
+        setSkillLevel(res);
+      })
+      .catch(console.error);
+  }, [skill.levelId]);
+
+  return (
+    <Flex
+      pos={"relative"}
+      w={width}
+      h={height}
+      bg="#F5F5F5"
+      rounded="3xl"
+      overflow={"hidden"}
+    >
+      <Box
+        filter={"grayscale(1) brightness(.6)"}
+        opacity={0.05}
+        h={"50%"}
+        w={"50%"}
+        m={"auto"}
+        pos={"relative"}
+        zIndex={1}
+      >
+        <Image
+          src={skill?.logoUrl}
+          alt={skill?.slug}
+          fill
+          style={{ objectFit: "contain" }}
+        />
+      </Box>
+      <Flex
+        w={width}
+        h={height}
+        pos={"absolute"}
+        zIndex={2}
+        flexDir={"column"}
+        justifyContent={"space-between"}
+        px={4}
+        py={8}
+      >
+        <Flex w="full" flexDir={"column"}>
+          <Flex w={"full"}>
+            <Heading w={"4/5"} as="h2" fontSize={"2xl"}>
+              {skill?.title}
+            </Heading>
+          </Flex>
+          <Text w={"full"} fontStyle={"italic"} textTransform={"lowercase"}>
+            {skill?.type}
+          </Text>
+        </Flex>
+        {/* <Flex flexDir={"column"}>
+          <Heading as="h3" fontSize={"lg"} w={"full"}>
+            Projets :
+          </Heading>
+          <Flex flexWrap={"wrap"} lineHeight={1.1}>
+            {skill?.projets?.map((projet, index) => {
+              return (
+                <Text key={index} mr={1}>
+                  {projet?.title}
+                  {index !== skill?.projets?.length - 1 && ","}
+                </Text>
+              );
+            })}
+          </Flex>
+        </Flex> */}
+        {skillLevel && (
+          <Highlight
+            query={skillLevel.label}
+            styles={{ px: "1", bg: skillLevel.color, rounded: "md", w: "fit" }}
+          >
+            {skillLevel.label}
+          </Highlight>
+        )}
+      </Flex>
+    </Flex>
+  );
+}
