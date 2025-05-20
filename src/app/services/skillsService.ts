@@ -3,7 +3,7 @@ export async function getSkills() {
     const response = await fetch("/api/skills", { method: "GET" });
     return await response.json();
   } catch (error) {
-    console.error("Error fetching users:", error);
+    console.error("Error fetching skills :", error);
     return Promise.reject(error);
   }
 }
