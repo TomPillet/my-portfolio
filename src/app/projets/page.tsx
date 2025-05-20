@@ -37,7 +37,7 @@ export default function Projets() {
         lineHeight={2}
         mb={8}
       >
-        J'ai travaillé sur ces projets
+        J{"'"}ai travaillé sur ces projets
       </Heading>
       <Flex gap={4} flexWrap={"wrap"} justifyContent={"center"}>
         {projects.map((project, index) => {

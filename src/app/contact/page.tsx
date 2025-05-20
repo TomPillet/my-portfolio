@@ -69,14 +69,16 @@ export default function Contact() {
                 Prénom <Field.RequiredIndicator />
               </Field.Label>
               <Input name="firstname" variant="flushed" />
-              <Field.ErrorText>Merci d'indiquer votre prénom.</Field.ErrorText>
+              <Field.ErrorText>
+                Merci d{"'"}indiquer votre prénom.
+              </Field.ErrorText>
             </Field.Root>
             <Field.Root gridArea={"lastname"} required>
               <Field.Label>
                 Nom <Field.RequiredIndicator />
               </Field.Label>
               <Input name="lastname" variant="flushed" />
-              <Field.ErrorText>Merci d'indiquer votre nom.</Field.ErrorText>
+              <Field.ErrorText>Merci d{"'"}indiquer votre nom.</Field.ErrorText>
             </Field.Root>
             <Field.Root gridArea={"entreprise"}>
               <Field.Label>Entreprise </Field.Label>
