@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { Skill, SkillLevel } from "@prisma/client";
 import TiltedCard from "@/reactbits/components/TiltedCard/TiltedCard";
 import { CompetenceCard } from "@/components/layout/CompetenceCard";
-import { getSkills } from "../services/skills";
+import { getSkills } from "../services/skillsService";
 import { getSkillLevelById } from "@/app/services/skillLevelService";
 
 const competenceCardHeight = "260px";

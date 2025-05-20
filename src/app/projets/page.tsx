@@ -1,41 +1,19 @@
+"use client";
+
 import ProjetCard from "@/components/layout/ProjetCard";
 import { Container, Flex, Heading } from "@chakra-ui/react";
 import { Project } from "@prisma/client";
-import React from "react";
+import { getProjects } from "../services/projectsService";
+import React, { useEffect, useState } from "react";
 
 export default function Projets() {
-  const projects: Project[] = [
-    // {
-    //   id: 1,
-    //   slug: "",
-    //   title: "The Hive",
-    //   description: "Description du projet 1",
-    //   imageUrl:
-    //     "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsoftwarewebsas.com%2Fpublic%2Fimages%2Fblog%2Fdev.webp&f=1&ipt=5baea3e1fddfec31f0d9e80fe8cca937a1ddedd3c88a504d9f7b75c769d351c9",
-    //   gitUrl: "",
-    //   date: new Date(),
-    // },
-    // {
-    //   id: 1,
-    //   slug: "",
-    //   title: "EDC - Cahier des charges",
-    //   description: "Description du projet 1",
-    //   imageUrl:
-    //     "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fchef-de-projet.fr%2Fwp-content%2Fuploads%2F2022%2F12%2FGestion-de-projet.png&f=1&ipt=0fd4be6a0d4616576d79b859bc08ea68a8a21669535c04e522615c01c86439bb",
-    //   gitUrl: "",
-    //   date: new Date(),
-    // },
-    // {
-    //   id: 1,
-    //   slug: "",
-    //   title: "Nike",
-    //   description: "Description du projet 1",
-    //   imageUrl:
-    //     "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogodix.com%2Flogo%2F903077.jpg&f=1&nofb=1&ipt=9bfe8812132dacad72307ac9ade9547a9c256412a15b611a95d9d2fa77e720f3",
-    //   gitUrl: "",
-    //   date: new Date(),
-    // },
-  ];
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    getProjects()
+      .then((res: Project[]) => setProjects(res))
+      .catch(console.error);
+  }, []);
 
   return (
     <Container maxW={"7xl"} pt="120px">
