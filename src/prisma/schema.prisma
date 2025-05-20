@@ -41,15 +41,27 @@ model SkillLevel {
 }
 
 model Project {
-    id          Int         @id @default(autoincrement())
-    slug        String      @unique
-    title       String
-    description String      @db.Text
-    imageUrl    String
-    gitLink     String
-    date        DateTime    @db.Date
+    id                  Int         @id @default(autoincrement())
+    slug                String      @unique
+    title               String
+    description         Json
+    shortDescription    String      @db.VarChar(128)
+    imageUrl            String
+    gitUrl              String
+    hostUrl             String
+    date                DateTime    @db.Date
+    type                ProjectType @default(PERSO)          
+
+    entreprise          Entreprise?  @relation(fields: [entrepriseId], references: [id])
+    entrepriseId        Int?         
 
     skills      SkillsOnProjects[]
+}
+
+enum ProjectType {
+    PERSO
+    PRO
+    UNIV
 }
 
 model SkillsOnProjects {
@@ -59,4 +71,12 @@ model SkillsOnProjects {
     skillId     Int
 
     @@id([projectId, skillId])
+}
+
+model Entreprise {
+    id          Int         @id @default(autoincrement())
+    slug        String      @unique
+    name        String
+    siteUrl     String
+    projects    Project[]
 }

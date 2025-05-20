@@ -1,34 +1,102 @@
 [
   {
-    "slug": "nest",
-    "title": "Nest",
-    "description": "",
-    "imageUrl": "",
-    "gitLink": "",
-    "date": ""
+    "slug": "site-cadcom",
+    "title": "Site Cadcom",
+    "description": {
+      "sections": [
+        {
+          "title": "",
+          "content": "",
+          "imageUrl": ""
+        }
+      ]
+    },
+    "shortDescription": "Refonte code base du site de Cadcom, en combinant NextJS et Wordpress en headless.",
+    "imageUrl": "/projects/site-cadcom.jpg",
+    "gitUrl": "",
+    "hostUrl": "https://www.cadcom-studio.fr/",
+    "date": "2024",
+    "type": "PRO",
+    "entreprise": "cadcom"
   },
   {
-    "slug": "cadcom",
-    "title": "Cadcom",
-    "description": "",
-    "imageUrl": "",
-    "gitLink": "",
-    "date": ""
+    "slug": "perfony",
+    "title": "Perfony",
+    "description": {
+      "sections": [
+        {
+          "title": "",
+          "content": "",
+          "imageUrl": ""
+        }
+      ]
+    },
+    "shortDescription": "Maintenance en production et conception de features pour l'application web ERP Perfony.",
+    "imageUrl": "/projects/perfony.png",
+    "gitUrl": "",
+    "hostUrl": "https://www.perfony.com/fr/decouvrez-notre-application/",
+    "date": "2022",
+    "type": "PRO",
+    "entreprise": "perfony"
   },
   {
-    "slug": "the-hive",
-    "title": "The Hive",
-    "description": "",
-    "imageUrl": "",
-    "gitLink": "",
-    "date": ""
+    "slug": "pro-fusion",
+    "title": "Pro'Fusion",
+    "description": {
+      "sections": [
+        {
+          "title": "",
+          "content": "",
+          "imageUrl": ""
+        }
+      ]
+    },
+    "shortDescription": "Conception de l'API et de l'application mobile de réseautage Pro'Fusion, un groupe privé d'échange d'affaires.",
+    "imageUrl": "/projects/profusion.jpg",
+    "gitUrl": "",
+    "hostUrl": "",
+    "date": "2025",
+    "type": "PRO",
+    "entreprise": "cadcom"
   },
   {
-    "slug": "profusion",
-    "title": "Profusion",
-    "description": "",
-    "imageUrl": "",
-    "gitLink": "",
-    "date": ""
+    "slug": "cahier-des-charges-sirh",
+    "title": "Cahier des charges SIRH",
+    "description": {
+      "sections": [
+        {
+          "title": "",
+          "content": "",
+          "imageUrl": ""
+        }
+      ]
+    },
+    "shortDescription": "Rédaction d'un cahier des charges fonctionnel : développement et implémentation d'un SIRH pour une entreprise européenne.",
+    "imageUrl": "/projects/edc-cahier-charges-fonctionnel.png",
+    "gitUrl": "",
+    "hostUrl": "",
+    "date": "2025",
+    "type": "UNIV",
+    "entreprise": ""
+  },
+  {
+    "slug": "mini-rpg-godot",
+    "title": "Mini RPG",
+    "description": {
+      "sections": [
+        {
+          "title": "",
+          "content": "",
+          "imageUrl": ""
+        }
+      ]
+    },
+    "shortDescription": "Création d'un mini jeu RPG en 2D dans le but de découvrir les bases du moteur Godot.",
+    "imageUrl": "/projects/mini-rpg-godot.jpg",
+    "gitUrl": "https://github.com/TomPillet/tampoulet.github.io",
+    "hostUrl": "https://tampoulet.github.io/",
+    "date": "2020",
+    "type": "PERSO",
+    "entreprise": ""
   }
 ]

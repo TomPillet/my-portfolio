@@ -74,7 +74,7 @@ export default function ProjetCard({ project }: { project: Project }) {
           letterSpacing={1}
           lineHeight={1.6}
         >
-          {project?.description}
+          {project?.shortDescription}
         </Text>
       </Flex>
     </Box>
