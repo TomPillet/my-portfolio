@@ -5,8 +5,6 @@ import {
   Box,
   Container,
   Flex,
-  Grid,
-  GridItem,
   Heading,
   HStack,
   Separator,
@@ -14,42 +12,10 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
-
-const CustomBox = ({
-  children,
-  onHover,
-  onOut,
-  ...props
-}: {
-  children: React.ReactNode;
-  onHover?: () => void;
-  onOut?: () => void;
-}) => (
-  <Box
-    {...props}
-    border={"1px solid rgba(255,255,255,0.4)"}
-    borderRadius={"10px"}
-    px={"20px"}
-    py={"12px"}
-    width={"fit"}
-    bg={"#101010"}
-    transition={"all 0.3s ease-in-out"}
-    _hover={{
-      background: "#161616",
-      border: "1px solid #2C5E4C",
-      boxShadow: "0px 0px 4px #1E5631",
-      scale: "1.05",
-    }}
-    onMouseOver={onHover}
-    onMouseOut={onOut}
-  >
-    {children}
-  </Box>
-);
+import DynamicShinyText from "@/components/ui/DynamicShinyText";
 
 export default function Home() {
   const keySkills = ["React", "Nest", "PHP", "Wordpress", "Java"];
-  const [isMoreSkillsHover, setIsMoreSkillsHover] = React.useState(false);
 
   return (
     <Container maxW="6xl" pt="120px">
@@ -86,9 +52,9 @@ export default function Home() {
               />
             </Heading>
             <Text fontSize={"xl"} fontWeight={"300"}>
-              Je texte un peu sur moi. C'est cool d'avoir un site web ! :)
-              J'espère que vous y trouverez ce que vous cherchez ! Bonne journée
-              ! 👋{" "}
+              Je texte un peu sur moi. C{"'"}est cool d{"'"}avoir un site web !
+              :) J{"'"}espère que vous y trouverez ce que vous cherchez ! Bonne
+              journée ! 👋{" "}
             </Text>
           </Flex>
           <Flex w={"1/2"} justifyContent={"center"}>
@@ -138,22 +104,9 @@ export default function Home() {
           flexWrap={"wrap"}
           gap={"20px"}
         >
-          {keySkills.map((competence, index) => {
-            const [isHover, setIsHover] = React.useState(false);
-            return (
-              <CustomBox
-                key={index}
-                onHover={() => setIsHover(true)}
-                onOut={() => setIsHover(false)}
-              >
-                <ShinyText
-                  text={competence}
-                  speed={2}
-                  className={isHover ? "shiny-text-hovered" : ""}
-                />
-              </CustomBox>
-            );
-          })}
+          {keySkills.map((competence, index) => (
+            <DynamicShinyText key={index} text={competence} />
+          ))}
           <Link
             href="/competences"
             style={{
@@ -162,16 +115,7 @@ export default function Home() {
               width: "fit-content",
             }}
           >
-            <CustomBox
-              onHover={() => setIsMoreSkillsHover(true)}
-              onOut={() => setIsMoreSkillsHover(false)}
-            >
-              <ShinyText
-                text="Voir plus 👉"
-                speed={2}
-                className={isMoreSkillsHover ? "shiny-text-hovered" : ""}
-              />
-            </CustomBox>
+            <DynamicShinyText text="Voir plus 👉" />
           </Link>
         </Flex>
       </Flex>
