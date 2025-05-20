@@ -2,7 +2,6 @@
 
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
-import DynamicUnderlineText from "../ui/DynamicUnderlineText";
 import { Project } from "@prisma/client";
 import ImageWithDominantColor from "../ui/ImageWithDominantColor";
 
@@ -12,7 +11,7 @@ export default function ProjetCard({ project }: { project: Project }) {
   return (
     <Box
       h="520px"
-      w="320px"
+      w="360px"
       pos={"relative"}
       animation={"2s ease-in-out 0s infinite verticalFloatingAnimation"}
       transform={"scale(.9)"}
@@ -22,10 +21,8 @@ export default function ProjetCard({ project }: { project: Project }) {
         animationPlayState: "paused",
         transform: "scale(1)",
         "& .card-image": {
-          filter: "grayscale(0) !important",
-        },
-        "& .card-title .dynamic-underline:after": {
-          width: "84%",
+          filter: "brightness(1) !important",
+          borderWidth: "10px !important",
         },
       }}
     >
@@ -45,22 +42,28 @@ export default function ProjetCard({ project }: { project: Project }) {
             className="card-image"
             alt="project-image"
             style={{
+              borderBottom: `0px solid ${dominantColor}`,
               objectFit: "cover",
-              filter: "grayscale(.6)",
-              transition: "all .6s ease-in-out",
+              filter: "brightness(.9)",
+              transition: "all .4s ease-in-out",
             }}
           />
-          <Heading
-            className="card-title"
-            pos={"relative"}
-            p={4}
-            color={"white"}
-            w={"full"}
-            textShadow={"2px 2px 0px #131313"}
-          >
-            <DynamicUnderlineText color={dominantColor}>
+          <Heading pos={"relative"} p={4}>
+            <Text
+              h={"fit"}
+              w={"fit"}
+              px={4}
+              py={2}
+              color={"white"}
+              fontFamily={"DM Sans"}
+              fontSize={18}
+              fontWeight={"900"}
+              bg={"rgba(0,0,0,0.4)"}
+              backdropFilter={"blur(4px)"}
+              rounded={"2xl"}
+            >
               {project?.title}
-            </DynamicUnderlineText>
+            </Text>
           </Heading>
         </Flex>
         <Text
