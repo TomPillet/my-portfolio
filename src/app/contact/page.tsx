@@ -52,9 +52,8 @@ export default function Contact() {
         justifyContent="center"
         alignItems="center"
         flexDir={"column"}
-        gap={12}
       >
-        <Heading as="h1" variant={"mainTitle"}>
+        <Heading as="h1" variant={"mainTitle"} mb={8}>
           Contactez-moi
         </Heading>
         <Form action={sendEmail}>

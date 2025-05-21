@@ -2,10 +2,15 @@
 import React from "react";
 import {
   Box,
+  Button,
   Container,
   Flex,
+  Grid,
+  GridItem,
   Heading,
+  Highlight,
   HStack,
+  Icon,
   Separator,
   Span,
   Text,
@@ -14,171 +19,215 @@ import Image from "next/image";
 import Link from "next/link";
 import ShinyText from "@/reactbits/text-animations/ShinyText/ShinyText";
 import Magnet from "@/reactbits/animations/Magnet/Magnet";
+import { AiOutlineCloudDownload } from "react-icons/ai";
 
 export default function Home() {
-  const keySkills = ["React", "Nest", "PHP", "Wordpress", "Java"];
+  const keySkills = ["React", "NextJS", "Nest", "PHP", "Java"];
   const cvUrl =
     "https://drive.google.com/uc?export=download&id=1EScmQhCf7Es0_310ss9vfrQ8JaLg_f-7";
 
   return (
     <Container maxW="6xl" pt="120px">
-      <Flex
-        w="full"
-        justifyContent="center"
-        alignItems="center"
-        flexDir={"column"}
-      >
-        <Flex h={"300px"} w={"full"}>
-          <Flex flexDir={"column"} w={"full"} justifyContent={"center"}>
-            <Heading as="h1" variant={"mainTitle"}>
-              Tom PILLET-GAULON
-            </Heading>
-            <Heading
-              as="h2"
-              fontSize={"3xl"}
-              textAlign={"center"}
-              fontStyle={"italic"}
-              fontWeight={"400"}
-            >
-              <ShinyText
-                text="Développeur fullstack"
-                speed={3}
-                className="primary-color"
-              />
-            </Heading>
-            <Text fontSize={"xl"} fontWeight={"300"} textAlign={"center"}>
-              Je texte un peu sur moi. C{"'"}est cool d{"'"}avoir un site web !
-              :) J{"'"}espère que vous y trouverez ce que vous cherchez ! Bonne
-              journée ! 👋{" "}
+      <Flex w="full" justifyContent="center" flexDir={"column"} gap={16}>
+        <Grid
+          gridTemplateAreas={`"title image" "desc image" "links links"`}
+          w="full"
+          gapY={4}
+          px={4}
+        >
+          <GridItem gridArea={"title"} w={"2xl"}>
+            <Flex flexDir={"column"} w={"full"}>
+              <Heading as="h1" variant={"mainTitle"}>
+                Tom PILLET-GAULON
+              </Heading>
+              <Heading
+                as="h2"
+                variant={"skinnyTitle"}
+                fontStyle={"italic"}
+                alignSelf={"flex-end"}
+              >
+                <ShinyText text="Développeur Fullstack" speed={2} />
+              </Heading>
+            </Flex>
+          </GridItem>
+          <GridItem gridArea={"image"}>
+            <Flex justifyContent={"flex-end"}>
+              <Box
+                h="240px"
+                w="200px"
+                pos={"relative"}
+                mr={4}
+                _before={{
+                  content: '""',
+                  position: "absolute",
+                  display: "block",
+                  height: "100%",
+                  width: "100%",
+                  top: "20px",
+                  left: "20px",
+                  border: "2px solid",
+                  borderColor: "light.default",
+                  borderRadius: "10px",
+                  background: "dark.darker",
+                }}
+              >
+                <Image
+                  src="/photo-portfolio.jpg"
+                  alt="Tom"
+                  fill
+                  style={{
+                    objectFit: "cover",
+                    filter: "saturate(.8)",
+                    borderRadius: "10px",
+                  }}
+                />
+              </Box>
+            </Flex>
+          </GridItem>
+          <GridItem gridArea={"desc"} maxW={"2xl"} px={4}>
+            <Text fontSize={"lg"}>
+              🤖 <strong>Développeur web</strong> passionné, curieux et
+              touche-à-tout, j{"'"}aime <strong>coder</strong> et transformer
+              des idées en projets concrets et utiles. Mon objectif est de
+              devenir un <strong>développeur web</strong> toujours plus
+              compétent, créatif et rigoureux.
             </Text>
-            {/* <Magnet></Magnet> */}
-          </Flex>
-          <Flex w={"1/2"} justifyContent={"center"}>
-            <Box
-              m="auto"
-              h="4/5"
-              w="1/2"
-              pos={"relative"}
-              _before={{
-                content: '""',
-                position: "absolute",
+            <Text fontSize={"lg"} pt={2}>
+              🎯 Ce qui m{"'"}anime :{" "}
+              <strong>
+                résoudre des problèmes réels, pour des gens réels.
+              </strong>
+            </Text>
+          </GridItem>
+          <GridItem gridArea={"links"} w={"full"}>
+            <Flex w="full" justifyContent={"center"} pt={4}>
+              <Link href={cvUrl} target="_blank" rel="noopener noreferrer">
+                <Magnet padding={50} disabled={false} magnetStrength={2}>
+                  <Button
+                    border={"1px solid"}
+                    borderColor={"primary.default"}
+                    borderRadius={"xl"}
+                    bg={"dark.lighter"}
+                    color={"primary.default"}
+                    px={4}
+                    py={2}
+                    transform={"scale(1.1)"}
+                    _hover={{
+                      borderColor: "primary.hover",
+                      color: "primary.hover",
+                    }}
+                  >
+                    <ShinyText
+                      text="Consulter le CV"
+                      speed={2}
+                      className={"primary-color"}
+                    />
+                    <Icon as={AiOutlineCloudDownload} />
+                  </Button>
+                </Magnet>
+              </Link>
+            </Flex>
+          </GridItem>
+        </Grid>
+
+        <Flex w={"full"} flexDir={"column"} alignItems={"center"} gap={8}>
+          <HStack w={"full"}>
+            <Separator
+              flex="1"
+              variant="solid"
+              borderColor={"light.dirty"}
+              size="lg"
+            />
+            <Heading flexShrink="0" as="h2" variant={"secondTitle"}>
+              Compétences clés
+            </Heading>
+            <Separator
+              flex="1"
+              variant="solid"
+              borderColor={"light.dirty"}
+              size="lg"
+            />
+          </HStack>
+
+          <Flex
+            w={"1/2"}
+            flexDir={"column"}
+            alignItems={"center"}
+            justifyContent={"space-around"}
+            flexWrap={"wrap"}
+            gap={8}
+          >
+            <Flex flexDir={"row"} justifyContent={"center"} gap={8}>
+              {keySkills.map((competence, index) => (
+                <Box
+                  key={index}
+                  border={"1px solid"}
+                  borderColor={"light.dirty"}
+                  borderRadius={"xl"}
+                  bg={"dark.darker"}
+                  px={4}
+                  py={2}
+                >
+                  <ShinyText text={competence} speed={2} />
+                </Box>
+              ))}
+            </Flex>
+            <Link
+              href="/competences"
+              style={{
                 display: "block",
-                height: "100%",
-                width: "100%",
-                top: "20px",
-                left: "20px",
-                border: "2px solid white",
-                borderRadius: "10px",
-                background: "dark.darker",
+                height: "fit-content",
+                width: "fit-content",
               }}
             >
-              <Image
-                src="/photo-portfolio.jpg"
-                alt="Tom"
-                fill
-                style={{
-                  objectFit: "cover",
-                  filter: "saturate(.8)",
-                  borderRadius: "10px",
-                }}
-              />
-            </Box>
-          </Flex>
-        </Flex>
-
-        <HStack w={"3/5"} mb={"80px"} mt={"40px"}>
-          <Separator flex="1" variant="solid" />
-          <Heading
-            flexShrink="0"
-            as="h2"
-            fontSize={"2xl"}
-            fontWeight={"600"}
-            textTransform={"uppercase"}
-          >
-            Compétences clés
-          </Heading>
-          <Separator flex="1" variant="solid" />
-        </HStack>
-
-        <Flex
-          w={"1/2"}
-          flexDir={"column"}
-          alignItems={"center"}
-          justifyContent={"space-around"}
-          flexWrap={"wrap"}
-          gap={"20px"}
-        >
-          <Flex flexDir={"row"} justifyContent={"center"} gap={8}>
-            {keySkills.map((competence, index) => (
               <Box
-                key={index}
-                borderWidth={"1px"}
-                borderStyle={"solid"}
-                borderColor={"light.dirty"}
+                pos="relative"
+                border={"1px solid"}
+                borderColor={"primary.default"}
                 borderRadius={"xl"}
-                bg={"dark.darker"}
+                bg={"dark.lighter"}
                 px={4}
                 py={2}
-              >
-                <ShinyText text={competence} speed={2} />
-              </Box>
-            ))}
-          </Flex>
-          <Link
-            href="/competences"
-            style={{
-              display: "block",
-              height: "fit-content",
-              width: "fit-content",
-            }}
-          >
-            <Box
-              pos="relative"
-              borderWidth={"1px"}
-              borderStyle={"solid"}
-              borderColor={"primary.default"}
-              borderRadius={"xl"}
-              bg={"dark.darker"}
-              px={4}
-              py={2}
-              overflow={"hidden"}
-              _hover={{
-                "& .see-more": {
-                  width: "120%",
-                },
-              }}
-            >
-              <Flex
-                className="see-more"
-                pos="absolute"
-                width={"0%"}
-                height={"100%"}
-                bg="light.default"
-                left={"-10%"}
-                top={0}
-                justifyContent={"center"}
-                alignItems={"center"}
+                transform={"scale(1.1)"}
                 overflow={"hidden"}
-                textWrap={"nowrap"}
-                transform={"skewX(-16deg)"}
-                transition={"all 0.3s"}
+                _hover={{
+                  "& .see-more": {
+                    width: "120%",
+                  },
+                }}
               >
-                <Span
-                  color={"dark.default"}
-                  fontSize={"xl"}
-                  fontWeight={"700"}
-                  textTransform={"uppercase"}
+                <Flex
+                  className="see-more"
+                  pos="absolute"
+                  width={"0%"}
+                  height={"100%"}
+                  bg="light.default"
+                  left={"-10%"}
+                  top={0}
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  overflow={"hidden"}
+                  textWrap={"nowrap"}
+                  transform={"skewX(-16deg)"}
+                  transition={"all 0.3s"}
                 >
-                  Voir plus
-                </Span>
-              </Flex>
-              <ShinyText
-                text={">> Voir plus >>"}
-                speed={2}
-                className={"primary-color"}
-              />
-            </Box>
-          </Link>
+                  <Span
+                    color={"dark.default"}
+                    fontSize={"xl"}
+                    fontWeight={"700"}
+                    textTransform={"uppercase"}
+                  >
+                    Voir plus
+                  </Span>
+                </Flex>
+                <ShinyText
+                  text={">> Voir plus >>"}
+                  speed={2}
+                  className={"primary-color"}
+                />
+              </Box>
+            </Link>
+          </Flex>
         </Flex>
       </Flex>
     </Container>
