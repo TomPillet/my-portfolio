@@ -1,5 +1,6 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 import { buttonRecipe } from "./button";
+import { headingRecipe } from "./heading";
 
 const customConfig = defineConfig({
   theme: {
@@ -39,6 +40,7 @@ const customConfig = defineConfig({
     },
     recipes: {
       button: buttonRecipe,
+      heading: headingRecipe,
     },
   },
 });
