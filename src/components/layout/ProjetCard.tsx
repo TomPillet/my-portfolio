@@ -5,7 +5,13 @@ import React, { useState } from "react";
 import { Project } from "@prisma/client";
 import ImageWithDominantColor from "../ui/ImageWithDominantColor";
 
-export default function ProjetCard({ project }: { project: Project }) {
+export default function ProjetCard({
+  project,
+  animationDelay,
+}: {
+  project: Project;
+  animationDelay: number;
+}) {
   const [dominantColor, setDominantColor] = useState("");
 
   return (
@@ -13,7 +19,9 @@ export default function ProjetCard({ project }: { project: Project }) {
       h="520px"
       w="360px"
       pos={"relative"}
-      animation={"2s ease-in-out 0s infinite verticalFloatingAnimation"}
+      animation={`2s ease-in-out .${
+        animationDelay * 2
+      }s infinite verticalFloatingAnimation`}
       transform={"scale(.9)"}
       transition={"transform .4s"}
       // TODO: use framer motion
