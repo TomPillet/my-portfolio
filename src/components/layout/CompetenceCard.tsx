@@ -83,7 +83,12 @@ export function CompetenceCard({
         {skillLevel && (
           <Highlight
             query={skillLevel.label}
-            styles={{ px: "1", bg: skillLevel.color, rounded: "md", w: "fit" }}
+            styles={{
+              px: "1",
+              bg: "skills." + skillLevel.slug,
+              rounded: "md",
+              w: "fit",
+            }}
           >
             {skillLevel.label}
           </Highlight>

@@ -47,7 +47,7 @@ export default function Competences() {
         as="h1"
         fontSize={"6xl"}
         fontWeight={"700"}
-        color={"#fcf8e8"}
+        color={"light"}
         textAlign={"center"}
         textTransform={"uppercase"}
         lineHeight={2}
@@ -69,7 +69,7 @@ export default function Competences() {
               key={index}
               h="fit"
               w="fit"
-              color={"#131313"}
+              color={"dark.default"}
               className="skill-card"
             >
               {/* TODO: TitledCard isn't optimized for mobile */}

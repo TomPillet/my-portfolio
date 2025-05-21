@@ -23,7 +23,7 @@ export default function Projets() {
         fontWeight={"700"}
         textTransform={"uppercase"}
         lineHeight={2}
-        color={"#fcf8e8"}
+        color={"light"}
         mb={8}
         alignItems={"center"}
         justifyContent={"center"}
@@ -41,7 +41,7 @@ export default function Projets() {
         </Heading>
         <Box
           transition={"all 0.3s ease-in-out"}
-          bg="#163a2c"
+          bg="primary.pressed"
           px={4}
           rounded={"2xl"}
           lineHeight={1.6}

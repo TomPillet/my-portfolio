@@ -17,7 +17,7 @@ export default function ProjetCard({
       h="520px"
       w="360px"
       pos={"relative"}
-      boxShadow={"8px 8px 0px #101010"}
+      boxShadow={"8px 8px 0px dark.darker"}
       rounded={"2xl"}
       overflow={"hidden"}
       animation={`4s .${
@@ -30,11 +30,11 @@ export default function ProjetCard({
         animationPlayState: "paused",
         transform: "scale(1)",
         "& .card-title": {
-          bg: "#163a2c",
+          bg: "primary.pressed",
         },
       }}
     >
-      <Flex h={"full"} w={"full"} bg={"#161616"} flexDir={"column"}>
+      <Flex h={"full"} w={"full"} bg={"dark.lighter"} flexDir={"column"}>
         <Flex h={"36%"} mb={8} pos={"relative"} alignItems={"flex-end"}>
           <Image
             src={project?.imageUrl}
@@ -48,7 +48,7 @@ export default function ProjetCard({
               w={"fit"}
               px={4}
               py={2}
-              color={"#fcf8e8"}
+              color={"light"}
               fontFamily={"DM Sans"}
               fontSize={18}
               fontWeight={"900"}

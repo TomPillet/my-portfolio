@@ -1,6 +1,6 @@
 [
-  { "slug": "junior", "label": "Junior", "color": "#B8E2A1" },
-  { "slug": "intermediate", "label": "Intermédiaire", "color": "#A3E4D7" },
-  { "slug": "confirmed", "label": "Confirmé", "color": "#F5B7B1" },
-  { "slug": "expert", "label": "Expert", "color": "#D7BDE2" }
+  { "slug": "junior", "label": "Junior" },
+  { "slug": "intermediate", "label": "Intermédiaire" },
+  { "slug": "confirmed", "label": "Confirmé" },
+  { "slug": "expert", "label": "Expert" }
 ]

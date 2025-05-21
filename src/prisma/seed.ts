@@ -4,7 +4,6 @@ import entreprises from "./entreprises.json";
 import projects from "./projects.json";
 import levels from "./levels.json";
 import skills from "./skills.json";
-import { create } from "domain";
 
 const prisma = new PrismaClient();
 const projectTypeSchema = z.nativeEnum(ProjectType);

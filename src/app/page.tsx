@@ -73,7 +73,7 @@ export default function Home() {
                 left: "20px",
                 border: "2px solid white",
                 borderRadius: "10px",
-                background: "#101010",
+                background: "dark.darker",
               }}
             >
               <Image

@@ -58,7 +58,7 @@ export default function Contact() {
           as="h1"
           fontSize={"6xl"}
           fontWeight={"700"}
-          color={"#fcf8e8"}
+          color={"light"}
           textAlign={"center"}
           textTransform={"uppercase"}
           lineHeight={1}
