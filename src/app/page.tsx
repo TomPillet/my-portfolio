@@ -51,7 +51,7 @@ export default function Home() {
                 className="sapin-color"
               />
             </Heading>
-            <Text fontSize={"xl"} fontWeight={"300"}>
+            <Text fontSize={"xl"} fontWeight={"300"} textAlign={"center"}>
               Je texte un peu sur moi. C{"'"}est cool d{"'"}avoir un site web !
               :) J{"'"}espère que vous y trouverez ce que vous cherchez ! Bonne
               journée ! 👋{" "}
@@ -91,11 +91,11 @@ export default function Home() {
         </Flex>
 
         <HStack w={"3/5"} mb={"80px"} mt={"40px"}>
-          <Separator flex="1" variant="dashed" />
+          <Separator flex="1" variant="solid" />
           <Heading flexShrink="0" as="h2" fontSize={"2xl"} fontWeight={"400"}>
             Compétences clés
           </Heading>
-          <Separator flex="1" variant="dashed" />
+          <Separator flex="1" variant="solid" />
         </HStack>
 
         <Flex

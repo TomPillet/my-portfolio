@@ -27,22 +27,42 @@ export default function Header() {
         zIndex={1}
       >
         <Link href="/" style={{ height: "100%", width: "100%" }}>
-          <Button w="full" variant="buttonLink" cursor={"pointer"}>
+          <Button
+            w="full"
+            variant="buttonLink"
+            cursor={"pointer"}
+            color={"#fcf8e8"}
+          >
             Accueil
           </Button>
         </Link>
         <Link href="/competences" style={{ height: "100%", width: "100%" }}>
-          <Button w="full" variant="buttonLink" cursor={"pointer"}>
+          <Button
+            w="full"
+            variant="buttonLink"
+            cursor={"pointer"}
+            color={"#fcf8e8"}
+          >
             Compétences
           </Button>
         </Link>
         <Link href="/projets" style={{ height: "100%", width: "100%" }}>
-          <Button w="full" variant="buttonLink" cursor={"pointer"}>
+          <Button
+            w="full"
+            variant="buttonLink"
+            cursor={"pointer"}
+            color={"#fcf8e8"}
+          >
             Projets
           </Button>
         </Link>
         <Link href="/contact" style={{ height: "100%", width: "100%" }}>
-          <Button w="full" variant="buttonLink" cursor={"pointer"}>
+          <Button
+            w="full"
+            variant="buttonLink"
+            cursor={"pointer"}
+            color={"#fcf8e8"}
+          >
             Contact
           </Button>
         </Link>

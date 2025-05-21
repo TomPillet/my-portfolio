@@ -31,8 +31,8 @@ export default function Projets() {
         <Heading
           as="h1"
           h="fit"
-          lineHeight={1}
           w={"1/3"}
+          lineHeight={2}
           fontSize={"6xl"}
           fontWeight={"700"}
           pb={1}

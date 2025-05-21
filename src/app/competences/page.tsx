@@ -42,12 +42,14 @@ export default function Competences() {
   }, [skills, skillLevels]);
 
   return (
-    <Container maxW={"conatiner.xl"} pt="120px">
+    <Container maxW={"container.xl"} pt="120px">
       <Heading
         as="h1"
         fontSize={"6xl"}
+        fontWeight={"700"}
+        color={"#fcf8e8"}
         textAlign={"center"}
-        h="fit"
+        textTransform={"uppercase"}
         lineHeight={2}
         mb={8}
       >
