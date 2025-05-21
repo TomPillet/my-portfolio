@@ -48,7 +48,7 @@ export default function ProjetCard({
               w={"fit"}
               px={4}
               py={2}
-              color={"light"}
+              color={"white.default"}
               fontFamily={"DM Sans"}
               fontSize={18}
               fontWeight={"900"}

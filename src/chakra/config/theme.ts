@@ -10,7 +10,7 @@ const customConfig = defineConfig({
           darker: { value: "#101010" },
           lighter: { value: "#161616" },
         },
-        light: { value: "#FCF8E8" },
+        light: { default: { value: "#FCF8E8" }, dirty: { value: "#b2b2b2" } },
         primary: {
           default: { value: "#2C5E4C" },
           hover: { value: "#3A7A62" },

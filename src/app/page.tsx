@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import ShinyText from "@/reactbits/text-animations/ShinyText/ShinyText";
 import {
   Box,
   Container,
@@ -13,9 +12,13 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import DynamicShinyText from "@/components/ui/DynamicShinyText";
+import ShinyText from "@/reactbits/text-animations/ShinyText/ShinyText";
+import Magnet from "@/reactbits/animations/Magnet/Magnet";
 
 export default function Home() {
   const keySkills = ["React", "Nest", "PHP", "Wordpress", "Java"];
+  const cvUrl =
+    "https://drive.google.com/uc?export=download&id=1EScmQhCf7Es0_310ss9vfrQ8JaLg_f-7";
 
   return (
     <Container maxW="6xl" pt="120px">
@@ -48,7 +51,7 @@ export default function Home() {
               <ShinyText
                 text="Développeur fullstack"
                 speed={3}
-                className="sapin-color"
+                className="primary-color"
               />
             </Heading>
             <Text fontSize={"xl"} fontWeight={"300"} textAlign={"center"}>
@@ -56,6 +59,7 @@ export default function Home() {
               :) J{"'"}espère que vous y trouverez ce que vous cherchez ! Bonne
               journée ! 👋{" "}
             </Text>
+            {/* <Magnet></Magnet> */}
           </Flex>
           <Flex w={"1/2"} justifyContent={"center"}>
             <Box
@@ -100,13 +104,28 @@ export default function Home() {
 
         <Flex
           w={"1/2"}
+          flexDir={"column"}
+          alignItems={"center"}
           justifyContent={"space-around"}
           flexWrap={"wrap"}
           gap={"20px"}
         >
-          {keySkills.map((competence, index) => (
-            <DynamicShinyText key={index} text={competence} />
-          ))}
+          <Flex flexDir={"row"} justifyContent={"center"} gap={8}>
+            {keySkills.map((competence, index) => (
+              // <DynamicShinyText key={index} text={competence} />
+              <Box
+                borderWidth={"1px"}
+                borderStyle={"solid"}
+                borderColor={"light.dirty"}
+                borderRadius={"xl"}
+                bg={"dark.darker"}
+                px={4}
+                py={2}
+              >
+                <ShinyText text={competence} speed={2} />
+              </Box>
+            ))}
+          </Flex>
           <Link
             href="/competences"
             style={{
@@ -115,7 +134,24 @@ export default function Home() {
               width: "fit-content",
             }}
           >
-            <DynamicShinyText text="Voir plus 👉" />
+            <Box
+              borderWidth={"1px"}
+              borderStyle={"solid"}
+              borderColor={"light.dirty"}
+              borderRadius={"xl"}
+              bg={"dark.darker"}
+              px={4}
+              py={2}
+              style={{
+                color: "dark.lighter !important",
+              }}
+            >
+              <ShinyText
+                text={"Voir plus"}
+                speed={2}
+                className={"primary-color"}
+              />
+            </Box>
           </Link>
         </Flex>
       </Flex>

@@ -19,7 +19,7 @@ export default function Header() {
             w="full"
             variant="buttonLink"
             cursor={"pointer"}
-            color={"light"}
+            color={"white.default"}
           >
             Accueil
           </Button>
@@ -29,7 +29,7 @@ export default function Header() {
             w="full"
             variant="buttonLink"
             cursor={"pointer"}
-            color={"light"}
+            color={"white.default"}
           >
             Compétences
           </Button>
@@ -39,7 +39,7 @@ export default function Header() {
             w="full"
             variant="buttonLink"
             cursor={"pointer"}
-            color={"light"}
+            color={"white.default"}
           >
             Projets
           </Button>
@@ -49,7 +49,7 @@ export default function Header() {
             w="full"
             variant="buttonLink"
             cursor={"pointer"}
-            color={"light"}
+            color={"white.default"}
           >
             Contact
           </Button>

@@ -47,7 +47,7 @@ export default function Competences() {
         as="h1"
         fontSize={"6xl"}
         fontWeight={"700"}
-        color={"light"}
+        color={"white.default"}
         textAlign={"center"}
         textTransform={"uppercase"}
         lineHeight={2}

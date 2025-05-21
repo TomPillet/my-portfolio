@@ -23,7 +23,7 @@ export default function Projets() {
         fontWeight={"700"}
         textTransform={"uppercase"}
         lineHeight={2}
-        color={"light"}
+        color={"white.default"}
         mb={8}
         alignItems={"center"}
         justifyContent={"center"}
