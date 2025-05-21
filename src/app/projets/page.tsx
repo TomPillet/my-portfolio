@@ -19,33 +19,45 @@ export default function Projets() {
   return (
     <Container maxW={"7xl"} pt="120px">
       <Flex
+        color={"light.default"}
         fontSize={"6xl"}
         fontWeight={"700"}
-        textTransform={"uppercase"}
         lineHeight={2}
-        color={"white.default"}
+        textTransform={"uppercase"}
         mb={8}
         alignItems={"center"}
         justifyContent={"center"}
+        gap={2}
       >
-        <Heading
-          as="h1"
-          h="fit"
-          w={"1/3"}
-          lineHeight={2}
-          fontSize={"6xl"}
-          fontWeight={"700"}
-          pb={1}
-        >
+        <Heading as="h1" h="fit" w={"1/3"} pb={1} variant={"mainTitle"}>
           Mes projets
         </Heading>
         <Box
-          transition={"all 0.3s ease-in-out"}
-          bg="primary.pressed"
+          transition={"all 0.2s ease-in-out"}
+          bg="primary.default"
           px={4}
+          mt={1}
+          pos="relative"
           rounded={"2xl"}
           lineHeight={1.6}
+          overflow={"hidden"}
+          _hover={{
+            "& .light-bg": {
+              width: "120%",
+            },
+          }}
         >
+          <Box
+            pos="absolute"
+            w="0%"
+            h="full"
+            top={0}
+            left={"-10%"}
+            bg="primary.hover"
+            transform={"skewX(-16deg)"}
+            transition={"all 0.2s ease-in-out"}
+            className="light-bg"
+          ></Box>
           <RotatingText
             texts={["Professionnels", "Personnels", "Universitaires"]}
             staggerFrom={"last"}
@@ -53,7 +65,6 @@ export default function Projets() {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             staggerDuration={0.025}
-            splitLevelClassName="overflow-hidden "
             transition={{ type: "spring", damping: 30, stiffness: 1000 }}
             rotationInterval={3200}
           />

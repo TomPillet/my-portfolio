@@ -54,15 +54,7 @@ export default function Contact() {
         flexDir={"column"}
         gap={12}
       >
-        <Heading
-          as="h1"
-          fontSize={"6xl"}
-          fontWeight={"700"}
-          color={"white.default"}
-          textAlign={"center"}
-          textTransform={"uppercase"}
-          lineHeight={1}
-        >
+        <Heading as="h1" variant={"mainTitle"}>
           Contactez-moi
         </Heading>
         <Form action={sendEmail}>

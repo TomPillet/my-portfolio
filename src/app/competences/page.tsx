@@ -43,16 +43,7 @@ export default function Competences() {
 
   return (
     <Container maxW={"container.xl"} pt="120px">
-      <Heading
-        as="h1"
-        fontSize={"6xl"}
-        fontWeight={"700"}
-        color={"white.default"}
-        textAlign={"center"}
-        textTransform={"uppercase"}
-        lineHeight={2}
-        mb={8}
-      >
+      <Heading as="h1" mb={8} variant={"mainTitle"}>
         Mes compétences
       </Heading>
       <Grid

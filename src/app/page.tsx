@@ -7,11 +7,11 @@ import {
   Heading,
   HStack,
   Separator,
+  Span,
   Text,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
-import DynamicShinyText from "@/components/ui/DynamicShinyText";
 import ShinyText from "@/reactbits/text-animations/ShinyText/ShinyText";
 import Magnet from "@/reactbits/animations/Magnet/Magnet";
 
@@ -29,17 +29,9 @@ export default function Home() {
         flexDir={"column"}
       >
         <Flex h={"300px"} w={"full"}>
-          <Flex flexDir={"column"} w={"full"} gap={8} justifyContent={"center"}>
-            <Heading
-              as="h1"
-              fontSize={"6xl"}
-              textAlign={"center"}
-              display={"flex"}
-              flexDir={"column"}
-              gap={8}
-            >
-              <Text>Tom</Text>
-              <Text>PILLET-GAULON</Text>
+          <Flex flexDir={"column"} w={"full"} justifyContent={"center"}>
+            <Heading as="h1" variant={"mainTitle"}>
+              Tom PILLET-GAULON
             </Heading>
             <Heading
               as="h2"
@@ -96,7 +88,13 @@ export default function Home() {
 
         <HStack w={"3/5"} mb={"80px"} mt={"40px"}>
           <Separator flex="1" variant="solid" />
-          <Heading flexShrink="0" as="h2" fontSize={"2xl"} fontWeight={"400"}>
+          <Heading
+            flexShrink="0"
+            as="h2"
+            fontSize={"2xl"}
+            fontWeight={"600"}
+            textTransform={"uppercase"}
+          >
             Compétences clés
           </Heading>
           <Separator flex="1" variant="solid" />
@@ -112,8 +110,8 @@ export default function Home() {
         >
           <Flex flexDir={"row"} justifyContent={"center"} gap={8}>
             {keySkills.map((competence, index) => (
-              // <DynamicShinyText key={index} text={competence} />
               <Box
+                key={index}
                 borderWidth={"1px"}
                 borderStyle={"solid"}
                 borderColor={"light.dirty"}
@@ -135,19 +133,47 @@ export default function Home() {
             }}
           >
             <Box
+              pos="relative"
               borderWidth={"1px"}
               borderStyle={"solid"}
-              borderColor={"light.dirty"}
+              borderColor={"primary.default"}
               borderRadius={"xl"}
               bg={"dark.darker"}
               px={4}
               py={2}
-              style={{
-                color: "dark.lighter !important",
+              overflow={"hidden"}
+              _hover={{
+                "& .see-more": {
+                  width: "120%",
+                },
               }}
             >
+              <Flex
+                className="see-more"
+                pos="absolute"
+                width={"0%"}
+                height={"100%"}
+                bg="light.default"
+                left={"-10%"}
+                top={0}
+                justifyContent={"center"}
+                alignItems={"center"}
+                overflow={"hidden"}
+                textWrap={"nowrap"}
+                transform={"skewX(-16deg)"}
+                transition={"all 0.3s"}
+              >
+                <Span
+                  color={"dark.default"}
+                  fontSize={"xl"}
+                  fontWeight={"700"}
+                  textTransform={"uppercase"}
+                >
+                  Voir plus
+                </Span>
+              </Flex>
               <ShinyText
-                text={"Voir plus"}
+                text={">> Voir plus >>"}
                 speed={2}
                 className={"primary-color"}
               />

@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Span, Text } from "@chakra-ui/react";
 import React from "react";
 import { Project } from "@prisma/client";
 import Image from "next/image";
@@ -29,8 +29,8 @@ export default function ProjetCard({
       _hover={{
         animationPlayState: "paused",
         transform: "scale(1)",
-        "& .card-title": {
-          bg: "primary.pressed",
+        "& .see-more": {
+          width: "120%",
         },
       }}
     >
@@ -42,21 +42,50 @@ export default function ProjetCard({
             fill
             style={{ objectFit: "cover" }}
           />
-          <Heading pos={"relative"} p={4}>
+          <Heading
+            pos={"relative"}
+            h={"fit"}
+            w={"fit"}
+            overflow={"hidden"}
+            rounded={"xl"}
+            bottom={2}
+            left={4}
+            color={"light.default"}
+            fontFamily={"DM Sans"}
+            fontSize={"lg"}
+            fontWeight={"600"}
+            lineHeight={1}
+          >
+            <Flex
+              className="see-more"
+              pos="absolute"
+              width={"0%"}
+              height={"100%"}
+              bg="primary.hover"
+              left={"-10%"}
+              top={0}
+              justifyContent={"center"}
+              alignItems={"center"}
+              overflow={"hidden"}
+              transform={"skewX(-16deg)"}
+              transition={"all 0.3s"}
+              zIndex={1}
+            >
+              <Span
+                textTransform={"uppercase"}
+                textWrap={"nowrap"}
+                letterSpacing={"-1px"}
+              >
+                {project?.title}
+              </Span>
+            </Flex>
             <Text
               h={"fit"}
               w={"fit"}
-              px={4}
-              py={2}
-              color={"white.default"}
-              fontFamily={"DM Sans"}
-              fontSize={18}
-              fontWeight={"900"}
+              px={6}
+              py={3}
               bg={"rgba(0,0,0,0.4)"}
               backdropFilter={"blur(4px)"}
-              rounded={"2xl"}
-              transition={"all .4s ease-in-out"}
-              className="card-title"
             >
               {project?.title}
             </Text>
