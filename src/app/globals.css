@@ -22,10 +22,10 @@
 @keyframes verticalFloatingAnimation {
   from,
   to {
-    top: 8px;
+    top: 10px;
   }
   50% {
-    top: -8px;
+    top: -10px;
   }
 }
 

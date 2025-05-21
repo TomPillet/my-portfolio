@@ -1,9 +1,9 @@
 "use client";
 
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 import { Project } from "@prisma/client";
-import ImageWithDominantColor from "../ui/ImageWithDominantColor";
+import Image from "next/image";
 
 export default function ProjetCard({
   project,
@@ -12,49 +12,35 @@ export default function ProjetCard({
   project: Project;
   animationDelay: number;
 }) {
-  const [dominantColor, setDominantColor] = useState("");
-
   return (
     <Box
       h="520px"
       w="360px"
       pos={"relative"}
-      animation={`2s ease-in-out .${
+      boxShadow={"8px 8px 0px #101010"}
+      rounded={"2xl"}
+      overflow={"hidden"}
+      animation={`4s .${
         animationDelay * 2
-      }s infinite verticalFloatingAnimation`}
+      }s infinite verticalFloatingAnimation ease-in-out`}
       transform={"scale(.9)"}
-      transition={"transform .4s"}
+      transition={"all .4s ease-in-out"}
       // TODO: use framer motion
       _hover={{
         animationPlayState: "paused",
         transform: "scale(1)",
-        "& .card-image": {
-          filter: "brightness(1) !important",
-          borderWidth: "10px !important",
+        "& .card-title": {
+          bg: "#163a2c",
         },
       }}
     >
-      <Flex
-        h={"full"}
-        w={"full"}
-        bg={"#161616"}
-        rounded={"2xl"}
-        boxShadow={"8px 8px 0px #101010"}
-        flexDir={"column"}
-        overflow={"hidden"}
-      >
+      <Flex h={"full"} w={"full"} bg={"#161616"} flexDir={"column"}>
         <Flex h={"36%"} mb={8} pos={"relative"} alignItems={"flex-end"}>
-          <ImageWithDominantColor
-            imageUrl={project?.imageUrl}
-            onDominantColorFound={(color) => setDominantColor(color)}
-            className="card-image"
-            alt="project-image"
-            style={{
-              borderBottom: `0px solid ${dominantColor}`,
-              objectFit: "cover",
-              filter: "brightness(.9)",
-              transition: "all .4s ease-in-out",
-            }}
+          <Image
+            src={project?.imageUrl}
+            alt={project?.title}
+            fill
+            style={{ objectFit: "cover" }}
           />
           <Heading pos={"relative"} p={4}>
             <Text
@@ -62,13 +48,15 @@ export default function ProjetCard({
               w={"fit"}
               px={4}
               py={2}
-              color={"white"}
+              color={"#fcf8e8"}
               fontFamily={"DM Sans"}
               fontSize={18}
               fontWeight={"900"}
               bg={"rgba(0,0,0,0.4)"}
               backdropFilter={"blur(4px)"}
               rounded={"2xl"}
+              transition={"all .4s ease-in-out"}
+              className="card-title"
             >
               {project?.title}
             </Text>
