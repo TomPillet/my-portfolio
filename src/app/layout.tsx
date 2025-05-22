@@ -19,7 +19,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Tom Pillet-Gaulon",
   description:
-    "Bienvenue sur mon portfolio ! Je suis Tom Pillet-Gaulon, développeur web fullstack à Besançon, en France.",
+    "Bienvenue sur mon portfolio ! Je suis Tom Pillet-Gaulon, développeur web fullstack et ingénieur informatique à Besançon, en France.",
 };
 
 export default function RootLayout({
