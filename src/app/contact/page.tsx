@@ -45,9 +45,9 @@ export default function Contact() {
   };
 
   return (
-    <Container maxW="container.xl" pt="120px">
+    <Container maxW="7xl">
       <Flex
-        h="fit"
+        minH="100dvh"
         w="full"
         justifyContent="center"
         alignItems="center"

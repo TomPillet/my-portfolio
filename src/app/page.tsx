@@ -8,7 +8,6 @@ import {
   Grid,
   GridItem,
   Heading,
-  Highlight,
   HStack,
   Icon,
   Separator,
@@ -20,6 +19,7 @@ import Link from "next/link";
 import ShinyText from "@/reactbits/text-animations/ShinyText/ShinyText";
 import Magnet from "@/reactbits/animations/Magnet/Magnet";
 import { AiOutlineCloudDownload } from "react-icons/ai";
+import { FaAngleRight } from "react-icons/fa";
 
 export default function Home() {
   const keySkills = ["React", "NextJS", "Nest", "PHP", "Java"];
@@ -27,8 +27,15 @@ export default function Home() {
     "https://drive.google.com/uc?export=download&id=1EScmQhCf7Es0_310ss9vfrQ8JaLg_f-7";
 
   return (
-    <Container maxW="6xl" pt="120px">
-      <Flex w="full" justifyContent="center" flexDir={"column"} gap={16}>
+    <Container maxW="7xl">
+      <Flex
+        minH="100dvh"
+        w="full"
+        justifyContent="center"
+        alignItems={"center"}
+        flexDir={"column"}
+        gap={16}
+      >
         <Grid
           gridTemplateAreas={`"title image" "desc image" "links links"`}
           w="full"
@@ -40,12 +47,7 @@ export default function Home() {
               <Heading as="h1" variant={"mainTitle"}>
                 Tom PILLET-GAULON
               </Heading>
-              <Heading
-                as="h2"
-                variant={"skinnyTitle"}
-                fontStyle={"italic"}
-                pl={4}
-              >
+              <Heading as="h2" variant={"skinnyTitle"} pl={2}>
                 <ShinyText text="Développeur Fullstack" speed={2} />
               </Heading>
             </Flex>
@@ -84,7 +86,7 @@ export default function Home() {
               </Box>
             </Flex>
           </GridItem>
-          <GridItem gridArea={"desc"} maxW={"2xl"} px={8}>
+          <GridItem gridArea={"desc"} maxW={"2xl"} pl={2}>
             <Text fontSize={"lg"}>
               🤖 <strong>Développeur web</strong> passionné, curieux et
               touche-à-tout, j{"'"}aime <strong>coder</strong> et transformer
@@ -117,7 +119,6 @@ export default function Home() {
                       color: "primary.hover",
                     }}
                   >
-                    <Icon as={AiOutlineCloudDownload} />
                     <ShinyText
                       text="Consulter le CV"
                       speed={2}
@@ -225,10 +226,11 @@ export default function Home() {
                   </Span>
                 </Flex>
                 <ShinyText
-                  text={">> Voir plus >>"}
+                  text={"Voir plus"}
                   speed={2}
                   className={"primary-color"}
                 />
+                <Icon as={FaAngleRight} ml={1} color={"primary.default"} />
               </Flex>
             </Link>
           </Flex>

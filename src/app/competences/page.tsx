@@ -1,5 +1,5 @@
 "use client";
-import { Container, Grid, GridItem, Heading } from "@chakra-ui/react";
+import { Container, Flex, Grid, GridItem, Heading } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { Skill, SkillLevel } from "@prisma/client";
 import TiltedCard from "@/reactbits/components/TiltedCard/TiltedCard";
@@ -42,53 +42,55 @@ export default function Competences() {
   }, [skills, skillLevels]);
 
   return (
-    <Container maxW={"container.xl"} pt="120px">
-      <Heading as="h1" textAlign={"center"} mb={16} variant={"mainTitle"}>
-        Mes compétences
-      </Heading>
-      <Grid
-        templateColumns={"repeat(4, 1fr)"}
-        autoRows={competenceCardHeight}
-        w={"fit"}
-        h={"fit"}
-        m={"auto"}
-        gap={16}
-      >
-        {skills?.map((skill, index) => {
-          return (
-            <GridItem
-              key={index}
-              h="fit"
-              w="fit"
-              color={"dark.default"}
-              className="skill-card"
-            >
-              {/* TODO: TitledCard isn't optimized for mobile */}
-              <TiltedCard
-                imageSrc={"https://cataas.com/cat"}
-                altText={skill?.slug}
-                imageHeight={competenceCardHeight}
-                imageWidth={competenceCardWidth}
-                containerHeight={competenceCardHeight}
-                containerWidth={competenceCardWidth}
-                rotateAmplitude={12}
-                scaleOnHover={1.2}
-                showMobileWarning={false}
-                showTooltip={true}
-                displayOverlayContent={true}
-                overlayContent={
-                  <CompetenceCard
-                    width={competenceCardWidth}
-                    height={competenceCardHeight}
-                    skill={skill}
-                    skillLevel={skillLevels[skill.levelId]}
-                  />
-                }
-              ></TiltedCard>
-            </GridItem>
-          );
-        })}
-      </Grid>
+    <Container maxW={"7xl"}>
+      <Flex pt={"120px"} w="full" flexDir={"column"}>
+        <Heading as="h1" textAlign={"center"} mb={16} variant={"mainTitle"}>
+          Mes compétences
+        </Heading>
+        <Grid
+          templateColumns={"repeat(4, 1fr)"}
+          autoRows={competenceCardHeight}
+          w={"fit"}
+          h={"fit"}
+          m={"auto"}
+          gap={16}
+        >
+          {skills?.map((skill, index) => {
+            return (
+              <GridItem
+                key={index}
+                h="fit"
+                w="fit"
+                color={"dark.default"}
+                className="skill-card"
+              >
+                {/* TODO: TitledCard isn't optimized for mobile */}
+                <TiltedCard
+                  imageSrc={"https://cataas.com/cat"}
+                  altText={skill?.slug}
+                  imageHeight={competenceCardHeight}
+                  imageWidth={competenceCardWidth}
+                  containerHeight={competenceCardHeight}
+                  containerWidth={competenceCardWidth}
+                  rotateAmplitude={12}
+                  scaleOnHover={1.2}
+                  showMobileWarning={false}
+                  showTooltip={true}
+                  displayOverlayContent={true}
+                  overlayContent={
+                    <CompetenceCard
+                      width={competenceCardWidth}
+                      height={competenceCardHeight}
+                      skill={skill}
+                      skillLevel={skillLevels[skill.levelId]}
+                    />
+                  }
+                ></TiltedCard>
+              </GridItem>
+            );
+          })}
+        </Grid>
+      </Flex>
     </Container>
   );
 }
