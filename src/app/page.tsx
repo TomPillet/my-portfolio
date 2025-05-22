@@ -36,7 +36,7 @@ export default function Home() {
           px={4}
         >
           <GridItem gridArea={"title"} w={"2xl"}>
-            <Flex flexDir={"column"} w={"full"}>
+            <Flex flexDir={"column"} w={"fit"}>
               <Heading as="h1" variant={"mainTitle"}>
                 Tom PILLET-GAULON
               </Heading>
@@ -44,7 +44,7 @@ export default function Home() {
                 as="h2"
                 variant={"skinnyTitle"}
                 fontStyle={"italic"}
-                alignSelf={"flex-end"}
+                pl={4}
               >
                 <ShinyText text="Développeur Fullstack" speed={2} />
               </Heading>
@@ -84,7 +84,7 @@ export default function Home() {
               </Box>
             </Flex>
           </GridItem>
-          <GridItem gridArea={"desc"} maxW={"2xl"} px={4}>
+          <GridItem gridArea={"desc"} maxW={"2xl"} px={8}>
             <Text fontSize={"lg"}>
               🤖 <strong>Développeur web</strong> passionné, curieux et
               touche-à-tout, j{"'"}aime <strong>coder</strong> et transformer
@@ -117,6 +117,7 @@ export default function Home() {
                       color: "primary.hover",
                     }}
                   >
+                    <Icon as={AiOutlineCloudDownload} />
                     <ShinyText
                       text="Consulter le CV"
                       speed={2}
@@ -180,17 +181,20 @@ export default function Home() {
                 width: "fit-content",
               }}
             >
-              <Box
+              <Flex
                 pos="relative"
+                alignItems={"center"}
                 border={"1px solid"}
                 borderColor={"primary.default"}
                 borderRadius={"xl"}
                 bg={"dark.lighter"}
+                h={10}
                 px={4}
-                py={2}
-                transform={"scale(1.1)"}
                 overflow={"hidden"}
+                transform={"scale(1.1)"}
+                transition={"all 0.2s"}
                 _hover={{
+                  borderColor: "light.default",
                   "& .see-more": {
                     width: "120%",
                   },
@@ -225,7 +229,7 @@ export default function Home() {
                   speed={2}
                   className={"primary-color"}
                 />
-              </Box>
+              </Flex>
             </Link>
           </Flex>
         </Flex>
