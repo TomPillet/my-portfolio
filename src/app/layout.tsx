@@ -18,7 +18,7 @@ const dmSans = DM_Sans({
 
 // TODO: must be dynamic according to each page (check SeoHeaders in other projects)
 export const metadata: Metadata = {
-  title: "Tom Pillet-Gaulon",
+  title: "Tom Pillet-Gaulon - Portfolio d'un développeur",
   description:
     "Bienvenue sur mon portfolio ! Je suis Tom Pillet-Gaulon, développeur web fullstack et ingénieur informatique à Besançon, en France.",
 };
