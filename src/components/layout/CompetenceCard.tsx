@@ -28,7 +28,6 @@ export function CompetenceCard({
       overflow={"hidden"}
     >
       <Box
-        filter={"grayscale(1) brightness(.6)"}
         opacity={0.05}
         h={"50%"}
         w={"50%"}
