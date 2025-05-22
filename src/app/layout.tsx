@@ -16,6 +16,7 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
+// TODO: must be dynamic according to each page (check SeoHeaders in other projects)
 export const metadata: Metadata = {
   title: "Tom Pillet-Gaulon",
   description:
