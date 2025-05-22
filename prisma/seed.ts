@@ -1,5 +1,11 @@
 import { z } from "zod";
-import { PrismaClient, SkillType, Project, ProjectType } from "@prisma/client";
+import {
+  PrismaClient,
+  SkillType,
+  Project,
+  ProjectType,
+  Skill,
+} from "@prisma/client";
 import entreprises from "./entreprises.json";
 import projects from "./projects.json";
 import levels from "./levels.json";
@@ -11,25 +17,51 @@ const skillTypeSchema = z.nativeEnum(SkillType);
 
 async function createEntreprisesModel() {
   const createdEntreprises = [];
+  const existingEntreprises = await prisma.entreprise.findMany();
+  const existingEntreprisesSlugs = existingEntreprises.map(
+    (entreprise) => entreprise.slug
+  );
+
   for (const entreprise of entreprises) {
+    if (existingEntreprisesSlugs.includes(entreprise.slug)) {
+      console.log(`Entreprise with slug ${entreprise.slug} already exists`);
+      continue;
+    }
     const created = await prisma.entreprise.create({ data: entreprise });
     createdEntreprises.push(created);
   }
+
   return createdEntreprises;
 }
 
 async function createLevelsModel() {
   const createdLevels = [];
+  const existingLevels = await prisma.skillLevel.findMany();
+  const existingLevelsSlugs = existingLevels.map((level) => level.slug);
+
   for (const level of levels) {
+    if (existingLevelsSlugs.includes(level.slug)) {
+      console.log(`Level with slug ${level.slug} already exists`);
+      continue;
+    }
     const created = await prisma.skillLevel.create({ data: level });
     createdLevels.push(created);
   }
+
   return createdLevels;
 }
 
 async function createProjectsModel(entrepriseIdBySlug: any) {
   const createdProjects: Project[] = [];
+  const existingProjects = await prisma.project.findMany();
+  const existingProjectsSlugs = existingProjects.map((project) => project.slug);
+
   for (const project of projects) {
+    if (existingProjectsSlugs.includes(project.slug)) {
+      console.log(`Project with slug ${project.slug} already exists`);
+      continue;
+    }
+
     const data = {
       slug: project.slug,
       title: project.title,
@@ -54,20 +86,30 @@ async function createProjectsModel(entrepriseIdBySlug: any) {
     });
     createdProjects.push(createdProject);
   }
+
   return createdProjects;
 }
 
 async function createSkillsModel(levelIdBySlug: any, projectIdBySlug: any) {
+  const existingSkills = await prisma.skill.findMany();
+  const existingSkillsSlugs = existingSkills.map((skill) => skill.slug);
+
   for (const skill of skills) {
-    const createdSkill = await prisma.skill.create({
-      data: {
-        slug: skill.slug,
-        title: skill.title,
-        logoUrl: skill.logoUrl,
-        type: skillTypeSchema.parse(skill.type),
-        level: { connect: { id: levelIdBySlug[skill.level] } },
-      },
-    });
+    let createdSkill: Skill;
+    if (existingSkillsSlugs.includes(skill.slug)) {
+      console.log(`Skill with slug ${skill.slug} already exists`);
+      createdSkill = existingSkills.find((s) => s.slug === skill.slug)!;
+    } else {
+      createdSkill = await prisma.skill.create({
+        data: {
+          slug: skill.slug,
+          title: skill.title,
+          logoUrl: skill.logoUrl,
+          type: skillTypeSchema.parse(skill.type),
+          level: { connect: { id: levelIdBySlug[skill.level] } },
+        },
+      });
+    }
 
     for (const projectSlug of skill.projects) {
       const projectId = projectIdBySlug[projectSlug];
