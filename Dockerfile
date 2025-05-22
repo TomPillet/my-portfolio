@@ -5,8 +5,9 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
+RUN npx @chakra-ui/cli typegen ./src/chakra/config/theme.ts 
 RUN npx prisma generate
 RUN npm run build
 
 EXPOSE 3000
-CMD ["sh", "-c", "npx prisma migrate deploy && npx @chakra-ui/cli typegen ./src/chakra/config/theme.ts && npm start"]
+CMD ["sh", "-c", "npx prisma migrate deploy && npm start"]
