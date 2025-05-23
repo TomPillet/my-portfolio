@@ -1,34 +1,242 @@
 [
   {
+    "slug": "javascript",
+    "title": "Javascript",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg",
+    "level": "intermediate",
+    "categories": ["front", "back"],
+    "projects": []
+  },
+  {
     "slug": "typescript",
     "title": "Typescript",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg",
-    "type": "FRONT",
-    "level": "expert",
-    "projects": ["nest", "cadcom", "the-hive", "profusion"]
+    "level": "intermediate",
+    "categories": ["front", "back"],
+    "projects": []
   },
   {
     "slug": "php",
     "title": "PHP",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-plain.svg",
-    "type": "BACK",
-    "level": "confirmed",
+    "level": "junior",
+    "categories": ["back"],
     "projects": []
   },
   {
     "slug": "java",
     "title": "JAVA",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-plain.svg",
-    "type": "SOFTWARE",
     "level": "junior",
+    "categories": ["software"],
     "projects": []
   },
   {
     "slug": "sql",
     "title": "SQL",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg",
-    "type": "BACK",
     "level": "intermediate",
+    "categories": ["data", "back"],
+    "projects": []
+  },
+  {
+    "slug": "angular",
+    "title": "Angular",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-plain.svg",
+    "level": "junior",
+    "categories": ["front"],
+    "projects": []
+  },
+  {
+    "slug": "react",
+    "title": "React",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    "level": "junior",
+    "categories": ["front"],
+    "projects": []
+  },
+  {
+    "slug": "react-native",
+    "title": "React Native",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    "level": "junior",
+    "categories": ["mobile", "front"],
+    "projects": []
+  },
+  {
+    "slug": "nextjs",
+    "title": "Next.js",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-plain.svg",
+    "level": "junior",
+    "categories": ["front", "back"],
+    "projects": []
+  },
+  {
+    "slug": "nestjs",
+    "title": "NestJS",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
+    "level": "junior",
+    "categories": ["back"],
+    "projects": []
+  },
+  {
+    "slug": "laravel",
+    "title": "Laravel",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+    "level": "junior",
+    "categories": ["back"],
+    "projects": []
+  },
+  {
+    "slug": "prisma",
+    "title": "Prisma",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg",
+    "level": "junior",
+    "categories": ["data", "back"],
+    "projects": []
+  },
+  {
+    "slug": "sylius",
+    "title": "Sylius",
+    "logoUrl": "/skills/sylius.jpg",
+    "level": "junior",
+    "categories": ["cms", "back"],
+    "projects": ["", ""]
+  },
+  {
+    "slug": "mysql",
+    "title": "MySQL",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+    "level": "junior",
+    "categories": ["data", "infrastructure"],
+    "projects": []
+  },
+  {
+    "slug": "mariadb",
+    "title": "MariaDB",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original.svg",
+    "level": "junior",
+    "categories": ["data", "infrastructure"],
+    "projects": []
+  },
+  {
+    "slug": "spring-boot",
+    "title": "Spring Boot",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
+    "level": "junior",
+    "categories": ["back", "software"],
+    "projects": []
+  },
+  {
+    "slug": "junit",
+    "title": "JUnit",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-plain.svg",
+    "level": "junior",
+    "categories": ["testing", "software"],
+    "projects": []
+  },
+  {
+    "slug": "git",
+    "title": "Git",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-plain.svg",
+    "level": "intermediate",
+    "categories": ["devops", "infrastructure"],
+    "projects": []
+  },
+  {
+    "slug": "github",
+    "title": "GitHub",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+    "level": "intermediate",
+    "categories": ["devops", "infrastructure"],
+    "projects": []
+  },
+  {
+    "slug": "gitlab",
+    "title": "GitLab",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg",
+    "level": "junior",
+    "categories": ["devops", "infrastructure"],
+    "projects": []
+  },
+  {
+    "slug": "bitbucket",
+    "title": "BitBucket",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bitbucket/bitbucket-original.svg",
+    "level": "junior",
+    "categories": ["devops", "infrastructure"],
+    "projects": []
+  },
+  {
+    "slug": "docker",
+    "title": "Docker",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg",
+    "level": "junior",
+    "categories": ["devops", "infrastructure", "network"],
+    "projects": []
+  },
+  {
+    "slug": "kubernetes",
+    "title": "Kubernetes",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg",
+    "level": "junior",
+    "categories": ["devops", "infrastructure", "network"],
+    "projects": []
+  },
+  {
+    "slug": "caprover",
+    "title": "CapRover",
+    "logoUrl": "/skills/caprover.png",
+    "level": "junior",
+    "categories": ["devops", "infrastructure", "network"],
+    "projects": []
+  },
+  {
+    "slug": "postman",
+    "title": "Postman",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-plain.svg",
+    "level": "junior",
+    "categories": ["back", "devops", "testing"],
+    "projects": []
+  },
+  {
+    "slug": "linux",
+    "title": "Linux",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-plain.svg",
+    "level": "intermediate",
+    "categories": ["os", "infrastructure"],
+    "projects": []
+  },
+  {
+    "slug": "tailwind",
+    "title": "Tailwind",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    "level": "intermediate",
+    "categories": ["front", "design"],
+    "projects": []
+  },
+  {
+    "slug": "chakraui",
+    "title": "ChakraUI",
+    "logoUrl": "/skills/chakraui.jpg",
+    "level": "intermediate",
+    "categories": ["front", "design"],
+    "projects": []
+  },
+  {
+    "slug": "figma",
+    "title": "Figma",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
+    "level": "junior",
+    "categories": ["design"],
+    "projects": []
+  },
+  {
+    "slug": "wordpress",
+    "title": "Wordpress",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg",
+    "level": "junior",
+    "categories": ["cms", "front", "back"],
     "projects": []
   }
 ]

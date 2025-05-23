@@ -17,7 +17,7 @@
   {
     "slug": "ca-fcomte",
     "name": "Crédit Agricole Franche-Comté",
-    "siteUrl": ""
+    "siteUrl": "https://www.credit-agricole.fr/ca-franchecomte/particulier.html"
   },
   {
     "slug": "perfony",
@@ -27,6 +27,6 @@
   {
     "slug": "min-economie",
     "name": "Ministère de l'Economie",
-    "siteUrl": ""
+    "siteUrl": "https://www.economie.gouv.fr/"
   }
 ]

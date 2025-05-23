@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "software",
+    "shortDescription": "Développement d'applications logicielles pour divers besoins et plateformes."
+  },
+  {
+    "slug": "game",
+    "shortDescription": "Création de jeux vidéo et d'expériences interactives pour divertir et engager."
+  },
+  {
+    "slug": "mobile",
+    "shortDescription": "Applications mobiles pour iOS et Android, conçues pour une expérience utilisateur optimale."
+  },
+  {
+    "slug": "front",
+    "shortDescription": "Interfaces utilisateur et expériences interactives pour le web et les applications."
+  },
+  {
+    "slug": "back",
+    "shortDescription": "Logique serveur, bases de données et API pour soutenir les applications."
+  },
+  {
+    "slug": "cms",
+    "shortDescription": "Développement de solutions de gestion de contenu pour sites et applications."
+  },
+  {
+    "slug": "ai",
+    "shortDescription": "Solutions d'intelligence artificielle et d'apprentissage automatique pour des tâches intelligentes."
+  },
+  {
+    "slug": "data",
+    "shortDescription": "Analyse et visualisation de données pour des insights et décisions éclairées."
+  },
+  {
+    "slug": "iot",
+    "shortDescription": "Développement de dispositifs connectés et solutions pour l'Internet des Objets."
+  },
+  {
+    "slug": "cybersecurity",
+    "shortDescription": "Protection des systèmes et des données contre les cybermenaces et vulnérabilités."
+  },
+  {
+    "slug": "network",
+    "shortDescription": "Configuration et gestion de réseaux pour une connectivité et une sécurité optimales."
+  },
+  {
+    "slug": "infrastructure",
+    "shortDescription": "Solutions d'infrastructure pour soutenir les applications et services."
+  },
+  {
+    "slug": "devops",
+    "shortDescription": "Pratiques DevOps pour l'intégration continue, le déploiement et l'automatisation."
+  },
+  {
+    "slug": "design",
+    "shortDescription": "Création de designs visuels et d'expériences utilisateur pour des applications attrayantes."
+  },
+  {
+    "slug": "testing",
+    "shortDescription": "Conception, automatisation et exécution de tests garantissant qualité, fiabilité et robustesse du code et des fonctionnalités."
+  },
+  {
+    "slug": "os",
+    "shortDescription": "Systèmes d'exploitation et environnement d'exécution pour le développement, le déploiement et l'administration."
+  }
+]
