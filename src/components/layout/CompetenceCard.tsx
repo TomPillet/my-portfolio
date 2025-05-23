@@ -84,6 +84,9 @@ export function CompetenceCard({
           >
             catégorie de fou
           </Text>
+          {/* <Text w={"full"} fontStyle={"italic"} textTransform={"lowercase"}>
+            {skill?.}
+          </Text> */}
         </Flex>
         {/* {projets && ( */}
         <Flex
