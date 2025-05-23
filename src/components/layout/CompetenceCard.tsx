@@ -2,6 +2,7 @@ import React from "react";
 import { Category, Project, Skill, SkillLevel } from "@prisma/client";
 import Image from "next/image";
 import { Box, Flex, Heading, Highlight, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 interface CompetenceCardProps {
   width: string;
@@ -24,17 +25,30 @@ export function CompetenceCard({
       pos={"relative"}
       w={width}
       h={height}
-      bg="#F5F5F5"
+      bg="#fff"
       rounded="3xl"
       overflow={"hidden"}
+      _hover={{
+        "& .skill-categories": {
+          opacity: 1,
+        },
+        "& .skill-image": {
+          filter: "blur(12px)",
+        },
+        "& .skill-projects": {
+          opacity: 1,
+        },
+      }}
     >
       <Box
-        opacity={0.05}
-        h={"50%"}
-        w={"50%"}
+        opacity={0.6}
+        h={"40%"}
+        w={"40%"}
         m={"auto"}
         pos={"relative"}
         zIndex={1}
+        transition={"all 0.4s ease-in-out"}
+        className="skill-image"
       >
         <Image
           src={skill?.logoUrl}
@@ -60,27 +74,80 @@ export function CompetenceCard({
             </Heading>
           </Flex>
           {/* TODO: use categories */}
-          {/* <Text w={"full"} fontStyle={"italic"} textTransform={"lowercase"}>
-            {skill?.}
-          </Text> */}
+          <Text
+            w={"full"}
+            fontStyle={"italic"}
+            textTransform={"lowercase"}
+            opacity={0}
+            transition={"all 0.4s ease-in-out"}
+            className="skill-categories"
+          >
+            catégorie de fou
+          </Text>
         </Flex>
-        {projets && (
-          <Flex flexDir={"column"}>
-            <Heading as="h3" fontSize={"lg"} w={"full"}>
-              Projets :
-            </Heading>
-            <Flex flexWrap={"wrap"} lineHeight={1.1}>
-              {projets.map((projet, index) => {
+        {/* {projets && ( */}
+        <Flex
+          flexDir={"column"}
+          className="skill-projects"
+          opacity={0}
+          transition={"all 0.4s ease-in-out"}
+        >
+          <Heading
+            as="h3"
+            fontSize={"lg"}
+            w={"full"}
+            textDecoration={"underline"}
+          >
+            Projets :
+          </Heading>
+          <Flex flexWrap={"wrap"} lineHeight={1.1}>
+            <Text
+              color={"dark.default"}
+              mr={1}
+              letterSpacing={"-1px"}
+              transition={"all 0.2s ease-in-out"}
+              _hover={{
+                color: "secondary.hover",
+                letterSpacing: "0px",
+              }}
+            >
+              <Link href="">projet 1</Link>,
+            </Text>
+            <Text
+              color={"dark.default"}
+              mr={1}
+              letterSpacing={"-1px"}
+              transition={"all 0.2s ease-in-out"}
+              _hover={{
+                color: "secondary.hover",
+                letterSpacing: "0px",
+              }}
+            >
+              <Link href="">projet 2</Link>,
+            </Text>
+            <Text
+              color={"dark.default"}
+              mr={1}
+              letterSpacing={"-1px"}
+              transition={"all 0.2s ease-in-out"}
+              _hover={{
+                color: "secondary.hover",
+                letterSpacing: "0px",
+              }}
+            >
+              <Link href="">projet 3</Link>
+            </Text>
+            {/* {projets.map((projet, index) => {
                 return (
                   <Text key={index} mr={1}>
                     {projet.title}
                     {index !== projets.length - 1 && ","}
                   </Text>
                 );
-              })}
-            </Flex>
+              })} */}
           </Flex>
-        )}
+        </Flex>
+        {/* )} */}
         {skillLevel && (
           <Highlight
             query={skillLevel.label}

@@ -18,7 +18,7 @@ export default function Projets() {
 
   return (
     <Container maxW={"7xl"}>
-      <Flex pt={"120px"} w="full" flexDir={"column"}>
+      <Flex py={"120px"} w="full" flexDir={"column"}>
         <Flex
           w="full"
           color={"light.default"}

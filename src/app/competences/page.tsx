@@ -43,7 +43,7 @@ export default function Competences() {
 
   return (
     <Container maxW={"7xl"}>
-      <Flex pt={"120px"} w="full" flexDir={"column"}>
+      <Flex py={"120px"} w="full" flexDir={"column"}>
         <Heading as="h1" textAlign={"center"} mb={16} variant={"mainTitle"}>
           Mes compétences
         </Heading>
