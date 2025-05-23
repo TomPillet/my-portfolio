@@ -1,6 +1,6 @@
 [
   { "slug": "junior", "label": "Junior" },
   { "slug": "intermediate", "label": "Intermédiaire" },
-  { "slug": "confirmed", "label": "Confirmé" },
+  { "slug": "senior", "label": "Senior" },
   { "slug": "expert", "label": "Expert" }
 ]

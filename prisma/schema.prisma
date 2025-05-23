@@ -7,36 +7,20 @@ generator client {
     provider    = "prisma-client-js"
 }
 
-model Skill {
+model Category {
+    id                  Int         @id @default(autoincrement())
+    slug                String      @unique
+    shortDescription    String      @db.VarChar(128)
+
+    skills              CategoriesOnSkills[]
+}
+
+model Entreprise {
     id          Int         @id @default(autoincrement())
     slug        String      @unique
-    title       String
-    logoUrl     String
-    type        SkillType     
-
-    level       SkillLevel  @relation(fields: [levelId], references: [id])
-    levelId     Int
-
-    projects    SkillsOnProjects[]
-}
-
-enum SkillType {
-    FRONT         
-    BACK          
-    MOBILE        
-    SOFTWARE      
-    CMS           
-    TESTING       
-    DEVOPS        
-    DESIGN        
-    INFRASTRUCTURE
-}
-
-model SkillLevel {
-    id      Int     @id @default(autoincrement())
-    slug    String  @unique
-    label   String
-    skills  Skill[]
+    name        String
+    siteUrl     String
+    projects    Project[]
 }
 
 model Project {
@@ -49,18 +33,47 @@ model Project {
     gitUrl              String
     hostUrl             String
     date                DateTime    @db.Date
-    type                ProjectType @default(PERSO)          
+    type                ProjectType @default(PERSO)    
 
     entreprise          Entreprise?  @relation(fields: [entrepriseId], references: [id])
     entrepriseId        Int?         
-
-    skills      SkillsOnProjects[]
+ 
+    skills              SkillsOnProjects[]
 }
 
 enum ProjectType {
     PERSO
     PRO
     UNIV
+}
+
+model Skill {
+    id          Int         @id @default(autoincrement())
+    slug        String      @unique
+    title       String
+    logoUrl     String
+
+    level       SkillLevel  @relation(fields: [levelId], references: [id])
+    levelId     Int
+
+    categories  CategoriesOnSkills[]
+    projects    SkillsOnProjects[]
+}
+
+model SkillLevel {
+    id      Int     @id @default(autoincrement())
+    slug    String  @unique
+    label   String
+    skills  Skill[]
+}
+
+model CategoriesOnSkills {
+    category    Category    @relation(fields: [categoryId], references: [id])
+    categoryId  Int
+    skill       Skill       @relation(fields: [skillId], references: [id])
+    skillId     Int
+
+    @@id([categoryId, skillId])
 }
 
 model SkillsOnProjects {
@@ -72,10 +85,3 @@ model SkillsOnProjects {
     @@id([projectId, skillId])
 }
 
-model Entreprise {
-    id          Int         @id @default(autoincrement())
-    slug        String      @unique
-    name        String
-    siteUrl     String
-    projects    Project[]
-}
