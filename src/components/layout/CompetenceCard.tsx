@@ -1,5 +1,5 @@
 import React from "react";
-import { Project, Skill, SkillLevel } from "@prisma/client";
+import { Category, Project, Skill, SkillLevel } from "@prisma/client";
 import Image from "next/image";
 import { Box, Flex, Heading, Highlight, Text } from "@chakra-ui/react";
 
@@ -8,6 +8,7 @@ interface CompetenceCardProps {
   height: string;
   skill: Skill;
   skillLevel: SkillLevel;
+  categories?: Category[];
   projets?: Project[];
 }
 
@@ -58,9 +59,10 @@ export function CompetenceCard({
               {skill?.title}
             </Heading>
           </Flex>
-          <Text w={"full"} fontStyle={"italic"} textTransform={"lowercase"}>
-            {skill?.type}
-          </Text>
+          {/* TODO: use categories */}
+          {/* <Text w={"full"} fontStyle={"italic"} textTransform={"lowercase"}>
+            {skill?.}
+          </Text> */}
         </Flex>
         {projets && (
           <Flex flexDir={"column"}>
