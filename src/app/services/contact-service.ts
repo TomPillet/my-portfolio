@@ -1,7 +1,7 @@
 import emailjs from "@emailjs/browser";
 
 export class ContactService {
-  static async sendEmail(data: FormData) {
+  static async sendEmail(data: FormData): Promise<boolean> {
     const templateParams = {
       title: data.get("title"),
       firstname: data.get("firstname"),
@@ -16,6 +16,7 @@ export class ContactService {
     const templateId = process.env.EMAILJS_TEMPLATE_ID;
     const publicKey = process.env.EMAILJS_PUBLIC_KEY;
 
+    let success = false;
     emailjs
       .send(
         serviceId as string,
@@ -24,15 +25,9 @@ export class ContactService {
         publicKey
       )
       .then(() => {
-        return {
-          success: true,
-        };
-      })
-      .catch((error) => {
-        return {
-          error: error,
-          success: false,
-        };
+        success = true;
       });
+
+    return success;
   }
 }
