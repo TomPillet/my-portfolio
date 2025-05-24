@@ -2,6 +2,7 @@
 import React from "react";
 import emailjs from "@emailjs/browser";
 import {
+  Box,
   Button,
   Container,
   Field,
@@ -58,7 +59,7 @@ export default function Contact() {
         </Heading>
         <Form action={sendEmail}>
           <Grid
-            gridTemplateAreas={`"firstname lastname" "entreprise entreprise" "email phone" "title title" "message message" "submit submit"`}
+            gridTemplateAreas={`"firstname lastname" "entreprise entreprise" "email phone" "title title" "message message" "captcha captcha" "submit submit"`}
             gap={6}
             p={6}
             justifyItems={"center"}
@@ -112,6 +113,13 @@ export default function Contact() {
                 Il serait dommage de ne pas laisser de message !
               </Field.ErrorText>
             </Field.Root>
+            <Box
+              as="div"
+              className="g-recaptcha"
+              data-sitekey={process.env.RECAPTCHA_PUBLIC_KEY}
+              data-callback={(res: any) => console.log("coucou", res)}
+              gridArea={"captcha"}
+            ></Box>
             <Button gridArea={"submit"} w={"1/2"} type="submit">
               Envoyer
             </Button>
