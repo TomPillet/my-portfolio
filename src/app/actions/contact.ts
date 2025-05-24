@@ -69,7 +69,7 @@ export async function sendEmail(formData: FormData) {
     });
 
     await transporter.sendMail({
-      from: process.env.MAIL_FROM,
+      from: email,
       to: process.env.MAIL_TO,
       subject: title,
       text: `Nom: ${lastname}\nEmail: ${email}\nMessage: ${message}`,
