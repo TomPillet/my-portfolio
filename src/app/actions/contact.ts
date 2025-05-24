@@ -1,6 +1,39 @@
 "use server";
-
 import nodemailer from "nodemailer";
+
+interface RecaptchaResponse {
+  success: boolean;
+  challenge_ts?: string;
+  hostname?: string;
+  "error-codes"?: string[];
+}
+
+async function verifyRecaptcha(token: string) {
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+  if (!secretKey) {
+    console.error("RECAPTCHA_SECRET_KEY n'est pas définie");
+    return false;
+  }
+
+  try {
+    const response = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `secret=${secretKey}&response=${token}`,
+      }
+    );
+
+    const data: RecaptchaResponse = await response.json();
+    return data.success;
+  } catch (error) {
+    console.error("Erreur lors de la vérification reCAPTCHA:", error);
+    return false;
+  }
+}
 
 export async function sendEmail(formData: FormData) {
   try {
@@ -11,6 +44,19 @@ export async function sendEmail(formData: FormData) {
     const phone = formData.get("phone") as string;
     const title = formData.get("title") as string;
     const message = formData.get("message") as string;
+    const captcha = formData.get("g-recaptcha-response") as string;
+
+    if (!captcha) {
+      return { success: false, error: "Veuillez compléter le reCAPTCHA." };
+    }
+
+    const isCaptchaValid = await verifyRecaptcha(captcha);
+    if (!isCaptchaValid) {
+      return {
+        success: false,
+        error: "Le reCAPTCHA est invalide. Veuillez réessayer.",
+      };
+    }
 
     const transporter = nodemailer.createTransport({
       host: process.env.MAIL_HOST,
@@ -40,7 +86,7 @@ export async function sendEmail(formData: FormData) {
 
     return { success: true };
   } catch (error) {
-    console.error("Email error:", error);
-    return { success: false, error: "Failed to send email" };
+    console.error("Erreur envoi d'email:", error);
+    return { success: false, error: "Erreur lors de l'envoi de l'email." };
   }
 }
