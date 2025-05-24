@@ -24,7 +24,7 @@ import { FaAngleRight } from "react-icons/fa";
 export default function Home() {
   const keySkills = ["React", "NextJS", "Nest", "PHP", "Java"];
   const cvUrl =
-    "https://drive.google.com/uc?export=download&id=1EScmQhCf7Es0_310ss9vfrQ8JaLg_f-7";
+    "https://drive.google.com/file/d/1p4ZT75-VEdRZHwvGWj36p_PGZevZcy68/view?usp=sharing";
 
   return (
     <Container maxW="7xl">
