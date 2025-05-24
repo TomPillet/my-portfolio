@@ -12,11 +12,11 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import Form from "next/form";
-import { ContactService } from "../services/contact-service";
+import { sendEmail } from "../actions/contact";
 
 export default function Contact() {
   const handleSendEmail = async (formData: FormData) => {
-    const result = await ContactService.sendEmail(formData);
+    const result = await sendEmail(formData);
     console.log("result email", result);
   };
 
