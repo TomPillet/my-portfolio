@@ -26,7 +26,12 @@ export default function Contact() {
       message: formData.get("message"),
     };
 
-    console.log(process.env.EMAILJS_PUBLIC_KEY);
+    console.log(
+      "check emailjs env vars",
+      process.env.EMAILJS_PUBLIC_KEY,
+      process?.env?.EMAILJS_SERVICE_ID,
+      process?.env?.EMAILJS_TEMPLATE_ID
+    );
 
     emailjs
       .send(
