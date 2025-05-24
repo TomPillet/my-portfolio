@@ -26,6 +26,8 @@ export default function Contact() {
       message: formData.get("message"),
     };
 
+    console.log(process.env.EMAILJS_PUBLIC_KEY);
+
     emailjs
       .send(
         process?.env?.EMAILJS_SERVICE_ID as string,
