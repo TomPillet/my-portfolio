@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import emailjs from "@emailjs/browser";
 import {
   Box,
   Button,
@@ -13,43 +12,11 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import Form from "next/form";
+import { ContactService } from "../services/contact-service";
 
 export default function Contact() {
-  const sendEmail = (formData: FormData) => {
-    const templateParams = {
-      title: formData.get("title"),
-      firstname: formData.get("firstname"),
-      lastname: formData.get("lastname"),
-      entreprise: formData.get("entreprise"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      message: formData.get("message"),
-    };
-
-    console.log(
-      "check emailjs env vars",
-      process.env.EMAILJS_PUBLIC_KEY,
-      process?.env?.EMAILJS_SERVICE_ID,
-      process?.env?.EMAILJS_TEMPLATE_ID
-    );
-
-    emailjs
-      .send(
-        process?.env?.EMAILJS_SERVICE_ID as string,
-        process?.env?.EMAILJS_TEMPLATE_ID as string,
-        templateParams,
-        {
-          publicKey: process.env.EMAILJS_PUBLIC_KEY,
-        }
-      )
-      .then(() => {
-        console.log("success");
-        // TODO: handle success
-      })
-      .catch((error) => {
-        console.log(error);
-        // TODO: handle error
-      });
+  const handleSendEmail = async (formData: FormData) => {
+    const result = await ContactService.sendEmail(formData);
   };
 
   return (
@@ -64,7 +31,7 @@ export default function Contact() {
         <Heading as="h1" variant={"mainTitle"} mb={8}>
           Contactez-moi
         </Heading>
-        <Form action={sendEmail}>
+        <Form action={handleSendEmail}>
           <Grid
             gridTemplateAreas={`"firstname lastname" "entreprise entreprise" "email phone" "title title" "message message" "captcha captcha" "submit submit"`}
             gap={6}
@@ -125,6 +92,7 @@ export default function Contact() {
               className="g-recaptcha"
               data-sitekey={process.env.RECAPTCHA_PUBLIC_KEY}
               data-callback={(res: any) => console.log("coucou", res)}
+              error-callback={(res: any) => console.log("error", res)}
               gridArea={"captcha"}
             ></Box>
             <Button gridArea={"submit"} w={"1/2"} type="submit">
