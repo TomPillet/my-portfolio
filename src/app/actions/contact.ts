@@ -35,7 +35,14 @@ async function verifyRecaptcha(token: string) {
   }
 }
 
-export async function sendEmail(formData: FormData) {
+interface sendEmailResponse {
+  success: boolean;
+  message: string;
+}
+
+export async function sendEmail(
+  formData: FormData
+): Promise<sendEmailResponse> {
   try {
     const firstname = formData.get("firstname") as string;
     const lastname = formData.get("lastname") as string;
@@ -47,14 +54,14 @@ export async function sendEmail(formData: FormData) {
     const captcha = formData.get("g-recaptcha-response") as string;
 
     if (!captcha) {
-      return { success: false, error: "Veuillez compléter le reCAPTCHA." };
+      return { success: false, message: "Veuillez compléter le reCAPTCHA." };
     }
 
     const isCaptchaValid = await verifyRecaptcha(captcha);
     if (!isCaptchaValid) {
       return {
         success: false,
-        error: "Le reCAPTCHA est invalide. Veuillez réessayer.",
+        message: "Le reCAPTCHA est invalide. Veuillez réessayer.",
       };
     }
 
@@ -84,9 +91,13 @@ export async function sendEmail(formData: FormData) {
           `,
     });
 
-    return { success: true };
+    return {
+      success: true,
+      message:
+        "L'email a été envoyé avec succès. Vous aurez une réponse dans les plus brefs delais.",
+    };
   } catch (error) {
-    console.error("Erreur envoi d'email:", error);
-    return { success: false, error: "Erreur lors de l'envoi de l'email." };
+    console.error("Email error:", error);
+    return { success: false, message: "Erreur lors de l'envoi de l'email." };
   }
 }

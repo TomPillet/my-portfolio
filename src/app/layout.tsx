@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Ubuntu, DM_Sans } from "next/font/google";
 import { Provider } from "@/chakra/provider";
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body className={`${ubuntu.className} ${dmSans.className} antialiased`}>
         <Provider>
           <Header />
+          <Toaster />
           {children}
         </Provider>
       </body>

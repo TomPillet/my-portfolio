@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useId } from "react";
 import {
   Box,
   Button,
@@ -11,13 +11,28 @@ import {
   Input,
   Textarea,
 } from "@chakra-ui/react";
+import { toaster } from "@/components/ui/toaster";
 import Form from "next/form";
 import { sendEmail } from "../actions/contact";
 
 export default function Contact() {
+  const loadingToasterId = useId();
+
   const handleSendEmail = async (formData: FormData) => {
-    const result = await sendEmail(formData);
-    console.log("result email", result);
+    toaster.loading({
+      id: loadingToasterId,
+      title: "Le message est en cours d'envoi...",
+    });
+    await sendEmail(formData).then((res) => {
+      toaster.remove(loadingToasterId);
+      toaster.create({
+        title: res.success
+          ? "Message bien envoyé !"
+          : "Erreur lors de l'envoi du message !",
+        description: res.message,
+        type: res.success ? "success" : "error",
+      });
+    });
   };
 
   return (
@@ -92,8 +107,6 @@ export default function Contact() {
               as="div"
               className="g-recaptcha"
               data-sitekey={process.env.RECAPTCHA_PUBLIC_KEY}
-              data-callback={(res: any) => console.log("coucou", res)}
-              error-callback={(res: any) => console.log("error", res)}
               gridArea={"captcha"}
             ></Box>
             <Button gridArea={"submit"} w={"1/2"} type="submit">
