@@ -48,7 +48,7 @@ export default function Home() {
                 Tom PILLET-GAULON
               </Heading>
               <Heading as="h2" variant={"skinnyTitle"} pl={2}>
-                <ShinyText text="Développeur Fullstack" speed={2} />
+                <ShinyText text="Développeur Fullstack & Logiciel" speed={2} />
               </Heading>
             </Flex>
           </GridItem>
@@ -88,8 +88,8 @@ export default function Home() {
           </GridItem>
           <GridItem gridArea={"desc"} maxW={"2xl"} pl={2}>
             <Text fontSize={"lg"}>
-              🤖 <strong>Développeur web</strong> passionné, curieux et
-              touche-à-tout, j{"'"}aime <strong>coder</strong> et transformer
+              🤖 <strong>Développeur web & logiciel</strong> passionné, curieux
+              et touche-à-tout, j{"'"}aime <strong>coder</strong> et transformer
               des idées en projets concrets et utiles. Mon objectif est de
               devenir un <strong>développeur web</strong> toujours plus
               compétent, créatif et rigoureux.
