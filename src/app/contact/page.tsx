@@ -17,6 +17,7 @@ import { ContactService } from "../services/contact-service";
 export default function Contact() {
   const handleSendEmail = async (formData: FormData) => {
     const result = await ContactService.sendEmail(formData);
+    console.log("result email", result);
   };
 
   return (
