@@ -17,7 +17,29 @@
     "hostUrl": "",
     "date": "2025",
     "type": "UNIV",
-    "entreprise": ""
+    "etablissement": "",
+    "skills": []
+  },
+  {
+    "slug": "besacraft",
+    "title": "Besacraft",
+    "description": {
+      "sections": [
+        {
+          "title": "",
+          "content": "",
+          "imageUrl": ""
+        }
+      ]
+    },
+    "shortDescription": "Collectif visant à reproduire le Besançon du 18ème siècle sur le jeu Minecraft, en s'armant de scripts Python et de patience.",
+    "imageUrl": "/projects/mini-rpg-godot.jpg",
+    "gitUrl": "",
+    "hostUrl": "https://besacraft.fr/",
+    "date": "2024",
+    "type": "PERSO",
+    "etablissement": "besacraft",
+    "skills": ["java", "python"]
   },
   {
     "slug": "mini-rpg-godot",
@@ -37,6 +59,7 @@
     "hostUrl": "https://tampoulet.github.io/",
     "date": "2020",
     "type": "PERSO",
-    "entreprise": ""
+    "etablissement": "",
+    "skills": ["godot"]
   }
 ]

@@ -10,17 +10,25 @@ generator client {
 model Category {
     id                  Int         @id @default(autoincrement())
     slug                String      @unique
+    title               String
     shortDescription    String      @db.VarChar(128)
 
     skills              CategoriesOnSkills[]
 }
 
-model Entreprise {
+model Etablissement {
     id          Int         @id @default(autoincrement())
     slug        String      @unique
     name        String
     siteUrl     String
+    type        EtablissementType
     projects    Project[]
+}
+
+enum EtablissementType {
+    ECOLE
+    ENTREPRISE
+    COLLECTIF
 }
 
 model Project {
@@ -33,10 +41,11 @@ model Project {
     gitUrl              String
     hostUrl             String
     date                DateTime    @db.Date
+    isActive            Boolean?    @default(false)
     type                ProjectType @default(PERSO)    
 
-    entreprise          Entreprise?  @relation(fields: [entrepriseId], references: [id])
-    entrepriseId        Int?         
+    etablissement       Etablissement?  @relation(fields: [etablissementId], references: [id])
+    etablissementId     Int?         
  
     skills              SkillsOnProjects[]
 }

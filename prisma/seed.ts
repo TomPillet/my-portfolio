@@ -1,24 +1,25 @@
 import { z } from "zod";
 import {
   Category,
-  Entreprise,
+  Etablissement,
+  EtablissementType,
   PrismaClient,
   Project,
   ProjectType,
   Skill,
   SkillLevel,
 } from "@prisma/client";
-import entreprises from "./entreprises.json";
+import etablissements from "./etablissements.json";
 import categories from "./categories.json";
 import projects from "./projects.json";
 import levels from "./levels.json";
 import skills from "./skills.json";
-import { create } from "domain";
 
 const prisma = new PrismaClient();
 const projectTypeSchema = z.nativeEnum(ProjectType);
+const etablissementTypeSchema = z.nativeEnum(EtablissementType);
 
-async function createCategoriesOnSkillsRecords(
+async function createCategoriesOnSkillRecords(
   categoriesSlugs: string[],
   categoryIdBySlug: any,
   skillId: number
@@ -39,14 +40,14 @@ async function createCategoriesOnSkillsRecords(
   }
 }
 
-async function createSkillsOnProjectsRecords(
-  projectsSlugs: string[],
-  projectIdBySlug: any,
-  skillId: number
+async function createSkillsOnProjectRecords(
+  skillsSlugs: string[],
+  skillIdBySlug: any,
+  projectId: number
 ) {
-  for (const projectSlug of projectsSlugs) {
-    const projectId = projectIdBySlug[projectSlug];
-    if (projectId === undefined) continue;
+  for (const skillSlug of skillsSlugs) {
+    const skillId = skillIdBySlug[skillSlug];
+    if (skillId === undefined) continue;
     await prisma.skillsOnProjects.upsert({
       where: {
         projectId_skillId: { projectId: projectId, skillId: skillId },
@@ -70,6 +71,7 @@ async function createCategoriesModel(): Promise<Category[]> {
   for (const category of categories) {
     const data = {
       slug: category.slug,
+      title: category.title,
       shortDescription: category.shortDescription,
     };
 
@@ -86,39 +88,38 @@ async function createCategoriesModel(): Promise<Category[]> {
     }
     createdCategories.push(createdCategory);
   }
-
   return createdCategories;
 }
 
-async function createEntreprisesModel(): Promise<Entreprise[]> {
-  const createdEntreprises = [];
-  const existingEntreprises = await prisma.entreprise.findMany();
-  const existingEntreprisesSlugs = existingEntreprises.map(
-    (entreprise) => entreprise.slug
+async function createEtablissementsModel(): Promise<Etablissement[]> {
+  const createdEtablissements = [];
+  const existingEtablissements = await prisma.etablissement.findMany();
+  const existingEtablissementsSlugs = existingEtablissements.map(
+    (etablissement: any) => etablissement.slug
   );
 
-  for (const entreprise of entreprises) {
+  for (const etablissement of etablissements) {
     const data = {
-      slug: entreprise.slug,
-      name: entreprise.name,
-      siteUrl: entreprise.siteUrl,
+      slug: etablissement.slug,
+      name: etablissement.name,
+      siteUrl: etablissement.siteUrl,
+      type: etablissementTypeSchema.parse(etablissement.type),
     };
 
-    let createdEntreprise: Entreprise;
-    if (existingEntreprisesSlugs.includes(entreprise.slug)) {
-      createdEntreprise = await prisma.entreprise.update({
-        where: { slug: entreprise.slug },
+    let createdEtablissement: Etablissement;
+    if (existingEtablissementsSlugs.includes(etablissement.slug)) {
+      createdEtablissement = await prisma.etablissement.update({
+        where: { slug: etablissement.slug },
         data: data,
       });
     } else {
-      createdEntreprise = await prisma.entreprise.create({
+      createdEtablissement = await prisma.etablissement.create({
         data: data,
       });
     }
-    createdEntreprises.push(createdEntreprise);
+    createdEtablissements.push(createdEtablissement);
   }
-
-  return createdEntreprises;
+  return createdEtablissements;
 }
 
 async function createLevelsModel(): Promise<SkillLevel[]> {
@@ -143,61 +144,16 @@ async function createLevelsModel(): Promise<SkillLevel[]> {
     }
     createdLevels.push(createdLevel);
   }
-
   return createdLevels;
-}
-
-async function createProjectsModel(
-  entrepriseIdBySlug: any
-): Promise<Project[]> {
-  const createdProjects: Project[] = [];
-  const existingProjects = await prisma.project.findMany();
-  const existingProjectsSlugs = existingProjects.map((project) => project.slug);
-
-  for (const project of projects) {
-    const data = {
-      slug: project.slug,
-      title: project.title,
-      description: project.description,
-      shortDescription: project.shortDescription,
-      imageUrl: project.imageUrl,
-      gitUrl: project.gitUrl,
-      hostUrl: project.hostUrl,
-      date: project.date.length > 0 ? new Date(project.date) : new Date(),
-      type: projectTypeSchema.parse(project.type),
-      entreprise: {},
-    };
-
-    if (project.entreprise.length > 0) {
-      data.entreprise = {
-        connect: { id: entrepriseIdBySlug[project.entreprise] },
-      };
-    }
-
-    let createdProject: Project;
-    if (existingProjectsSlugs.includes(project.slug)) {
-      createdProject = await prisma.project.update({
-        where: { slug: project.slug },
-        data: data,
-      });
-    } else {
-      createdProject = await prisma.project.create({
-        data: data,
-      });
-    }
-    createdProjects.push(createdProject);
-  }
-
-  return createdProjects;
 }
 
 async function createSkillsModel(
   levelIdBySlug: any,
-  projectIdBySlug: any,
   categoryIdBySlug: any
-) {
+): Promise<Skill[]> {
   const existingSkills = await prisma.skill.findMany();
   const existingSkillsSlugs = existingSkills.map((skill) => skill.slug);
+  const createdSkills: Skill[] = [];
 
   for (const skill of skills) {
     const data = {
@@ -219,17 +175,64 @@ async function createSkillsModel(
       });
     }
 
-    createSkillsOnProjectsRecords(
-      skill.projects,
-      projectIdBySlug,
-      createdSkill.id
-    );
-    createCategoriesOnSkillsRecords(
+    createCategoriesOnSkillRecords(
       skill.categories,
       categoryIdBySlug,
       createdSkill.id
     );
+    createdSkills.push(createdSkill);
   }
+  return createdSkills;
+}
+
+async function createProjectsModel(
+  etablissementIdBySlug: any,
+  skillIdBySlug: any
+): Promise<Project[]> {
+  const createdProjects: Project[] = [];
+  const existingProjects = await prisma.project.findMany();
+  const existingProjectsSlugs = existingProjects.map((project) => project.slug);
+
+  for (const project of projects) {
+    const data = {
+      slug: project.slug,
+      title: project.title,
+      description: project.description,
+      shortDescription: project.shortDescription,
+      imageUrl: project.imageUrl,
+      gitUrl: project.gitUrl,
+      hostUrl: project.hostUrl,
+      date: project.date.length > 0 ? new Date(project.date) : new Date(),
+      type: projectTypeSchema.parse(project.type),
+      etablissement: {},
+    };
+
+    if (project.etablissement.length > 0) {
+      data.etablissement = {
+        connect: { id: etablissementIdBySlug[project.etablissement] },
+      };
+    }
+
+    let createdProject: Project;
+    if (existingProjectsSlugs.includes(project.slug)) {
+      createdProject = await prisma.project.update({
+        where: { slug: project.slug },
+        data: data,
+      });
+    } else {
+      createdProject = await prisma.project.create({
+        data: data,
+      });
+    }
+
+    createSkillsOnProjectRecords(
+      project.skills,
+      skillIdBySlug,
+      createdProject.id
+    );
+    createdProjects.push(createdProject);
+  }
+  return createdProjects;
 }
 
 function fetchFromSlugToId(model: any[]) {
@@ -238,15 +241,21 @@ function fetchFromSlugToId(model: any[]) {
 
 async function main() {
   const createdCategories = await createCategoriesModel();
-  const createdEntreprises = await createEntreprisesModel();
-  const createdLevels = await createLevelsModel();
   const categoryIdBySlug = fetchFromSlugToId(createdCategories);
-  const entrepriseIdBySlug = fetchFromSlugToId(createdEntreprises);
+
+  const createdEtablissements = await createEtablissementsModel();
+  const etablissementIdBySlug = fetchFromSlugToId(createdEtablissements);
+
+  const createdLevels = await createLevelsModel();
   const levelIdBySlug = fetchFromSlugToId(createdLevels);
 
-  const createdProjects = await createProjectsModel(entrepriseIdBySlug);
-  const projectIdBySlug = fetchFromSlugToId(createdProjects);
-  createSkillsModel(levelIdBySlug, projectIdBySlug, categoryIdBySlug);
+  const createdSkills = await createSkillsModel(
+    levelIdBySlug,
+    categoryIdBySlug
+  );
+  const skillIdBySlug = fetchFromSlugToId(createdSkills);
+
+  createProjectsModel(etablissementIdBySlug, skillIdBySlug);
 }
 
 main()

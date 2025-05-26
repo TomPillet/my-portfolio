@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "cadcom",
+    "name": "Cadcom",
+    "siteUrl": "https://www.cadcom-studio.fr/",
+    "type": "ENTREPRISE"
+  },
+  {
+    "slug": "capgemini",
+    "name": "Capgemini Engineering",
+    "siteUrl": "https://www.capgemini.com/fr-fr/notre-groupe/nous-connaitre/nos-marques/capgemini-engineering/",
+    "type": "ENTREPRISE"
+  },
+  {
+    "slug": "bwa",
+    "name": "Business Web Agence",
+    "siteUrl": "https://www.business-web-agence.com/",
+    "type": "ENTREPRISE"
+  },
+  {
+    "slug": "ca-fcomte",
+    "name": "Crédit Agricole Franche-Comté",
+    "siteUrl": "https://www.credit-agricole.fr/ca-franchecomte/particulier.html",
+    "type": "ENTREPRISE"
+  },
+  {
+    "slug": "perfony",
+    "name": "Perfony",
+    "siteUrl": "https://www.perfony.com/fr/",
+    "type": "ENTREPRISE"
+  },
+  {
+    "slug": "min-economie",
+    "name": "Ministère de l'Economie",
+    "siteUrl": "https://www.economie.gouv.fr/",
+    "type": "ENTREPRISE"
+  },
+  {
+    "slug": "besacraft",
+    "name": "Besacraft",
+    "siteUrl": "https://besacraft.fr/",
+    "type": "COLLECTIF"
+  },
+  {
+    "slug": "iscod",
+    "name": "ISCOD",
+    "siteUrl": "https://www.iscod.fr/",
+    "type": "ECOLE"
+  },
+  {
+    "slug": "ufr-sciences",
+    "name": "UFR Sciences et Techniques",
+    "siteUrl": "http://sciences.univ-fcomte.fr/",
+    "type": "ECOLE"
+  },
+  {
+    "slug": "iut-nancy",
+    "name": "IUT Nancy-Charlemagne",
+    "siteUrl": "https://iut-charlemagne.univ-lorraine.fr/",
+    "type": "ECOLE"
+  }
+]

@@ -1,66 +1,82 @@
 [
   {
     "slug": "software",
+    "title": "Software",
     "shortDescription": "Développement d'applications logicielles pour divers besoins et plateformes."
   },
   {
-    "slug": "game",
+    "slug": "game-dev",
+    "title": "Game Dev",
     "shortDescription": "Création de jeux vidéo et d'expériences interactives pour divertir et engager."
   },
   {
     "slug": "mobile",
+    "title": "Mobile",
     "shortDescription": "Applications mobiles pour iOS et Android, conçues pour une expérience utilisateur optimale."
   },
   {
     "slug": "front",
+    "title": "Frontend",
     "shortDescription": "Interfaces utilisateur et expériences interactives pour le web et les applications."
   },
   {
     "slug": "back",
+    "title": "Backend",
     "shortDescription": "Logique serveur, bases de données et API pour soutenir les applications."
   },
   {
     "slug": "cms",
+    "title": "CMS",
     "shortDescription": "Développement de solutions de gestion de contenu pour sites et applications."
   },
   {
     "slug": "ai",
+    "title": "AI",
     "shortDescription": "Solutions d'intelligence artificielle et d'apprentissage automatique pour des tâches intelligentes."
   },
   {
     "slug": "data",
+    "title": "Data",
     "shortDescription": "Analyse et visualisation de données pour des insights et décisions éclairées."
   },
   {
     "slug": "iot",
+    "title": "IoT",
     "shortDescription": "Développement de dispositifs connectés et solutions pour l'Internet des Objets."
   },
   {
     "slug": "cybersecurity",
+    "title": "Cybersecurity",
     "shortDescription": "Protection des systèmes et des données contre les cybermenaces et vulnérabilités."
   },
   {
     "slug": "network",
+    "title": "Network",
     "shortDescription": "Configuration et gestion de réseaux pour une connectivité et une sécurité optimales."
   },
   {
     "slug": "infrastructure",
+    "title": "Infrastructure",
     "shortDescription": "Solutions d'infrastructure pour soutenir les applications et services."
   },
   {
     "slug": "devops",
+    "title": "DevOps",
     "shortDescription": "Pratiques DevOps pour l'intégration continue, le déploiement et l'automatisation."
   },
   {
     "slug": "design",
+    "title": "Design",
     "shortDescription": "Création de designs visuels et d'expériences utilisateur pour des applications attrayantes."
   },
   {
     "slug": "testing",
+    "title": "Testing",
     "shortDescription": "Conception, automatisation et exécution de tests garantissant qualité, fiabilité et robustesse du code et des fonctionnalités."
   },
   {
     "slug": "os",
+    "title": "OS",
     "shortDescription": "Systèmes d'exploitation et environnement d'exécution pour le développement, le déploiement et l'administration."
   }
 ]
