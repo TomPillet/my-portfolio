@@ -203,6 +203,7 @@ async function createProjectsModel(
       gitUrl: project.gitUrl,
       hostUrl: project.hostUrl,
       date: project.date.length > 0 ? new Date(project.date) : new Date(),
+      isActive: project.isActive,
       type: projectTypeSchema.parse(project.type),
       etablissement: {},
     };
