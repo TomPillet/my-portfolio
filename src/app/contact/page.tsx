@@ -71,6 +71,7 @@ export default function Contact() {
   return (
     <Container maxW="7xl">
       <Flex
+        py={"120px"}
         minH="100dvh"
         w="full"
         justifyContent="center"
