@@ -8,12 +8,15 @@ import {
   Flex,
   Grid,
   Heading,
+  Icon,
   Input,
   Textarea,
 } from "@chakra-ui/react";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { toaster } from "@/components/ui/toaster";
-import Form from "next/form";
 import { sendEmail } from "../actions/contact";
+import Form from "next/form";
+import Link from "next/link";
 
 export default function Contact() {
   const loadingToasterId = useId();
@@ -77,97 +80,143 @@ export default function Contact() {
         justifyContent="center"
         alignItems="center"
         flexDir={"column"}
+        gap={8}
       >
-        <Heading as="h1" variant={"mainTitle"} mb={8}>
-          Contactez-moi
-        </Heading>
-        <Form action={handleSendEmail}>
-          <Grid
-            gridColumn={"1fr 1fr"}
-            gridTemplateAreas={`"firstname lastname" "email phone" "title title" "message message" "captcha captcha" "submit submit"`}
-            gap={6}
-            p={6}
-            justifyItems={"center"}
-          >
-            <Field.Root
-              gridArea={"firstname"}
-              required
-              invalid={isFirstnameInvalid}
+        <Flex flexDir={"column"}>
+          <Heading as="h1" variant={"mainTitle"} mb={8}>
+            Contactez-moi
+          </Heading>
+          <Form action={handleSendEmail}>
+            <Grid
+              gridColumn={"1fr 1fr"}
+              gridTemplateAreas={`"firstname lastname" "email phone" "title title" "message message" "captcha captcha" "submit submit"`}
+              gap={6}
+              p={6}
+              justifyItems={"center"}
             >
-              <Field.Label>
-                Prénom <Field.RequiredIndicator />
-              </Field.Label>
-              <Input name="firstname" variant="flushed" />
-              <Field.ErrorText>
-                Merci d{"'"}indiquer votre prénom.
-              </Field.ErrorText>
-            </Field.Root>
-            <Field.Root
-              gridArea={"lastname"}
-              required
-              invalid={isLastnameInvalid}
+              <Field.Root
+                gridArea={"firstname"}
+                required
+                invalid={isFirstnameInvalid}
+              >
+                <Field.Label>
+                  Prénom <Field.RequiredIndicator />
+                </Field.Label>
+                <Input name="firstname" variant="flushed" />
+                <Field.ErrorText>
+                  Merci d{"'"}indiquer votre prénom.
+                </Field.ErrorText>
+              </Field.Root>
+              <Field.Root
+                gridArea={"lastname"}
+                required
+                invalid={isLastnameInvalid}
+              >
+                <Field.Label>
+                  Nom <Field.RequiredIndicator />
+                </Field.Label>
+                <Input name="lastname" variant="flushed" />
+                <Field.ErrorText>
+                  Merci d{"'"}indiquer votre nom.
+                </Field.ErrorText>
+              </Field.Root>
+              <Field.Root gridArea={"email"} required invalid={isEmailInvalid}>
+                <Field.Label>
+                  Email <Field.RequiredIndicator />
+                </Field.Label>
+                <Input name="email" type="email" variant="flushed" />
+                <Field.ErrorText>
+                  Une adresse mail valide est requise.
+                </Field.ErrorText>
+              </Field.Root>
+              <Field.Root gridArea={"phone"} invalid={isPhoneInvalid}>
+                <Field.Label>Téléphone</Field.Label>
+                <Input
+                  name="phone"
+                  variant="flushed"
+                  placeholder="Ex : 0123456789"
+                  _placeholder={{ fontStyle: "italic" }}
+                />
+                <Field.ErrorText textWrap={"wrap"}>
+                  Numéro de téléphone invalide.
+                </Field.ErrorText>
+              </Field.Root>
+              <Field.Root gridArea={"title"}>
+                <Field.Label>Objet</Field.Label>
+                <Input
+                  type="text"
+                  name="title"
+                  variant="flushed"
+                  placeholder='Par défaut : "Echange avec [prénom] [nom]"'
+                  _placeholder={{ fontStyle: "italic" }}
+                />
+              </Field.Root>
+              <Field.Root
+                gridArea={"message"}
+                required
+                invalid={isMessageInvalid}
+              >
+                <Field.Label>
+                  Message <Field.RequiredIndicator />
+                </Field.Label>
+                <Textarea name="message" variant="flushed" />
+                <Field.ErrorText>
+                  Il serait dommage de ne pas laisser de message !
+                </Field.ErrorText>
+              </Field.Root>
+              <Box
+                as="div"
+                className="g-recaptcha"
+                data-sitekey={process.env.RECAPTCHA_PUBLIC_KEY}
+                gridArea={"captcha"}
+              ></Box>
+              <Button
+                gridArea={"submit"}
+                w={"1/2"}
+                type="submit"
+                p={4}
+                border={"1px solid"}
+                borderColor={"primary.default"}
+                color={"primary.default"}
+                bg={"dark.lighter"}
+              >
+                Envoyer
+              </Button>
+            </Grid>
+          </Form>
+        </Flex>
+        <Flex flexDir={"column"}>
+          <Heading as="h2" variant={"secondTitle"} mb={8}>
+            Et retrouvez-moi sur...
+          </Heading>
+          <Flex alignItems={"center"} justifyContent={"center"} gap={4}>
+            <Link target="_blank" href="https://github.com/TomPillet">
+              <Button
+                p={4}
+                border={"1px solid"}
+                borderColor={"primary.default"}
+                color={"primary.default"}
+                bg={"dark.lighter"}
+              >
+                <Icon as={FaGithub} />
+              </Button>
+            </Link>
+            <Link
+              target="_blank"
+              href="https://www.linkedin.com/in/tom-pillet/"
             >
-              <Field.Label>
-                Nom <Field.RequiredIndicator />
-              </Field.Label>
-              <Input name="lastname" variant="flushed" />
-              <Field.ErrorText>Merci d{"'"}indiquer votre nom.</Field.ErrorText>
-            </Field.Root>
-            <Field.Root gridArea={"email"} required invalid={isEmailInvalid}>
-              <Field.Label>
-                Email <Field.RequiredIndicator />
-              </Field.Label>
-              <Input name="email" type="email" variant="flushed" />
-              <Field.ErrorText>
-                Une adresse mail valide est requise.
-              </Field.ErrorText>
-            </Field.Root>
-            <Field.Root gridArea={"phone"} invalid={isPhoneInvalid}>
-              <Field.Label>Téléphone</Field.Label>
-              <Input
-                name="phone"
-                variant="flushed"
-                placeholder="Format : 0123456789"
-                _placeholder={{ fontStyle: "italic" }}
-              />
-              <Field.ErrorText textWrap={"wrap"}>
-                Numéro de téléphone invalide.
-              </Field.ErrorText>
-            </Field.Root>
-            <Field.Root gridArea={"title"}>
-              <Field.Label>Objet</Field.Label>
-              <Input
-                type="text"
-                name="title"
-                variant="flushed"
-                placeholder='Par défaut : "Echange avec [prénom] [nom]"'
-                _placeholder={{ fontStyle: "italic" }}
-              />
-            </Field.Root>
-            <Field.Root
-              gridArea={"message"}
-              required
-              invalid={isMessageInvalid}
-            >
-              <Field.Label>
-                Message <Field.RequiredIndicator />
-              </Field.Label>
-              <Textarea name="message" variant="flushed" />
-              <Field.ErrorText>
-                Il serait dommage de ne pas laisser de message !
-              </Field.ErrorText>
-            </Field.Root>
-            <Box
-              as="div"
-              className="g-recaptcha"
-              data-sitekey={process.env.RECAPTCHA_PUBLIC_KEY}
-              gridArea={"captcha"}
-            ></Box>
-            <Button gridArea={"submit"} w={"1/2"} type="submit">
-              Envoyer
-            </Button>
-          </Grid>
-        </Form>
+              <Button
+                p={4}
+                border={"1px solid"}
+                borderColor={"primary.default"}
+                color={"primary.default"}
+                bg={"dark.lighter"}
+              >
+                <Icon as={FaLinkedin} />
+              </Button>
+            </Link>
+          </Flex>
+        </Flex>
       </Flex>
     </Container>
   );
