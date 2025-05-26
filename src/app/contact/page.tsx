@@ -17,6 +17,7 @@ import { toaster } from "@/components/ui/toaster";
 import { sendEmail } from "../actions/contact";
 import Form from "next/form";
 import Link from "next/link";
+import CustomButton from "@/components/ui/CustomButton";
 
 export default function Contact() {
   const loadingToasterId = useId();
@@ -170,18 +171,9 @@ export default function Contact() {
                 data-sitekey={process.env.RECAPTCHA_PUBLIC_KEY}
                 gridArea={"captcha"}
               ></Box>
-              <Button
-                gridArea={"submit"}
-                w={"1/2"}
-                type="submit"
-                p={4}
-                border={"1px solid"}
-                borderColor={"primary.default"}
-                color={"primary.default"}
-                bg={"dark.lighter"}
-              >
+              <CustomButton gridArea={"submit"} w={"1/2"} type="submit">
                 Envoyer
-              </Button>
+              </CustomButton>
             </Grid>
           </Form>
         </Flex>
@@ -191,29 +183,17 @@ export default function Contact() {
           </Heading>
           <Flex alignItems={"center"} justifyContent={"center"} gap={4}>
             <Link target="_blank" href="https://github.com/TomPillet">
-              <Button
-                p={4}
-                border={"1px solid"}
-                borderColor={"primary.default"}
-                color={"primary.default"}
-                bg={"dark.lighter"}
-              >
+              <CustomButton>
                 <Icon as={FaGithub} />
-              </Button>
+              </CustomButton>
             </Link>
             <Link
               target="_blank"
               href="https://www.linkedin.com/in/tom-pillet/"
             >
-              <Button
-                p={4}
-                border={"1px solid"}
-                borderColor={"primary.default"}
-                color={"primary.default"}
-                bg={"dark.lighter"}
-              >
+              <CustomButton>
                 <Icon as={FaLinkedin} />
-              </Button>
+              </CustomButton>
             </Link>
           </Flex>
         </Flex>

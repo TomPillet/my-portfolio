@@ -20,6 +20,7 @@ import ShinyText from "@/reactbits/text-animations/ShinyText/ShinyText";
 import Magnet from "@/reactbits/animations/Magnet/Magnet";
 import { AiOutlineCloudDownload } from "react-icons/ai";
 import { FaAngleRight } from "react-icons/fa";
+import CustomButton from "@/components/ui/CustomButton";
 
 export default function Home() {
   const keySkills = ["React", "NextJS", "Nest", "PHP", "Java"];
@@ -105,27 +106,14 @@ export default function Home() {
             <Flex w="full" justifyContent={"center"} pt={4}>
               <Link href={cvUrl} target="_blank" rel="noopener noreferrer">
                 <Magnet padding={50} disabled={false} magnetStrength={2}>
-                  <Button
-                    border={"1px solid"}
-                    borderColor={"primary.default"}
-                    borderRadius={"xl"}
-                    bg={"dark.lighter"}
-                    color={"primary.default"}
-                    px={4}
-                    py={2}
-                    transform={"scale(1.1)"}
-                    _hover={{
-                      borderColor: "primary.hover",
-                      color: "primary.hover",
-                    }}
-                  >
+                  <CustomButton py={2} transform={"scale(1.1)"}>
                     <ShinyText
                       text="Consulter le CV"
                       speed={2}
                       className={"primary-color"}
                     />
                     <Icon as={AiOutlineCloudDownload} />
-                  </Button>
+                  </CustomButton>
                 </Magnet>
               </Link>
             </Flex>
