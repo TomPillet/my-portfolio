@@ -1,9 +1,24 @@
 "use client";
 
-import { Box, Flex, Heading, Span, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  Icon,
+  Separator,
+  Span,
+  Text,
+} from "@chakra-ui/react";
+import CustomButton from "../ui/CustomButton";
+import { Tooltip } from "../ui/tooltip";
 import React from "react";
 import { Project } from "@prisma/client";
 import Image from "next/image";
+import Link from "next/link";
+import { FaHammer, FaGithub } from "react-icons/fa6";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export default function ProjetCard({
   project,
@@ -13,9 +28,11 @@ export default function ProjetCard({
   animationDelay: number;
 }) {
   return (
-    <Box
+    <Flex
       h="520px"
       w="360px"
+      bg={"dark.lighter"}
+      flexDir={"column"}
       pos={"relative"}
       boxShadow={"8px 8px 0px dark.darker"}
       rounded={"2xl"}
@@ -34,74 +51,136 @@ export default function ProjetCard({
         },
       }}
     >
-      <Flex h={"full"} w={"full"} bg={"dark.lighter"} flexDir={"column"}>
-        <Flex h={"36%"} mb={8} pos={"relative"} alignItems={"flex-end"}>
-          <Image
-            src={project?.imageUrl}
-            alt={project?.title}
-            fill
-            style={{ objectFit: "cover" }}
-          />
-          <Heading
-            pos={"relative"}
-            h={"fit"}
-            w={"fit"}
+      <Flex h={"1/3"} mb={8} pos={"relative"} alignItems={"flex-end"}>
+        <Image
+          src={project?.imageUrl}
+          alt={project?.title}
+          fill
+          style={{ objectFit: "cover" }}
+        />
+        <Heading
+          pos={"relative"}
+          h={"fit"}
+          w={"fit"}
+          overflow={"hidden"}
+          rounded={"xl"}
+          bottom={2}
+          left={4}
+          color={"light.default"}
+          fontFamily={"DM Sans"}
+          fontSize={"lg"}
+          fontWeight={"600"}
+          lineHeight={1}
+        >
+          <Flex
+            className="see-more"
+            pos="absolute"
+            width={"0%"}
+            height={"100%"}
+            bg="primary.hover"
+            left={"-10%"}
+            top={0}
+            justifyContent={"center"}
+            alignItems={"center"}
             overflow={"hidden"}
-            rounded={"xl"}
-            bottom={2}
-            left={4}
-            color={"light.default"}
-            fontFamily={"DM Sans"}
-            fontSize={"lg"}
-            fontWeight={"600"}
-            lineHeight={1}
+            transform={"skewX(-16deg)"}
+            transition={"all 0.3s"}
+            zIndex={1}
           >
-            <Flex
-              className="see-more"
-              pos="absolute"
-              width={"0%"}
-              height={"100%"}
-              bg="primary.hover"
-              left={"-10%"}
-              top={0}
-              justifyContent={"center"}
-              alignItems={"center"}
-              overflow={"hidden"}
-              transform={"skewX(-16deg)"}
-              transition={"all 0.3s"}
-              zIndex={1}
-            >
-              <Span
-                textTransform={"uppercase"}
-                textWrap={"nowrap"}
-                letterSpacing={"-1px"}
-              >
-                {project?.title}
-              </Span>
-            </Flex>
-            <Text
-              h={"fit"}
-              w={"fit"}
-              px={6}
-              py={3}
-              bg={"rgba(0,0,0,0.4)"}
-              backdropFilter={"blur(4px)"}
+            <Span
+              textTransform={"uppercase"}
+              textWrap={"nowrap"}
+              letterSpacing={"-1px"}
             >
               {project?.title}
-            </Text>
-          </Heading>
-        </Flex>
-        <Text
-          h={"36%"}
-          px={8}
-          mb={4}
-          fontSize={"1em"}
-          letterSpacing={1}
-          lineHeight={1.6}
-        >
-          {project?.shortDescription}
-        </Text>
+            </Span>
+          </Flex>
+          <Text
+            h={"fit"}
+            w={"fit"}
+            px={6}
+            py={3}
+            bg={"rgba(0,0,0,0.4)"}
+            backdropFilter={"blur(4px)"}
+          >
+            {project?.title}
+          </Text>
+        </Heading>
       </Flex>
-    </Box>
+      <Grid h={"2/3"} px={4} gridTemplateRows={"repeat(10, 1fr"}>
+        <GridItem rowSpan={1} w={"full"}>
+          <Flex flexDir={"row"} h={"full"} w={"full"} gap={2}>
+            {project?.isActive && (
+              <Flex w={8} gap={1}>
+                <Tooltip content="Projet actif">
+                  <Icon
+                    as={FaHammer}
+                    w="full"
+                    color={"primary.default"}
+                    mt={"1px"}
+                    _hover={{
+                      color: "primary.hover",
+                      cursor: "pointer",
+                    }}
+                  />
+                </Tooltip>
+                <Separator orientation="vertical" h="1/2" w="2px" />
+              </Flex>
+            )}
+            <Text ml={2} fontSize={"1em"} letterSpacing={1} lineHeight={1.6}>
+              {project?.date.toString().slice(0, 4)}
+            </Text>
+            <Separator orientation="vertical" h="1/2" w="2px" />
+            <Text fontSize={"1em"} letterSpacing={1} lineHeight={1.6}>
+              {project?.type}
+            </Text>
+            <Separator orientation="vertical" h="1/2" w="2px" />
+            {project?.etablissementId && (
+              <Text fontSize={"1em"} letterSpacing={1} lineHeight={1.6}>
+                {project?.etablissementId}
+              </Text>
+            )}
+          </Flex>
+        </GridItem>
+        <GridItem rowSpan={6} px={8}>
+          <Text mb={4} fontSize={"1em"} letterSpacing={1} lineHeight={1.6}>
+            {project?.shortDescription}
+          </Text>
+        </GridItem>
+        <GridItem rowSpan={3} px={8}>
+          <Flex
+            alignItems={"center"}
+            justifyContent={
+              project?.hostUrl && project?.gitUrl ? "space-between" : "center"
+            }
+          >
+            {project?.hostUrl && (
+              <Link href={project?.hostUrl}>
+                <Icon
+                  as={FaExternalLinkAlt}
+                  w={8}
+                  h={8}
+                  color={"primary.default"}
+                  transition={"all 0.2s ease-in-out"}
+                  _hover={{ color: "primary.hover", w: 10, h: 10 }}
+                />
+              </Link>
+            )}
+            {project?.gitUrl && (
+              <Link href={project?.gitUrl}>
+                <Icon
+                  as={FaGithub}
+                  w={10}
+                  h={10}
+                  color={"primary.default"}
+                  transition={"all 0.2s ease-in-out"}
+                  _hover={{ color: "primary.hover", w: 12, h: 12 }}
+                />
+              </Link>
+            )}
+          </Flex>
+        </GridItem>
+      </Grid>
+    </Flex>
   );
 }
