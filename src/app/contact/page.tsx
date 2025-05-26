@@ -17,6 +17,11 @@ import { sendEmail } from "../actions/contact";
 
 export default function Contact() {
   const loadingToasterId = useId();
+  const [isFirstnameInvalid, setIsFirstnameInvalid] = React.useState(false);
+  const [isLastnameInvalid, setIsLastnameInvalid] = React.useState(false);
+  const [isEmailInvalid, setIsEmailInvalid] = React.useState(false);
+  const [isPhoneInvalid, setIsPhoneInvalid] = React.useState(false);
+  const [isMessageInvalid, setIsMessageInvalid] = React.useState(false);
 
   const handleSendEmail = async (formData: FormData) => {
     toaster.loading({
@@ -25,13 +30,41 @@ export default function Contact() {
     });
     await sendEmail(formData).then((res) => {
       toaster.remove(loadingToasterId);
-      toaster.create({
-        title: res.success
-          ? "Message bien envoyé !"
-          : "Erreur lors de l'envoi du message !",
-        description: res.message,
-        type: res.success ? "success" : "error",
-      });
+      if (res.success) {
+        toaster.create({
+          title: "Message bien envoyé !",
+          description: res.message,
+          type: "success",
+        });
+      } else {
+        if (res.fields) {
+          for (const field of res.fields) {
+            switch (field) {
+              case "firstname":
+                setIsFirstnameInvalid(true);
+                break;
+              case "lastname":
+                setIsLastnameInvalid(true);
+                break;
+              case "email":
+                setIsEmailInvalid(true);
+                break;
+              case "phone":
+                setIsPhoneInvalid(true);
+                break;
+              case "message":
+                setIsMessageInvalid(true);
+                break;
+            }
+          }
+        }
+
+        toaster.create({
+          title: "Erreur lors de l'envoi du message !",
+          description: res.message,
+          type: "error",
+        });
+      }
     });
   };
 
@@ -49,12 +82,17 @@ export default function Contact() {
         </Heading>
         <Form action={handleSendEmail}>
           <Grid
-            gridTemplateAreas={`"firstname lastname" "entreprise entreprise" "email phone" "title title" "message message" "captcha captcha" "submit submit"`}
+            gridColumn={"1fr 1fr"}
+            gridTemplateAreas={`"firstname lastname" "email phone" "title title" "message message" "captcha captcha" "submit submit"`}
             gap={6}
             p={6}
             justifyItems={"center"}
           >
-            <Field.Root gridArea={"firstname"} required>
+            <Field.Root
+              gridArea={"firstname"}
+              required
+              invalid={isFirstnameInvalid}
+            >
               <Field.Label>
                 Prénom <Field.RequiredIndicator />
               </Field.Label>
@@ -63,18 +101,18 @@ export default function Contact() {
                 Merci d{"'"}indiquer votre prénom.
               </Field.ErrorText>
             </Field.Root>
-            <Field.Root gridArea={"lastname"} required>
+            <Field.Root
+              gridArea={"lastname"}
+              required
+              invalid={isLastnameInvalid}
+            >
               <Field.Label>
                 Nom <Field.RequiredIndicator />
               </Field.Label>
               <Input name="lastname" variant="flushed" />
               <Field.ErrorText>Merci d{"'"}indiquer votre nom.</Field.ErrorText>
             </Field.Root>
-            <Field.Root gridArea={"entreprise"}>
-              <Field.Label>Entreprise </Field.Label>
-              <Input name="entreprise" variant="flushed" />
-            </Field.Root>
-            <Field.Root gridArea={"email"} required>
+            <Field.Root gridArea={"email"} required invalid={isEmailInvalid}>
               <Field.Label>
                 Email <Field.RequiredIndicator />
               </Field.Label>
@@ -83,18 +121,33 @@ export default function Contact() {
                 Une adresse mail valide est requise.
               </Field.ErrorText>
             </Field.Root>
-            <Field.Root gridArea={"phone"}>
+            <Field.Root gridArea={"phone"} invalid={isPhoneInvalid}>
               <Field.Label>Téléphone</Field.Label>
-              <Input name="phone" variant="flushed" />
+              <Input
+                name="phone"
+                variant="flushed"
+                placeholder="Format : 0123456789"
+                _placeholder={{ fontStyle: "italic" }}
+              />
+              <Field.ErrorText textWrap={"wrap"}>
+                Numéro de téléphone invalide.
+              </Field.ErrorText>
             </Field.Root>
-            <Field.Root gridArea={"title"} required>
-              <Field.Label>
-                Objet <Field.RequiredIndicator />
-              </Field.Label>
-              <Input name="title" variant="flushed" />
-              <Field.ErrorText>Un objet de message est requis.</Field.ErrorText>
+            <Field.Root gridArea={"title"}>
+              <Field.Label>Objet</Field.Label>
+              <Input
+                type="text"
+                name="title"
+                variant="flushed"
+                placeholder='Par défaut : "Echange avec [prénom] [nom]"'
+                _placeholder={{ fontStyle: "italic" }}
+              />
             </Field.Root>
-            <Field.Root gridArea={"message"} required>
+            <Field.Root
+              gridArea={"message"}
+              required
+              invalid={isMessageInvalid}
+            >
               <Field.Label>
                 Message <Field.RequiredIndicator />
               </Field.Label>

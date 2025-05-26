@@ -1,5 +1,6 @@
 "use server";
 import nodemailer from "nodemailer";
+import { z } from "zod";
 
 interface RecaptchaResponse {
   success: boolean;
@@ -11,7 +12,7 @@ interface RecaptchaResponse {
 async function verifyRecaptcha(token: string) {
   const secretKey = process.env.RECAPTCHA_SECRET_KEY;
   if (!secretKey) {
-    console.error("RECAPTCHA_SECRET_KEY n'est pas définie");
+    console.log("RECAPTCHA_SECRET_KEY n'est pas définie");
     return false;
   }
 
@@ -30,14 +31,24 @@ async function verifyRecaptcha(token: string) {
     const data: RecaptchaResponse = await response.json();
     return data.success;
   } catch (error) {
-    console.error("Erreur lors de la vérification reCAPTCHA:", error);
+    console.log("Erreur lors de la vérification reCAPTCHA:", error);
     return false;
   }
 }
 
+const EmailSchema = z.object({
+  firstname: z.string(),
+  lastname: z.string(),
+  email: z.string().email(),
+  phone: z.nullable(z.string().regex(/^0[1-9]\d{8}$/)),
+  title: z.nullable(z.string()),
+  message: z.string(),
+});
+
 interface sendEmailResponse {
   success: boolean;
   message: string;
+  fields?: (string | number)[];
 }
 
 export async function sendEmail(
@@ -46,22 +57,37 @@ export async function sendEmail(
   try {
     const firstname = formData.get("firstname") as string;
     const lastname = formData.get("lastname") as string;
-    const entreprise = formData.get("entreprise") as string;
     const email = formData.get("email") as string;
-    const phone = formData.get("phone") as string;
-    const title = formData.get("title") as string;
+    const phone = (formData.get("phone") as string)?.trim() || null;
+    const title =
+      (formData.get("title") as string)?.trim() ||
+      `Echange avec ${firstname} ${lastname}`;
     const message = formData.get("message") as string;
     const captcha = formData.get("g-recaptcha-response") as string;
 
-    if (!captcha) {
-      return { success: false, message: "Veuillez compléter le reCAPTCHA." };
-    }
-
-    const isCaptchaValid = await verifyRecaptcha(captcha);
-    if (!isCaptchaValid) {
+    if (!(await verifyRecaptcha(captcha))) {
       return {
         success: false,
         message: "Le reCAPTCHA est invalide. Veuillez réessayer.",
+      };
+    }
+
+    const validation = EmailSchema.safeParse({
+      firstname,
+      lastname,
+      email,
+      phone,
+      title,
+      message,
+    });
+
+    if (!validation.success) {
+      console.log(validation.error);
+      const fields = validation.error.issues.map((issue) => issue.path[0]);
+      return {
+        success: false,
+        message: "Certains champs ont été mal rempli.",
+        fields: fields,
       };
     }
 
@@ -76,17 +102,15 @@ export async function sendEmail(
     });
 
     await transporter.sendMail({
-      from: email,
+      from: process.env.MAIL_USER,
       to: process.env.MAIL_TO,
-      subject: title,
+      subject: title ?? `Echange avec ${firstname} ${lastname}`,
       text: `Nom: ${lastname}\nEmail: ${email}\nMessage: ${message}`,
       html: `
-            <h3>Contact Form Submission</h3>
             <p><strong>Nom:</strong> ${lastname}</p>
             <p><strong>Prénom:</strong> ${firstname}</p>
-            ${entreprise.length > 0 ? `<p><strong>Entreprise:</strong> ${entreprise}</p>` : ""}
             <p><strong>Email:</strong> ${email}</p>
-            ${phone.length > 0 ? `<p><strong>Téléphone:</strong> ${phone}</p>` : ""}
+            ${phone ? `<p><strong>Téléphone:</strong> ${phone}</p>` : ""}
             <p><strong>Message:</strong> ${message}</p>
           `,
     });
@@ -94,10 +118,13 @@ export async function sendEmail(
     return {
       success: true,
       message:
-        "L'email a été envoyé avec succès. Vous aurez une réponse dans les plus brefs delais.",
+        "L'email a été envoyé avec succès. Vous aurez une réponse dans les plus brefs delais !",
     };
   } catch (error) {
-    console.error("Email error:", error);
-    return { success: false, message: "Erreur lors de l'envoi de l'email." };
+    console.log("Email error:", error);
+    return {
+      success: false,
+      message: "Erreur lors de l'envoi de l'email.",
+    };
   }
 }
