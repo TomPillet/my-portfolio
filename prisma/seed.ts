@@ -48,7 +48,7 @@ async function createSkillsOnProjectRecords(
   for (const skillSlug of skillsSlugs) {
     const skillId = skillIdBySlug[skillSlug];
     if (skillId === undefined) continue;
-    await prisma.skillsOnProjects.upsert({
+    await prisma.projectsOnSkills.upsert({
       where: {
         projectId_skillId: { projectId: projectId, skillId: skillId },
       },

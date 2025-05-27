@@ -47,7 +47,7 @@ model Project {
     etablissement       Etablissement?  @relation(fields: [etablissementId], references: [id])
     etablissementId     Int?         
  
-    skills              SkillsOnProjects[]
+    skills              ProjectsOnSkills[]
 }
 
 enum ProjectType {
@@ -66,7 +66,7 @@ model Skill {
     levelId     Int
 
     categories  CategoriesOnSkills[]
-    projects    SkillsOnProjects[]
+    projects    ProjectsOnSkills[]
 }
 
 model SkillLevel {
@@ -85,7 +85,7 @@ model CategoriesOnSkills {
     @@id([categoryId, skillId])
 }
 
-model SkillsOnProjects {
+model ProjectsOnSkills {
     project     Project     @relation(fields: [projectId], references: [id])
     projectId   Int
     skill       Skill       @relation(fields: [skillId], references: [id])
