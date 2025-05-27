@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  Box,
   Flex,
   Grid,
   GridItem,
@@ -11,14 +10,14 @@ import {
   Span,
   Text,
 } from "@chakra-ui/react";
-import CustomButton from "../ui/CustomButton";
 import { Tooltip } from "../ui/tooltip";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Project } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import { FaHammer, FaGithub } from "react-icons/fa6";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { getEtablissementById } from "@/app/services/etablissementsService";
 
 export default function ProjetCard({
   project,
@@ -27,6 +26,18 @@ export default function ProjetCard({
   project: Project;
   animationDelay: number;
 }) {
+  const [etablissementName, setEtablissementName] = useState<string>("");
+
+  useEffect(() => {
+    if (project?.etablissementId) {
+      getEtablissementById(project?.etablissementId)
+        .then((res) => {
+          setEtablissementName(res.name);
+        })
+        .catch(console.error);
+    }
+  });
+
   return (
     <Flex
       h="520px"
@@ -137,7 +148,7 @@ export default function ProjetCard({
             <Separator orientation="vertical" h="1/2" w="2px" />
             {project?.etablissementId && (
               <Text fontSize={"1em"} letterSpacing={1} lineHeight={1.6}>
-                {project?.etablissementId}
+                {etablissementName}
               </Text>
             )}
           </Flex>
