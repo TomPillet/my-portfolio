@@ -101,7 +101,7 @@ export function CompetenceCard({
               textDecoration={"underline"}
               w={"full"}
             >
-              Projets :
+              Projets associés :
             </Heading>
             <Flex flexWrap={"wrap"} lineHeight={1.1}>
               {projets?.map((projet, index) => {
