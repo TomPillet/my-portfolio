@@ -166,7 +166,7 @@ export default function ProjetCard({
             }
           >
             {project?.hostUrl && (
-              <Link href={project?.hostUrl}>
+              <Link href={project?.hostUrl} target="_blank">
                 <Icon
                   as={FaExternalLinkAlt}
                   w={8}
@@ -178,7 +178,7 @@ export default function ProjetCard({
               </Link>
             )}
             {project?.gitUrl && (
-              <Link href={project?.gitUrl}>
+              <Link href={project?.gitUrl} target="_blank">
                 <Icon
                   as={FaGithub}
                   w={10}
