@@ -1,22 +1,28 @@
 "use client";
 import { Container, Flex, Grid, GridItem, Heading } from "@chakra-ui/react";
-import React, { useEffect } from "react";
-import { Skill, SkillLevel } from "@prisma/client";
+import React, { useEffect, useState } from "react";
+import { Category, Project, Skill, SkillLevel } from "@prisma/client";
 import TiltedCard from "@/reactbits/components/TiltedCard/TiltedCard";
 import { CompetenceCard } from "@/components/layout/CompetenceCard";
 import { getSkills } from "../services/skillsService";
 import { getSkillLevelById } from "@/app/services/skillLevelService";
+import { getCategoriesBySkills } from "../actions/categoriesOnSkills";
+import { getProjectsBySkills } from "../actions/projectsOnSkills";
 
 const competenceCardHeight = "260px";
 const competenceCardWidth = "240px";
 
 export default function Competences() {
-  const [skills, setSkills] = React.useState<Skill[]>([]);
-  const [skillLevels, setSkillLevels] = React.useState<
-    Record<number, SkillLevel>
+  const [categoriesBySkills, setCategoriesBySkills] = useState<
+    Record<number, Category[]>
   >({});
-  const [selectedLevel, setSelectedLevel] = React.useState<string | null>(null);
-  const [selectedType, setSelectedType] = React.useState<string | null>(null);
+  const [projectsBySkills, setProjectsBySkills] = useState<
+    Record<number, Project[]>
+  >({});
+  const [skills, setSkills] = useState<Skill[]>([]);
+  const [skillsLevels, setSkillsLevels] = useState<Record<number, SkillLevel>>(
+    {}
+  );
 
   useEffect(() => {
     getSkills()
@@ -25,13 +31,31 @@ export default function Competences() {
   }, []);
 
   useEffect(() => {
+    if (skills.length === 0) return;
+
+    const skillIds = skills.map((skill) => skill.id);
+
+    getCategoriesBySkills(skillIds)
+      .then((res: Record<number, Category[]>) => {
+        setCategoriesBySkills(res);
+      })
+      .catch(console.error);
+
+    getProjectsBySkills(skillIds)
+      .then((res: Record<number, Project[]>) => {
+        setProjectsBySkills(res);
+      })
+      .catch(console.error);
+  }, [skills]);
+
+  useEffect(() => {
     const levelIds = [...new Set(skills.map((skill) => skill.levelId))];
 
     levelIds.forEach((levelId) => {
-      if (!skillLevels[levelId]) {
+      if (!skillsLevels[levelId]) {
         getSkillLevelById(levelId)
           .then((res) => {
-            setSkillLevels((prev) => ({
+            setSkillsLevels((prev) => ({
               ...prev,
               [levelId]: res,
             }));
@@ -39,7 +63,7 @@ export default function Competences() {
           .catch(console.error);
       }
     });
-  }, [skills, skillLevels]);
+  }, [skills, skillsLevels]);
 
   return (
     <Container maxW={"7xl"}>
@@ -82,7 +106,9 @@ export default function Competences() {
                       width={competenceCardWidth}
                       height={competenceCardHeight}
                       skill={skill}
-                      skillLevel={skillLevels[skill.levelId]}
+                      skillLevel={skillsLevels[skill.levelId]}
+                      categories={categoriesBySkills[skill.id]}
+                      projets={projectsBySkills[skill.id]}
                     />
                   }
                 ></TiltedCard>
