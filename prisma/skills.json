@@ -49,6 +49,13 @@
     "categories": ["front"]
   },
   {
+    "slug": "vuejs",
+    "title": "VueJS",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
+    "level": "junior",
+    "categories": ["front"]
+  },
+  {
     "slug": "react",
     "title": "React",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",

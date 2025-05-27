@@ -62,7 +62,7 @@ export default function ProjetCard({
         },
       }}
     >
-      <Flex h={"1/3"} mb={8} pos={"relative"} alignItems={"flex-end"}>
+      <Flex h={"2/5"} mb={8} pos={"relative"} alignItems={"flex-end"}>
         <Image
           src={project?.imageUrl}
           alt={project?.title}
@@ -118,7 +118,7 @@ export default function ProjetCard({
           </Text>
         </Heading>
       </Flex>
-      <Grid h={"2/3"} px={4} gridTemplateRows={"repeat(10, 1fr"}>
+      <Grid h={"3/5"} px={4} gridTemplateRows={"repeat(10, 1fr"}>
         <GridItem rowSpan={1} w={"full"}>
           <Flex flexDir={"row"} h={"full"} w={"full"} gap={2}>
             {project?.isActive && (

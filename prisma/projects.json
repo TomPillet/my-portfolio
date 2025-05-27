@@ -17,7 +17,7 @@
     "hostUrl": "",
     "date": "2025",
     "type": "UNIV",
-    "etablissement": "",
+    "etablissement": "iscod",
     "skills": []
   },
   {
@@ -62,5 +62,91 @@
     "type": "PERSO",
     "etablissement": "",
     "skills": ["godot"]
+  },
+  {
+    "slug": "infras-map",
+    "title": "Infras Map",
+    "description": {
+      "sections": [
+        {
+          "title": "",
+          "content": "",
+          "imageUrl": ""
+        }
+      ]
+    },
+    "shortDescription": "Projet React utilisant la librairie Mapbox pour créer/éditer un annuaire de coordonnées d'entreprises, en LocalStorage.",
+    "imageUrl": "/projects/infras-map.jpg",
+    "gitUrl": "https://github.com/TomPillet/infras-map",
+    "hostUrl": "",
+    "date": "2023",
+    "type": "PERSO",
+    "etablissement": "",
+    "skills": ["react", "typescript", "tailwind"]
+  },
+  {
+    "slug": "newsletter-sign-up",
+    "title": "Newsletter sign-up",
+    "description": {
+      "sections": [
+        {
+          "title": "",
+          "content": "",
+          "imageUrl": ""
+        }
+      ]
+    },
+    "shortDescription": "Design d'un formulaire d'inscription à une newsletter, en pur HTML/CSS/JS, sur la base d'une maquette de Frontend Mentor.",
+    "imageUrl": "/projects/newsletter-sign-up.jpg",
+    "gitUrl": "https://github.com/TomPillet/design_newsletter-sign-up",
+    "hostUrl": "",
+    "date": "2023",
+    "type": "PERSO",
+    "etablissement": "",
+    "skills": ["design", "javascript"]
+  },
+  {
+    "slug": "pal-pav",
+    "title": "PalPav",
+    "description": {
+      "sections": [
+        {
+          "title": "",
+          "content": "",
+          "imageUrl": ""
+        }
+      ]
+    },
+    "shortDescription": "Plateforme pour organiser ses livres/films/séries à lire/voir, en Laravel et Vue.js. Projet en pause mais pas abandonné !",
+    "imageUrl": "/projects/pal-pav.jpg",
+    "gitUrl": "https://github.com/TomPillet/pal-pav",
+    "hostUrl": "",
+    "date": "2023",
+    "isActive": true,
+    "type": "PERSO",
+    "etablissement": "",
+    "skills": ["laravel", "vuejs", "php", "tailwind"]
+  },
+  {
+    "slug": "audit-architecture-logicielle",
+    "title": "Audit architecture logicielle",
+    "description": {
+      "sections": [
+        {
+          "title": "",
+          "content": "",
+          "imageUrl": ""
+        }
+      ]
+    },
+    "shortDescription": "Rédaction de documents d'audit (route de migration, étude de solutions,...) d'une architecture logicielle d'un complex scolaire.",
+    "imageUrl": "/projects/edc-archi-logicielle.png",
+    "gitUrl": "",
+    "hostUrl": "https://drive.google.com/drive/folders/1znF5SLMi0ZGtIqfkADxVAjjvZsfArVgr?usp=sharing",
+    "date": "2025",
+    "isActive": true,
+    "type": "UNIV",
+    "etablissement": "iscod",
+    "skills": []
   }
 ]
