@@ -45,6 +45,15 @@ const EmailSchema = z.object({
   message: z.string(),
 });
 
+export interface ContactForm {
+  firstname: string;
+  lastname: string;
+  email: string;
+  phone: string;
+  title: string;
+  message: string;
+}
+
 interface sendEmailResponse {
   success: boolean;
   message: string;
@@ -52,20 +61,11 @@ interface sendEmailResponse {
 }
 
 export async function sendEmail(
-  formData: FormData
+  data: ContactForm,
+  captchaToken: string
 ): Promise<sendEmailResponse> {
   try {
-    const firstname = formData.get("firstname") as string;
-    const lastname = formData.get("lastname") as string;
-    const email = formData.get("email") as string;
-    const phone = (formData.get("phone") as string)?.trim() || null;
-    const title =
-      (formData.get("title") as string)?.trim() ||
-      `Echange avec ${firstname} ${lastname}`;
-    const message = formData.get("message") as string;
-    const captcha = formData.get("g-recaptcha-response") as string;
-
-    if (!(await verifyRecaptcha(captcha))) {
+    if (!(await verifyRecaptcha(captchaToken))) {
       return {
         success: false,
         message: "Le reCAPTCHA est invalide. Veuillez réessayer.",
@@ -73,16 +73,15 @@ export async function sendEmail(
     }
 
     const validation = EmailSchema.safeParse({
-      firstname,
-      lastname,
-      email,
-      phone,
-      title,
-      message,
+      firstname: data.firstname,
+      lastname: data.lastname,
+      email: data.email,
+      phone: data.phone,
+      title: data.title,
+      message: data.message,
     });
 
     if (!validation.success) {
-      console.log(validation.error);
       const fields = validation.error.issues.map((issue) => issue.path[0]);
       return {
         success: false,
@@ -104,14 +103,14 @@ export async function sendEmail(
     await transporter.sendMail({
       from: process.env.MAIL_USER,
       to: process.env.MAIL_TO,
-      subject: title ?? `Echange avec ${firstname} ${lastname}`,
-      text: `Nom: ${lastname}\nEmail: ${email}\nMessage: ${message}`,
+      subject: data.title ?? `Echange avec ${data.firstname} ${data.lastname}`,
+      text: `Nom: ${data.lastname}\nEmail: ${data.email}\nMessage: ${data.message}`,
       html: `
-            <p><strong>Nom:</strong> ${lastname}</p>
-            <p><strong>Prénom:</strong> ${firstname}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            ${phone ? `<p><strong>Téléphone:</strong> ${phone}</p>` : ""}
-            <p><strong>Message:</strong> ${message}</p>
+            <p><strong>Nom:</strong> ${data.lastname}</p>
+            <p><strong>Prénom:</strong> ${data.firstname}</p>
+            <p><strong>Email:</strong> ${data.email}</p>
+            ${data.phone ? `<p><strong>Téléphone:</strong> ${data.phone}</p>` : ""}
+            <p><strong>Message:</strong> ${data.message}</p>
           `,
     });
 

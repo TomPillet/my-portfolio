@@ -1,8 +1,8 @@
 "use client";
-import React, { useId } from "react";
+import React, { useId, useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import {
   Box,
-  Button,
   Container,
   Field,
   Flex,
@@ -14,25 +14,66 @@ import {
 } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { toaster } from "@/components/ui/toaster";
-import { sendEmail } from "../actions/contact";
+import { ContactForm, sendEmail } from "../actions/contact";
 import Form from "next/form";
 import Link from "next/link";
 import CustomButton from "@/components/ui/CustomButton";
 
 export default function Contact() {
   const loadingToasterId = useId();
-  const [isFirstnameInvalid, setIsFirstnameInvalid] = React.useState(false);
-  const [isLastnameInvalid, setIsLastnameInvalid] = React.useState(false);
-  const [isEmailInvalid, setIsEmailInvalid] = React.useState(false);
-  const [isPhoneInvalid, setIsPhoneInvalid] = React.useState(false);
-  const [isMessageInvalid, setIsMessageInvalid] = React.useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [invalidFields, setInvalidFields] = useState<Set<string>>(new Set());
+  const [savedFormData, setSavedFormData] = useState<ContactForm>({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    title: "",
+    message: "",
+  });
+
+  const isFieldInvalid = (field: string) => invalidFields.has(field);
 
   const handleSendEmail = async (formData: FormData) => {
+    const { firstname, lastname, email, phone, title, message, captcha } =
+      Object.fromEntries(
+        [
+          "firstname",
+          "lastname",
+          "email",
+          "phone",
+          "title",
+          "message",
+          "g-recaptcha-response",
+        ].map((key) => [
+          key === "g-recaptcha-response" ? "captcha" : key,
+          formData.get(key) as string,
+        ])
+      ) as Record<string, string>;
+
+    setSavedFormData({
+      firstname,
+      lastname,
+      email,
+      phone,
+      title,
+      message,
+    });
+
+    if (!captcha) {
+      toaster.create({
+        title: "Impossible d'envoyer le message !",
+        description: "Veuillez valider le reCAPTCHA.",
+        type: "error",
+      });
+      return;
+    }
+
     toaster.loading({
       id: loadingToasterId,
       title: "Le message est en cours d'envoi...",
     });
-    await sendEmail(formData).then((res) => {
+    await sendEmail(savedFormData, captcha).then((res) => {
       toaster.remove(loadingToasterId);
       if (res.success) {
         toaster.create({
@@ -40,29 +81,18 @@ export default function Contact() {
           description: res.message,
           type: "success",
         });
+        setSavedFormData({
+          firstname: "",
+          lastname: "",
+          email: "",
+          phone: "",
+          title: "",
+          message: "",
+        });
       } else {
         if (res.fields) {
-          for (const field of res.fields) {
-            switch (field) {
-              case "firstname":
-                setIsFirstnameInvalid(true);
-                break;
-              case "lastname":
-                setIsLastnameInvalid(true);
-                break;
-              case "email":
-                setIsEmailInvalid(true);
-                break;
-              case "phone":
-                setIsPhoneInvalid(true);
-                break;
-              case "message":
-                setIsMessageInvalid(true);
-                break;
-            }
-          }
+          setInvalidFields(new Set(res.fields.toString()));
         }
-
         toaster.create({
           title: "Erreur lors de l'envoi du message !",
           description: res.message,
@@ -98,12 +128,16 @@ export default function Contact() {
               <Field.Root
                 gridArea={"firstname"}
                 required
-                invalid={isFirstnameInvalid}
+                invalid={isFieldInvalid("firstname")}
               >
                 <Field.Label>
                   Prénom <Field.RequiredIndicator />
                 </Field.Label>
-                <Input name="firstname" variant="flushed" />
+                <Input
+                  name="firstname"
+                  variant="flushed"
+                  defaultValue={savedFormData.firstname}
+                />
                 <Field.ErrorText>
                   Merci d{"'"}indiquer votre prénom.
                 </Field.ErrorText>
@@ -111,30 +145,44 @@ export default function Contact() {
               <Field.Root
                 gridArea={"lastname"}
                 required
-                invalid={isLastnameInvalid}
+                invalid={isFieldInvalid("lastname")}
               >
                 <Field.Label>
                   Nom <Field.RequiredIndicator />
                 </Field.Label>
-                <Input name="lastname" variant="flushed" />
+                <Input
+                  name="lastname"
+                  variant="flushed"
+                  defaultValue={savedFormData.lastname}
+                />
                 <Field.ErrorText>
                   Merci d{"'"}indiquer votre nom.
                 </Field.ErrorText>
               </Field.Root>
-              <Field.Root gridArea={"email"} required invalid={isEmailInvalid}>
+              <Field.Root
+                gridArea={"email"}
+                required
+                invalid={isFieldInvalid("email")}
+              >
                 <Field.Label>
                   Email <Field.RequiredIndicator />
                 </Field.Label>
-                <Input name="email" type="email" variant="flushed" />
+                <Input
+                  name="email"
+                  type="email"
+                  variant="flushed"
+                  defaultValue={savedFormData.email}
+                />
                 <Field.ErrorText>
                   Une adresse mail valide est requise.
                 </Field.ErrorText>
               </Field.Root>
-              <Field.Root gridArea={"phone"} invalid={isPhoneInvalid}>
+              <Field.Root gridArea={"phone"} invalid={isFieldInvalid("phone")}>
                 <Field.Label>Téléphone</Field.Label>
                 <Input
                   name="phone"
                   variant="flushed"
+                  defaultValue={savedFormData.phone}
                   placeholder="Ex : 0123456789"
                   _placeholder={{ fontStyle: "italic" }}
                 />
@@ -148,6 +196,7 @@ export default function Contact() {
                   type="text"
                   name="title"
                   variant="flushed"
+                  defaultValue={savedFormData.title}
                   placeholder='Par défaut : "Echange avec [prénom] [nom]"'
                   _placeholder={{ fontStyle: "italic" }}
                 />
@@ -155,22 +204,26 @@ export default function Contact() {
               <Field.Root
                 gridArea={"message"}
                 required
-                invalid={isMessageInvalid}
+                invalid={isFieldInvalid("message")}
               >
                 <Field.Label>
                   Message <Field.RequiredIndicator />
                 </Field.Label>
-                <Textarea name="message" variant="flushed" />
+                <Textarea
+                  name="message"
+                  variant="flushed"
+                  defaultValue={savedFormData.message}
+                />
                 <Field.ErrorText>
                   Il serait dommage de ne pas laisser de message !
                 </Field.ErrorText>
               </Field.Root>
-              <Box
-                as="div"
-                className="g-recaptcha"
-                data-sitekey={process.env.RECAPTCHA_PUBLIC_KEY}
-                gridArea={"captcha"}
-              ></Box>
+              <Box gridArea={"captcha"}>
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={process.env.RECAPTCHA_PUBLIC_KEY! as string}
+                />
+              </Box>
               <CustomButton gridArea={"submit"} w={"1/2"} type="submit">
                 Envoyer
               </CustomButton>
