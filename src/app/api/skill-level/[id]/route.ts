@@ -4,9 +4,8 @@ export async function GET(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const { id } = await params;
-
   try {
+    const { id } = await params;
     let result;
     result = await prisma.skillLevel.findUnique({
       where: {
