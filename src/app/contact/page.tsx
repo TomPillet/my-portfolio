@@ -105,7 +105,7 @@ export default function Contact() {
   return (
     <Container maxW="7xl">
       <Flex
-        py={"120px"}
+        py={{ lg: "120px", base: "100px" }}
         minH="100dvh"
         w="full"
         justifyContent="center"
@@ -114,7 +114,7 @@ export default function Contact() {
         gap={8}
       >
         <Flex flexDir={"column"}>
-          <Heading as="h1" variant={"mainTitle"} mb={8}>
+          <Heading as="h1" variant={"mainTitle"} mb={{ md: 8, base: 4 }}>
             Contactez-moi
           </Heading>
           <Form action={handleSendEmail}>

@@ -5,16 +5,18 @@ export const headingRecipe = defineRecipe({
     variant: {
       mainTitle: {
         color: "light.default",
-        fontSize: "6xl",
+        fontSize: { md: "6xl", sm: "5xl", base: "4xl" },
         fontWeight: "700",
         lineHeight: "1",
+        textAlign: "center",
         textTransform: "uppercase",
       },
       secondTitle: {
         color: "light.default",
-        fontSize: "4xl",
+        fontSize: { md: "4xl", base: "3xl" },
         fontWeight: "700",
         lineHeight: "1",
+        textAlign: "center",
         textTransform: "uppercase",
       },
       skinnyTitle: {

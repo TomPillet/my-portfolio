@@ -18,11 +18,12 @@ export default function Projets() {
 
   return (
     <Container maxW={"7xl"}>
-      <Flex py={"120px"} w="full" flexDir={"column"}>
+      <Flex py={{ lg: "120px", base: "100px" }} w="full" flexDir={"column"}>
         <Flex
+          flexDir={{ xl: "row", base: "column" }}
           w="full"
           color={"light.default"}
-          fontSize={"6xl"}
+          fontSize={{ md: "6xl", sm: "5xl", base: "4xl" }}
           fontWeight={"700"}
           lineHeight={2}
           textTransform={"uppercase"}
@@ -31,7 +32,13 @@ export default function Projets() {
           justifyContent={"center"}
           gap={2}
         >
-          <Heading as="h1" h="fit" w={"1/3"} pb={1} variant={"mainTitle"}>
+          <Heading
+            as="h1"
+            h="fit"
+            w={{ xl: "1/3", base: "full" }}
+            pb={1}
+            variant={"mainTitle"}
+          >
             Mes projets
           </Heading>
           <Box

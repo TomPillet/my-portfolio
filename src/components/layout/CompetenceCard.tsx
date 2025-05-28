@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Category, Project, Skill, SkillLevel } from "@prisma/client";
 import Image from "next/image";
 import { Box, Flex, Heading, Highlight, Text } from "@chakra-ui/react";
 import Link from "next/link";
-import { getCategories } from "@/app/services/categoriesService";
 
 interface CompetenceCardProps {
   width: string;
@@ -66,17 +65,22 @@ export function CompetenceCard({
         zIndex={2}
         flexDir={"column"}
         justifyContent={"space-between"}
-        px={4}
-        py={8}
+        px={{ sm: 4, base: 2 }}
+        py={{ lg: 8, base: 4 }}
       >
         <Flex w="full" flexDir={"column"} mb={0}>
           <Flex w={"full"}>
-            <Heading w={"4/5"} as="h2" fontSize={"2xl"}>
+            <Heading
+              w={"4/5"}
+              as="h2"
+              fontSize={{ lg: "2xl", sm: "xl", base: "lg" }}
+            >
               {skill?.title}
             </Heading>
           </Flex>
           <Text
             w={"full"}
+            fontSize={{ lg: "md", base: "xs" }}
             fontStyle={"italic"}
             textTransform={"lowercase"}
             opacity={0}
@@ -96,7 +100,7 @@ export function CompetenceCard({
           >
             <Heading
               as="h3"
-              fontSize={"lg"}
+              fontSize={{ lg: "lg", base: "sm" }}
               lineHeight={1.2}
               textDecoration={"underline"}
               w={"full"}
@@ -110,6 +114,7 @@ export function CompetenceCard({
                     key={index}
                     color={"dark.default"}
                     mr={1}
+                    fontSize={{ lg: "lg", base: "xs" }}
                     letterSpacing={"-1px"}
                     transition={"all 0.2s ease-in-out"}
                     _hover={{
@@ -131,6 +136,7 @@ export function CompetenceCard({
             styles={{
               px: "1",
               bg: "skills." + skillLevel.slug,
+              fontSize: { lg: "xl", base: "sm" },
               rounded: "md",
               w: "fit",
             }}

@@ -31,6 +31,7 @@ export default function Home() {
     <Container maxW="7xl">
       <Flex
         minH="100dvh"
+        py={{ lg: "120px", base: "100px" }}
         w="full"
         justifyContent="center"
         alignItems={"center"}
@@ -38,28 +39,61 @@ export default function Home() {
         gap={16}
       >
         <Grid
-          gridTemplateAreas={`"title image" "desc image" "links links"`}
+          gridTemplateAreas={{
+            lg: `"title image" "desc image" "links links"`,
+            base: `"title" "desc" "image" "links"`,
+          }}
           w="full"
-          gapY={4}
+          gapY={{ lg: 4, base: 10 }}
           px={4}
         >
-          <GridItem gridArea={"title"} w={"2xl"}>
-            <Flex flexDir={"column"} w={"fit"}>
+          <GridItem
+            gridArea={"title"}
+            maxW={"2xl"}
+            justifySelf={{ lg: "flex-start", base: "center" }}
+          >
+            <Flex flexDir={"column"} w={"fit"} m={"auto"}>
               <Heading as="h1" variant={"mainTitle"}>
                 Tom PILLET-GAULON
               </Heading>
-              <Heading as="h2" variant={"skinnyTitle"} pl={2}>
+              <Heading
+                as="h2"
+                variant={"skinnyTitle"}
+                pl={2}
+                m={{ lg: "0", base: "auto" }}
+                textAlign={{ lg: "left", base: "center" }}
+              >
                 <ShinyText text="Développeur Fullstack & Logiciel" speed={2} />
               </Heading>
             </Flex>
           </GridItem>
+          <GridItem
+            gridArea={"desc"}
+            maxW={"2xl"}
+            pl={2}
+            justifySelf={{ lg: "flex-start", base: "center" }}
+            textAlign={{ lg: "left", base: "center" }}
+          >
+            <Text fontSize={"lg"}>
+              🤖 <strong>Développeur web & logiciel</strong> passionné, curieux
+              et touche-à-tout, j{"'"}aime <strong>coder</strong> et transformer
+              des idées en projets concrets et utiles. Mon objectif est de
+              devenir un <strong>développeur web</strong> toujours plus
+              compétent, créatif et rigoureux.
+            </Text>
+            <Text fontSize={"lg"} pt={2}>
+              🎯 Ce qui m{"'"}anime :{" "}
+              <strong>
+                résoudre des problèmes réels, pour des gens réels.
+              </strong>
+            </Text>
+          </GridItem>
           <GridItem gridArea={"image"}>
-            <Flex justifyContent={"flex-end"}>
+            <Flex justifyContent={{ lg: "flex-end", base: "center" }}>
               <Box
                 h="240px"
                 w="200px"
                 pos={"relative"}
-                mr={4}
                 _before={{
                   content: '""',
                   position: "absolute",
@@ -86,21 +120,6 @@ export default function Home() {
                 />
               </Box>
             </Flex>
-          </GridItem>
-          <GridItem gridArea={"desc"} maxW={"2xl"} pl={2}>
-            <Text fontSize={"lg"}>
-              🤖 <strong>Développeur web & logiciel</strong> passionné, curieux
-              et touche-à-tout, j{"'"}aime <strong>coder</strong> et transformer
-              des idées en projets concrets et utiles. Mon objectif est de
-              devenir un <strong>développeur web</strong> toujours plus
-              compétent, créatif et rigoureux.
-            </Text>
-            <Text fontSize={"lg"} pt={2}>
-              🎯 Ce qui m{"'"}anime :{" "}
-              <strong>
-                résoudre des problèmes réels, pour des gens réels.
-              </strong>
-            </Text>
           </GridItem>
           <GridItem gridArea={"links"} w={"full"}>
             <Flex w="full" justifyContent={"center"} pt={4}>
@@ -140,14 +159,19 @@ export default function Home() {
           </HStack>
 
           <Flex
-            w={"1/2"}
+            w={{ lg: "1/2", base: "3/4" }}
             flexDir={"column"}
             alignItems={"center"}
             justifyContent={"space-around"}
             flexWrap={"wrap"}
-            gap={8}
+            gap={{ lg: 8, base: 4 }}
           >
-            <Flex flexDir={"row"} justifyContent={"center"} gap={8}>
+            <Flex
+              flexDir={"row"}
+              flexWrap={"wrap"}
+              justifyContent={"center"}
+              gap={{ lg: 8, base: 4 }}
+            >
               {keySkills.map((competence, index) => (
                 <Box
                   key={index}

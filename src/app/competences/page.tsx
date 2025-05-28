@@ -1,5 +1,12 @@
 "use client";
-import { Container, Flex, Grid, GridItem, Heading } from "@chakra-ui/react";
+import {
+  Container,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { Category, Project, Skill, SkillLevel } from "@prisma/client";
 import TiltedCard from "@/reactbits/components/TiltedCard/TiltedCard";
@@ -11,6 +18,10 @@ import { getProjectsBySkills } from "../actions/projectsOnSkills";
 
 const competenceCardHeight = "260px";
 const competenceCardWidth = "240px";
+const competenceCardHeightMobile = "210px";
+const competenceCardWidthMobile = "190px";
+const competenceCardHeightBase = "160px";
+const competenceCardWidthBase = "140px";
 
 export default function Competences() {
   const [categoriesBySkills, setCategoriesBySkills] = useState<
@@ -23,6 +34,28 @@ export default function Competences() {
   const [skillsLevels, setSkillsLevels] = useState<Record<number, SkillLevel>>(
     {}
   );
+
+  const breakpoint = useBreakpointValue({
+    base: "base",
+    sm: "sm",
+    lg: "lg",
+  });
+  const getCardSizes = (): Record<string, string> => {
+    return {
+      height:
+        breakpoint === "base"
+          ? competenceCardHeightBase
+          : breakpoint === "sm"
+            ? competenceCardHeightMobile
+            : competenceCardHeight,
+      width:
+        breakpoint === "base"
+          ? competenceCardWidthBase
+          : breakpoint === "sm"
+            ? competenceCardWidthMobile
+            : competenceCardWidth,
+    };
+  };
 
   useEffect(() => {
     getSkills()
@@ -67,17 +100,26 @@ export default function Competences() {
 
   return (
     <Container maxW={"7xl"}>
-      <Flex py={"120px"} w="full" flexDir={"column"}>
-        <Heading as="h1" textAlign={"center"} mb={16} variant={"mainTitle"}>
+      <Flex py={{ lg: "120px", base: "100px" }} w="full" flexDir={"column"}>
+        <Heading
+          as="h1"
+          textAlign={"center"}
+          mb={{ lg: 16, base: 8 }}
+          variant={"mainTitle"}
+        >
           Mes compétences
         </Heading>
         <Grid
-          templateColumns={"repeat(4, 1fr)"}
-          autoRows={competenceCardHeight}
+          templateColumns={{
+            xl: "repeat(4, 1fr)",
+            md: "repeat(3, 1fr)",
+            base: "repeat(2, 1fr)",
+          }}
+          autoRows={getCardSizes()?.height}
           w={"fit"}
           h={"fit"}
           m={"auto"}
-          gap={16}
+          gap={{ lg: 16, sm: 8, base: 6 }}
         >
           {skills?.map((skill, index) => {
             return (
@@ -92,10 +134,10 @@ export default function Competences() {
                 <TiltedCard
                   imageSrc={"https://cataas.com/cat"}
                   altText={skill?.slug}
-                  imageHeight={competenceCardHeight}
-                  imageWidth={competenceCardWidth}
-                  containerHeight={competenceCardHeight}
-                  containerWidth={competenceCardWidth}
+                  imageHeight={getCardSizes()?.height}
+                  imageWidth={getCardSizes()?.width}
+                  containerHeight={getCardSizes()?.height}
+                  containerWidth={getCardSizes()?.width}
                   rotateAmplitude={12}
                   scaleOnHover={1.2}
                   showMobileWarning={false}
@@ -103,8 +145,8 @@ export default function Competences() {
                   displayOverlayContent={true}
                   overlayContent={
                     <CompetenceCard
-                      width={competenceCardWidth}
-                      height={competenceCardHeight}
+                      width={getCardSizes()?.width}
+                      height={getCardSizes()?.height}
                       skill={skill}
                       skillLevel={skillsLevels[skill.levelId]}
                       categories={categoriesBySkills[skill.id]}
