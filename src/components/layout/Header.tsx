@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Flex, Button, useBreakpointValue, Icon } from "@chakra-ui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,8 +13,10 @@ export default function Header() {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const pathname = usePathname();
 
-  window.addEventListener("scroll", () => {
-    setScrollY(window.scrollY);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScrollY(window.scrollY);
+    });
   });
 
   return (
