@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "team-work",
+    "title": "Travail d'équipe",
+    "logoUrl": "/skills/team-work.svg",
+    "level": "",
+    "categories": ["softskill"]
+  },
+  {
+    "slug": "communication",
+    "title": "Communication",
+    "logoUrl": "/skills/communication.svg",
+    "level": "",
+    "categories": ["softskill"]
+  },
+  {
+    "slug": "adaptability",
+    "title": "Adaptabilité",
+    "logoUrl": "/skills/adaptability.svg",
+    "level": "",
+    "categories": ["softskill"]
+  },
+  {
+    "slug": "creativity",
+    "title": "Créativité",
+    "logoUrl": "/skills/creativity.svg",
+    "level": "",
+    "categories": ["softskill"]
+  },
+  {
+    "slug": "critical-thinking",
+    "title": "Esprit critique",
+    "logoUrl": "/skills/critical-thinking.svg",
+    "level": "",
+    "categories": ["softskill"]
+  },
+  {
+    "slug": "stress-management",
+    "title": "Gestion du stress",
+    "logoUrl": "/skills/stress-management.svg",
+    "level": "",
+    "categories": ["softskill"]
+  },
+  {
+    "slug": "active-listening",
+    "title": "Ecoute active",
+    "logoUrl": "/skills/active-listening.svg",
+    "level": "",
+    "categories": ["softskill"]
+  },
+  {
+    "slug": "curiosity",
+    "title": "Curiosité",
+    "logoUrl": "/skills/curiosity.svg",
+    "level": "",
+    "categories": ["softskill"]
+  },
+  {
+    "slug": "organization",
+    "title": "Organisation",
+    "logoUrl": "/skills/organization.svg",
+    "level": "",
+    "categories": ["softskill"]
+  },
+  {
+    "slug": "rigor",
+    "title": "Rigueur",
+    "logoUrl": "/skills/rigor.svg",
+    "level": "",
+    "categories": ["softskill"]
+  },
+  {
+    "slug": "propositional-force",
+    "title": "Force de proposition",
+    "logoUrl": "/skills/propositional-force.svg",
+    "level": "",
+    "categories": ["softskill"]
+  },
+  {
+    "slug": "attention-to-details",
+    "title": "Sens du détails",
+    "logoUrl": "/skills/attention-to-details.svg",
+    "level": "",
+    "categories": ["softskill"]
+  }
+]

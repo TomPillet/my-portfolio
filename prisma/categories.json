@@ -78,5 +78,10 @@
     "slug": "os",
     "title": "OS",
     "shortDescription": "Systèmes d'exploitation et environnement d'exécution pour le développement, le déploiement et l'administration."
+  },
+  {
+    "slug": "softskill",
+    "title": "Soft Skill",
+    "shortDescription": "Compétences humaines et personnelles pour le travail en entreprise."
   }
 ]

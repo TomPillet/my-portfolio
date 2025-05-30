@@ -8,7 +8,7 @@ interface CompetenceCardProps {
   width: string;
   height: string;
   skill: Skill;
-  skillLevel: SkillLevel;
+  skillLevel?: SkillLevel;
   categories?: Category[];
   projets?: Project[];
 }
@@ -70,11 +70,7 @@ export function CompetenceCard({
       >
         <Flex w="full" flexDir={"column"} mb={0}>
           <Flex w={"full"}>
-            <Heading
-              w={"4/5"}
-              as="h2"
-              fontSize={{ lg: "2xl", sm: "xl", base: "lg" }}
-            >
+            <Heading as="h2" fontSize={{ lg: "2xl", sm: "xl", base: "lg" }}>
               {skill?.title}
             </Heading>
           </Flex>

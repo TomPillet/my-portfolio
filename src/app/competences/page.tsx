@@ -85,7 +85,7 @@ export default function Competences() {
     const levelIds = [...new Set(skills.map((skill) => skill.levelId))];
 
     levelIds.forEach((levelId) => {
-      if (!skillsLevels[levelId]) {
+      if (levelId != null && !skillsLevels[levelId]) {
         getSkillLevelById(levelId)
           .then((res) => {
             setSkillsLevels((prev) => ({
@@ -153,7 +153,9 @@ export default function Competences() {
                       width={getCardSizes()?.width}
                       height={getCardSizes()?.height}
                       skill={skill}
-                      skillLevel={skillsLevels[skill.levelId]}
+                      skillLevel={
+                        skill.levelId ? skillsLevels[skill.levelId] : undefined
+                      }
                       categories={categoriesBySkills[skill.id]}
                       projets={projectsBySkills[skill.id]}
                     />

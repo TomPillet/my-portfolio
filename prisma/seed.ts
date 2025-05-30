@@ -13,7 +13,8 @@ import etablissements from "./etablissements.json";
 import categories from "./categories.json";
 import projects from "./projects.json";
 import levels from "./levels.json";
-import skills from "./skills.json";
+import techSkills from "./techSkills.json";
+import softSkills from "./softSkills.json";
 
 const prisma = new PrismaClient();
 const projectTypeSchema = z.nativeEnum(ProjectType);
@@ -154,13 +155,17 @@ async function createSkillsModel(
   const existingSkills = await prisma.skill.findMany();
   const existingSkillsSlugs = existingSkills.map((skill) => skill.slug);
   const createdSkills: Skill[] = [];
+  const skills = [...techSkills, ...softSkills];
 
   for (const skill of skills) {
     const data = {
       slug: skill.slug,
       title: skill.title,
       logoUrl: skill.logoUrl,
-      level: { connect: { id: levelIdBySlug[skill.level] } },
+      level:
+        skill.level.length > 0
+          ? { connect: { id: levelIdBySlug[skill.level] } }
+          : {},
     };
     let createdSkill: Skill;
 

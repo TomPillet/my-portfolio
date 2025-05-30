@@ -62,8 +62,8 @@ model Skill {
     title       String
     logoUrl     String
 
-    level       SkillLevel  @relation(fields: [levelId], references: [id])
-    levelId     Int
+    level       SkillLevel?  @relation(fields: [levelId], references: [id])
+    levelId     Int?
 
     categories  CategoriesOnSkills[]
     projects    ProjectsOnSkills[]
