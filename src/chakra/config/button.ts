@@ -15,7 +15,7 @@ export const buttonRecipe = defineRecipe({
     variant: {
       buttonLink: {
         position: "relative",
-        // background: "linear-gradient(to bottom, rgba(255,255,255,.05), transparent)",
+        paddingY: "24px !important",
         background: "transparent",
         color: "rgb(229, 229, 229)",
         border: "none",
@@ -27,25 +27,15 @@ export const buttonRecipe = defineRecipe({
         textTransform: "uppercase",
         transition: "all 0.3s ease-in-out",
 
-        // _after: {
-        //     ...pseudoNavStyles,
-        //     backdropFilter: "invert(1)",
-        // },
-
         _before: {
           ...pseudoNavStyles,
-          // background: "black",
           borderTop: "2px solid white",
           zIndex: "-1",
         },
 
         _hover: {
-          // background: "linear-gradient(to bottom, rgba(255,255,255,.05), transparent)",
           background: "transparent",
           letterSpacing: "8px",
-          // _after: {
-          //     width: "100%",
-          // },
           _before: {
             width: "100%",
           },
