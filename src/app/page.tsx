@@ -63,7 +63,7 @@ export default function Home() {
                 m={{ lg: "0", base: "auto" }}
                 textAlign={{ lg: "left", base: "center" }}
               >
-                <ShinyText text="Développeur Fullstack & Logiciel" speed={2} />
+                <ShinyText text="Développeur Web & Logiciel" speed={2} />
               </Heading>
             </Flex>
           </GridItem>
@@ -75,17 +75,16 @@ export default function Home() {
             textAlign={{ lg: "left", base: "center" }}
           >
             <Text fontSize={"lg"}>
-              🤖 <strong>Développeur web & logiciel</strong> passionné, curieux
-              et touche-à-tout, j{"'"}aime <strong>coder</strong> et transformer
-              des idées en projets concrets et utiles. Mon objectif est de
-              devenir un <strong>développeur web</strong> toujours plus
-              compétent, créatif et rigoureux.
+              🤖 <strong>Développeur fullstack</strong> passionné, curieux et
+              touche-à-tout, expert en <strong>ingénierie logicielle</strong>, j
+              {"'"}
+              aime transformer des idées en solutions concrètes et utiles. Mon
+              objectif est de devenir un <strong>développeur</strong> toujours
+              plus compétent, créatif, polyvalent et rigoureux.
             </Text>
             <Text fontSize={"lg"} pt={2}>
-              🎯 Ce qui m{"'"}anime :{" "}
-              <strong>
-                résoudre des problèmes réels, pour des gens réels.
-              </strong>
+              🎯 Ce qui m{"'"}anime : être à l'écoute et soucieux de l'
+              <strong>expérience utilisateur</strong> !
             </Text>
           </GridItem>
           <GridItem gridArea={"image"}>
