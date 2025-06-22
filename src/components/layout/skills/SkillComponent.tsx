@@ -1,10 +1,11 @@
+"use client";
 import React from "react";
 import { Category, Project, Skill, SkillLevel } from "@prisma/client";
 import Image from "next/image";
-import { Box, Flex, Heading, Highlight, Text } from "@chakra-ui/react";
 import Link from "next/link";
+import { Box, Flex, Heading, Highlight, Text } from "@chakra-ui/react";
 
-interface CompetenceCardProps {
+interface SkillComponentProps {
   width: string;
   height: string;
   skill: Skill;
@@ -13,14 +14,14 @@ interface CompetenceCardProps {
   projets?: Project[];
 }
 
-export function CompetenceCard({
+export function SkillComponent({
   width,
   height,
   skill,
   skillLevel,
   categories,
   projets,
-}: CompetenceCardProps) {
+}: SkillComponentProps) {
   return (
     <Flex
       pos={"relative"}

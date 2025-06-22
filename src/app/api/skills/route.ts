@@ -1,15 +1,26 @@
 import prisma from "@/lib/prisma";
+import { Prisma } from "@prisma/client";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const level = searchParams.get("level");
-  const type = searchParams.get("type");
+  const categoriesIdsParam = searchParams.get("categoriesIds");
+  let categoriesIds: number[] = [];
 
-  const filters: { [key: string]: string } = {};
-  if (level) filters.level = level;
-  if (type) filters.type = type;
+  if (categoriesIdsParam) {
+    categoriesIds = categoriesIdsParam.split(",").map((id) => parseInt(id));
+  }
+  const filters: Prisma.SkillWhereInput = {};
 
   try {
+    if (categoriesIds && categoriesIds.length > 0) {
+      console.log("categoriesIds", categoriesIds);
+      filters.categories = {
+        some: {
+          categoryId: { in: categoriesIds },
+        },
+      };
+    }
+
     const skills = await prisma.skill.findMany({
       where: filters,
     });

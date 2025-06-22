@@ -3,7 +3,7 @@
     "slug": "typescript",
     "title": "Typescript",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg",
-    "level": "intermediate",
+    "level": "junior",
     "categories": ["front", "back"]
   },
   {
@@ -63,18 +63,10 @@
     "categories": ["data", "back"]
   },
   {
-    "slug": "sylius",
-    "title": "Sylius",
-    "logoUrl": "/skills/sylius.jpg",
-    "level": "junior",
-    "categories": ["cms", "back"],
-    "projects": ["", ""]
-  },
-  {
     "slug": "php",
     "title": "PHP",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-plain.svg",
-    "level": "junior",
+    "level": "intermediate",
     "categories": ["back"]
   },
   {
@@ -102,6 +94,13 @@
     "slug": "mysql",
     "title": "MySQL",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+    "level": "intermediate",
+    "categories": ["data", "infrastructure"]
+  },
+  {
+    "slug": "mariadb",
+    "title": "Mariadb",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original.svg",
     "level": "intermediate",
     "categories": ["data", "infrastructure"]
   },
