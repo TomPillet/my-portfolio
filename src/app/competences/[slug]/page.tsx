@@ -1,7 +1,7 @@
-import { Flex, Heading, Container, Text } from "@chakra-ui/react";
+import { Flex, Heading, Container, Text, Highlight } from "@chakra-ui/react";
 import Image from "next/image";
-import { getSkillBySlug } from "@/app/actions/skillData";
-import { Skill } from "@prisma/client";
+import { getSkillBySlug, getSkillLevel } from "@/app/actions/skillData";
+import { Skill, SkillLevel } from "@prisma/client";
 
 interface CompetenceDetailsProps {
   params: Promise<{
@@ -14,6 +14,9 @@ export default async function CompetenceDetails({
 }: CompetenceDetailsProps) {
   const { slug } = await params;
   const skillData: Skill | null = await getSkillBySlug(slug).then((res) => res);
+  const skillLevel: SkillLevel | null = await getSkillLevel(
+    skillData?.levelId ?? 0
+  );
 
   return (
     <Container maxW={"4xl"}>
@@ -22,15 +25,29 @@ export default async function CompetenceDetails({
         minH={"100dvh"}
         w="full"
         flexDir={"column"}
+        gap={8}
       >
-        <Heading
-          as="h1"
-          textAlign={"center"}
-          mb={{ lg: 12, base: 8 }}
-          variant={"mainTitle"}
-        >
-          {slug}
-        </Heading>
+        <Flex flexDir={"column"} alignItems={"center"} gap={4}>
+          <Heading as="h1" textAlign={"center"} variant={"mainTitle"}>
+            {slug}
+          </Heading>
+          {skillLevel && (
+            <Highlight
+              query={skillLevel.label}
+              styles={{
+                px: "2",
+                bg: "skills." + skillLevel.slug,
+                color: "dark.default",
+                fontSize: { lg: "xl", base: "sm" },
+                fontWeight: "bold",
+                rounded: "md",
+                w: "fit",
+              }}
+            >
+              {skillLevel.label}
+            </Highlight>
+          )}
+        </Flex>
         {skillData && (
           <Flex flexDir={"column"} gap={8}>
             <Flex flexDir={"column"} gap={2}>

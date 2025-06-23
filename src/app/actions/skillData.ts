@@ -1,6 +1,6 @@
 "use server";
 import prisma from "@/lib/prisma";
-import { Skill } from "@prisma/client";
+import { Skill, SkillLevel } from "@prisma/client";
 
 export async function getSkillBySlug(slug: string): Promise<Skill | null> {
   try {
@@ -14,5 +14,19 @@ export async function getSkillBySlug(slug: string): Promise<Skill | null> {
   } catch (error) {
     console.error("Error fetching skill data:", error);
     throw new Error("Failed to fetch skill data");
+  }
+}
+
+export async function getSkillLevel(id: number): Promise<SkillLevel | null> {
+  try {
+    const skillLevel = await prisma.skillLevel.findFirst({
+      where: {
+        id: id,
+      },
+    });
+    return skillLevel;
+  } catch (error) {
+    console.error("Error fetching skill levels:", error);
+    throw new Error("Failed to fetch skill levels");
   }
 }
