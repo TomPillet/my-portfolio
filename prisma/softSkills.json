@@ -21,23 +21,9 @@
     "categories": ["softskill"]
   },
   {
-    "slug": "creativity",
-    "title": "Créativité",
-    "logoUrl": "/skills/creativity.svg",
-    "level": "",
-    "categories": ["softskill"]
-  },
-  {
     "slug": "critical-thinking",
     "title": "Esprit critique",
     "logoUrl": "/skills/critical-thinking.svg",
-    "level": "",
-    "categories": ["softskill"]
-  },
-  {
-    "slug": "stress-management",
-    "title": "Gestion du stress",
-    "logoUrl": "/skills/stress-management.svg",
     "level": "",
     "categories": ["softskill"]
   },
@@ -66,13 +52,6 @@
     "slug": "rigor",
     "title": "Rigueur",
     "logoUrl": "/skills/rigor.svg",
-    "level": "",
-    "categories": ["softskill"]
-  },
-  {
-    "slug": "propositional-force",
-    "title": "Force de proposition",
-    "logoUrl": "/skills/propositional-force.svg",
     "level": "",
     "categories": ["softskill"]
   },
