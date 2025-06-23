@@ -74,18 +74,22 @@ export default function Home() {
             justifySelf={{ lg: "flex-start", base: "center" }}
             textAlign={{ lg: "left", base: "center" }}
           >
-            <Text fontSize={"lg"}>
-              🤖 <strong>Développeur fullstack</strong> passionné, curieux et
-              touche-à-tout, expert en <strong>ingénierie logicielle</strong>, j
-              {"'"}
-              aime transformer des idées en solutions concrètes et utiles. Mon
-              objectif est de devenir un <strong>développeur</strong> toujours
-              plus compétent, créatif, polyvalent et rigoureux.
-            </Text>
-            <Text fontSize={"lg"} pt={2}>
-              🎯 Ce qui m{"'"}anime : être à l'écoute et soucieux de l'
-              <strong>expérience utilisateur</strong> !
-            </Text>
+            <Flex flexDir={"column"} gap={4}>
+              <Text fontSize={"lg"}>
+                <strong>Développeur fullstack</strong> passionné et
+                touche-à-tout, <strong>expert en ingénierie logicielle</strong>,
+                j{"'"}aime transformer des idées en solutions concrètes et
+                utiles.
+              </Text>
+              <Text fontSize={"lg"}>
+                Mon objectif est de devenir un <strong>développeur</strong>{" "}
+                toujours plus compétent, créatif, polyvalent et rigoureux.
+              </Text>
+              <Text fontSize={"lg"}>
+                Ce qui m{"'"}anime : être à l'écoute et soucieux de l'
+                <strong>expérience utilisateur</strong> !
+              </Text>
+            </Flex>
           </GridItem>
           <GridItem gridArea={"image"}>
             <Flex justifyContent={{ lg: "flex-end", base: "center" }}>
