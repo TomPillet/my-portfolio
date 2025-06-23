@@ -71,7 +71,7 @@
   },
   {
     "slug": "java",
-    "title": "JAVA",
+    "title": "Java",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-plain.svg",
     "level": "junior",
     "categories": ["software"]
@@ -148,7 +148,7 @@
   },
   {
     "slug": "ue4",
-    "title": "UE4",
+    "title": "Unreal Engine 4",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original.svg",
     "level": "junior",
     "categories": ["game"]
