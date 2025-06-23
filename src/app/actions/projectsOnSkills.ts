@@ -1,8 +1,10 @@
 "use server";
 import prisma from "@/lib/prisma";
-import { Project } from "@prisma/client";
+import { Project, Skill } from "@prisma/client";
 
-export async function getProjectsBySkills(skillsIds: number[]) {
+export async function getProjectsBySkills(
+  skillsIds: number[]
+): Promise<Record<number, Project[]>> {
   try {
     const projectsOnSkills = await prisma.projectsOnSkills.findMany({
       where: {
@@ -30,5 +32,24 @@ export async function getProjectsBySkills(skillsIds: number[]) {
   } catch (error) {
     console.error("Error fetching projects data on skills:", error);
     throw new Error("Failed to fetch projects data on skills");
+  }
+}
+
+export async function getSkillsByProject(projectId: number): Promise<Skill[]> {
+  try {
+    const projectSkills = await prisma.projectsOnSkills
+      .findMany({
+        where: {
+          projectId: projectId,
+        },
+        include: {
+          skill: true,
+        },
+      })
+      .then((skills) => skills.map((item) => item.skill));
+    return projectSkills;
+  } catch (error) {
+    console.error("Error fetching skills data on project:", error);
+    throw new Error("Failed to fetch skills data on project");
   }
 }

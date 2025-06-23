@@ -1,6 +1,8 @@
 import { Flex, Heading, Container, Text, Highlight } from "@chakra-ui/react";
 import { getProjectBySlug } from "@/app/actions/projectData";
-import { Project } from "@prisma/client";
+import { Project, Skill } from "@prisma/client";
+import { getSkillsByProject } from "@/app/actions/projectsOnSkills";
+import Link from "next/link";
 
 interface CompetenceDetailsProps {
   params: Promise<{
@@ -13,6 +15,9 @@ export default async function CompetenceDetails({
 }: CompetenceDetailsProps) {
   const { slug } = await params;
   const projectData: Project | null = await getProjectBySlug(slug).then(
+    (res) => res
+  );
+  const skills: Skill[] = await getSkillsByProject(projectData?.id ?? 0).then(
     (res) => res
   );
 
@@ -116,11 +121,36 @@ export default async function CompetenceDetails({
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </Text>
             </Flex>
-            <Flex flexDir={"column"} gap={2} id="skills-attached">
+            <Flex
+              flexDir={"column"}
+              gap={4}
+              id="skills-attached"
+              alignItems={"center"}
+            >
               {/* TODO: Add button to slide directly here */}
               <Heading as="h3" variant={"secondTitle"}>
                 Compétences rattachées
               </Heading>
+              <Flex flexDir={"row"} flexWrap={"wrap"} gap={4}>
+                {skills.map((skill) => (
+                  <Link key={skill.id} href={`/competences/${skill.slug}`}>
+                    <Highlight
+                      query={skill.title}
+                      styles={{
+                        px: "2",
+                        py: "1",
+                        rounded: "xl",
+                        bg: "light.default",
+                        color: "dark.default",
+                        fontSize: { lg: "xl", base: "sm" },
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {skill.title}
+                    </Highlight>
+                  </Link>
+                ))}
+              </Flex>
             </Flex>
           </Flex>
         )}
