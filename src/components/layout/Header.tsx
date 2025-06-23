@@ -1,16 +1,15 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { Flex, Button, useBreakpointValue, Icon } from "@chakra-ui/react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Flex } from "@chakra-ui/react";
 import { IoIosHome, IoIosMail } from "react-icons/io";
-import { FaTableList } from "react-icons/fa6";
+import { FaTableList, FaTimeline } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
+import HeaderLink from "../ui/HeaderLink";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [scrollY, setScrollY] = React.useState(0);
-  const isMobile = useBreakpointValue({ base: true, md: false });
   const pathname = usePathname();
 
   useEffect(() => {
@@ -26,57 +25,39 @@ export default function Header() {
       pos="fixed"
       zIndex={1}
       justifyContent="space-around"
-      bg={scrollY > 0 ? "dark.lighter" : "dark.default"}
-      transition={"all 0.3s ease-in-out"}
+      bg={scrollY > 0 ? "dark.default" : "transparent"}
+      transition={"all 0.2s ease-in-out"}
     >
-      <Link href="/" style={{ height: "100%", width: "100%" }}>
-        <Button
-          w="full"
-          variant="buttonLink"
-          cursor={"pointer"}
-          color={"white.default"}
-          {...(pathname === "/" ? { _before: { width: "100%" } } : {})}
-        >
-          {isMobile ? <Icon as={IoIosHome} boxSize={6} /> : "Accueil"}
-        </Button>
-      </Link>
-      <Link href="/competences" style={{ height: "100%", width: "100%" }}>
-        <Button
-          w="full"
-          variant="buttonLink"
-          cursor={"pointer"}
-          color={"white.default"}
-          {...(pathname.includes("/competences")
-            ? { _before: { width: "100%" } }
-            : {})}
-        >
-          {isMobile ? <Icon as={FaStar} boxSize={6} /> : "Compétences"}
-        </Button>
-      </Link>
-      <Link href="/projets" style={{ height: "100%", width: "100%" }}>
-        <Button
-          w="full"
-          variant="buttonLink"
-          cursor={"pointer"}
-          color={"white.default"}
-          {...(pathname.includes("/projets")
-            ? { _before: { width: "100%" } }
-            : {})}
-        >
-          {isMobile ? <Icon as={FaTableList} boxSize={6} /> : "Projets"}
-        </Button>
-      </Link>
-      <Link href="/contact" style={{ height: "100%", width: "100%" }}>
-        <Button
-          w="full"
-          variant="buttonLink"
-          cursor={"pointer"}
-          color={"white.default"}
-          {...(pathname === "/contact" ? { _before: { width: "100%" } } : {})}
-        >
-          {isMobile ? <Icon as={IoIosMail} boxSize={6} /> : "Contact"}
-        </Button>
-      </Link>
+      <HeaderLink
+        icon={IoIosHome}
+        route="/"
+        title="Accueil"
+        isRouteActive={pathname === "/"}
+      />
+      <HeaderLink
+        icon={FaStar}
+        route="/competences"
+        title="Compétences"
+        isRouteActive={pathname.includes("/competences")}
+      />
+      <HeaderLink
+        icon={FaTimeline}
+        route="/experiences"
+        title="Expériences"
+        isRouteActive={pathname === "/experiences"}
+      />
+      <HeaderLink
+        icon={FaTableList}
+        route="/projets"
+        title="Projets"
+        isRouteActive={pathname.includes("/projets")}
+      />
+      <HeaderLink
+        icon={IoIosMail}
+        route="/contact"
+        title="Contact"
+        isRouteActive={pathname === "/contact"}
+      />
     </Flex>
   );
 }
