@@ -6,7 +6,6 @@ import {
   GridItem,
   Heading,
   Icon,
-  Separator,
   Span,
   Text,
 } from "@chakra-ui/react";
@@ -14,9 +13,7 @@ import { Tooltip } from "../ui/tooltip";
 import React, { useEffect, useState } from "react";
 import { Project } from "@prisma/client";
 import Image from "next/image";
-import Link from "next/link";
-import { FaHammer, FaGithub } from "react-icons/fa6";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaHammer } from "react-icons/fa6";
 import { getEtablissementById } from "@/app/services/etablissementsService";
 
 export default function ProjetCard({
@@ -40,7 +37,7 @@ export default function ProjetCard({
 
   return (
     <Flex
-      h="520px"
+      minH="360px"
       w="360px"
       bg={"dark.lighter"}
       flexDir={"column"}
@@ -53,7 +50,7 @@ export default function ProjetCard({
       }s infinite verticalFloatingAnimation ease-in-out`}
       transform={"scale(.9)"}
       transition={"all .4s ease-in-out"}
-      // TODO: use framer motion
+      cursor={"pointer"}
       _hover={{
         animationPlayState: "paused",
         transform: "scale(1)",
@@ -69,6 +66,21 @@ export default function ProjetCard({
           fill
           style={{ objectFit: "cover" }}
         />
+        {project?.isActive && (
+          <Flex
+            pos={"absolute"}
+            top={4}
+            left={4}
+            p={1}
+            rounded={"lg"}
+            bg={"rgba(0,0,0,0.4)"}
+            backdropFilter={"blur(4px)"}
+          >
+            <Tooltip content="Projet actif">
+              <Icon as={FaHammer} color={"primary.hover"} />
+            </Tooltip>
+          </Flex>
+        )}
         <Heading
           pos={"relative"}
           h={"fit"}
@@ -121,34 +133,15 @@ export default function ProjetCard({
       <Grid h={"3/5"} px={4} gridTemplateRows={"repeat(10, 1fr"}>
         <GridItem rowSpan={1} w={"full"}>
           <Flex flexDir={"row"} h={"full"} w={"full"} gap={2}>
-            {project?.isActive && (
-              <Flex w={8} gap={1}>
-                <Tooltip content="Projet actif">
-                  <Icon
-                    as={FaHammer}
-                    w="full"
-                    color={"primary.default"}
-                    mt={"1px"}
-                    _hover={{
-                      color: "primary.hover",
-                      cursor: "pointer",
-                    }}
-                  />
-                </Tooltip>
-                <Separator orientation="vertical" h="1/2" w="2px" />
-              </Flex>
-            )}
             <Text ml={2} fontSize={"1em"} letterSpacing={1} lineHeight={1.6}>
               {project?.date.toString().slice(0, 4)}
             </Text>
-            <Separator orientation="vertical" h="1/2" w="2px" />
             <Text fontSize={"1em"} letterSpacing={1} lineHeight={1.6}>
-              {project?.type}
+              - {project?.type}
             </Text>
-            <Separator orientation="vertical" h="1/2" w="2px" />
             {project?.etablissementId && (
               <Text fontSize={"1em"} letterSpacing={1} lineHeight={1.6}>
-                {etablissementName}
+                - {etablissementName}
               </Text>
             )}
           </Flex>
@@ -158,7 +151,7 @@ export default function ProjetCard({
             {project?.shortDescription}
           </Text>
         </GridItem>
-        <GridItem rowSpan={3} px={8}>
+        {/* <GridItem rowSpan={3} px={8}>
           <Flex
             alignItems={"center"}
             justifyContent={
@@ -190,7 +183,7 @@ export default function ProjetCard({
               </Link>
             )}
           </Flex>
-        </GridItem>
+        </GridItem> */}
       </Grid>
     </Flex>
   );
