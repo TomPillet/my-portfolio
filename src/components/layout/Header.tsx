@@ -46,7 +46,7 @@ export default function Header() {
           variant="buttonLink"
           cursor={"pointer"}
           color={"white.default"}
-          {...(pathname === "/competences"
+          {...(pathname.includes("/competences")
             ? { _before: { width: "100%" } }
             : {})}
         >
@@ -59,7 +59,9 @@ export default function Header() {
           variant="buttonLink"
           cursor={"pointer"}
           color={"white.default"}
-          {...(pathname === "/projets" ? { _before: { width: "100%" } } : {})}
+          {...(pathname.includes("/projets")
+            ? { _before: { width: "100%" } }
+            : {})}
         >
           {isMobile ? <Icon as={FaTableList} boxSize={6} /> : "Projets"}
         </Button>

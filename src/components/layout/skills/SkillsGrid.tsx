@@ -1,5 +1,5 @@
 "use client";
-import { Flex, Grid, GridItem } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import SkillCard from "./SkillCard";
 import { Skill, SkillLevel, Category, Project } from "@prisma/client";
@@ -40,7 +40,6 @@ export default function SkillsGrid({ skills, skillsLevels }: SkillGridProps) {
     <Flex
       flexDir={"row"}
       flexWrap={"wrap"}
-      color={"dark.default"}
       gap={{ lg: 16, sm: 8, base: 6 }}
       justifyContent={"center"}
     >
