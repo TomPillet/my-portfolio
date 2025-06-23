@@ -71,7 +71,7 @@ export function SkillComponent({
       >
         <Flex w="full" flexDir={"column"} mb={0}>
           <Flex w={"full"}>
-            <Heading as="h2" fontSize={{ lg: "2xl", sm: "xl", base: "lg" }}>
+            <Heading as="h2" fontSize={{ lg: "2xl", sm: "xl", base: "md" }}>
               {skill?.title}
             </Heading>
           </Flex>

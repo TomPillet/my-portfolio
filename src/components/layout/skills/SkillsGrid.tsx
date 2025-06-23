@@ -1,5 +1,5 @@
 "use client";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Flex, Grid, GridItem } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import SkillCard from "./SkillCard";
 import { Skill, SkillLevel, Category, Project } from "@prisma/client";
@@ -37,36 +37,24 @@ export default function SkillsGrid({ skills, skillsLevels }: SkillGridProps) {
   }, [skills]);
 
   return (
-    <Grid
-      templateColumns={{
-        xl: "repeat(4, 1fr)",
-        md: "repeat(3, 1fr)",
-        base: "repeat(2, 1fr)",
-      }}
-      autoRows={"1fr"}
-      w={"fit"}
-      h={"fit"}
-      m={"auto"}
+    <Flex
+      flexDir={"row"}
+      flexWrap={"wrap"}
+      color={"dark.default"}
       gap={{ lg: 16, sm: 8, base: 6 }}
+      justifyContent={"center"}
     >
       {skills?.map((skill, index) => {
         return (
-          <GridItem
+          <SkillCard
             key={index}
-            h="fit"
-            w="fit"
-            color={"dark.default"}
-            className="skill-card"
-          >
-            <SkillCard
-              skill={skill}
-              skillLevel={skillsLevels && skillsLevels[skill.levelId!]}
-              categories={categoriesBySkills[skill.id]}
-              projects={projectsBySkills[skill.id]}
-            />
-          </GridItem>
+            skill={skill}
+            skillLevel={skillsLevels && skillsLevels[skill.levelId!]}
+            categories={categoriesBySkills[skill.id]}
+            projects={projectsBySkills[skill.id]}
+          />
         );
       })}
-    </Grid>
+    </Flex>
   );
 }
