@@ -1,4 +1,4 @@
-import { Flex, Heading, Container, Box } from "@chakra-ui/react";
+import { Flex, Heading, Container, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { getSkillBySlug } from "@/app/actions/skillData";
 import { Skill } from "@prisma/client";
@@ -16,7 +16,7 @@ export default async function CompetenceDetails({
   const skillData: Skill | null = await getSkillBySlug(slug).then((res) => res);
 
   return (
-    <Container maxW={"7xl"}>
+    <Container maxW={"4xl"}>
       <Flex
         py={{ lg: "120px", base: "100px" }}
         minH={"100dvh"}
@@ -32,14 +32,64 @@ export default async function CompetenceDetails({
           {slug}
         </Heading>
         {skillData && (
-          <Box opacity={0.6} h={"400px"} w={"400px"} m={"auto"}>
-            <Image
-              src={skillData?.logoUrl}
-              alt={slug}
-              fill
-              style={{ objectFit: "contain" }}
-            />
-          </Box>
+          <Flex flexDir={"column"} gap={8}>
+            <Flex flexDir={"column"} gap={2}>
+              <Heading as="h2" variant={"secondTitle"}>
+                Ma définition
+              </Heading>
+              <Text textAlign={"center"}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </Text>
+            </Flex>
+            <Flex flexDir={"column"} gap={2}>
+              <Heading as="h2" variant={"secondTitle"}>
+                Mon expérience
+              </Heading>
+              <Text textAlign={"center"}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </Text>
+            </Flex>
+            <Flex flexDir={"column"} gap={2}>
+              <Heading as="h2" variant={"secondTitle"}>
+                Ce que j'en pense
+              </Heading>
+              <Text textAlign={"center"}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </Text>
+            </Flex>
+            <Flex flexDir={"column"} gap={2}>
+              <Heading as="h2" variant={"secondTitle"}>
+                insertion dans mon parcours
+              </Heading>
+              <Text textAlign={"center"}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </Text>
+            </Flex>
+          </Flex>
         )}
       </Flex>
     </Container>
