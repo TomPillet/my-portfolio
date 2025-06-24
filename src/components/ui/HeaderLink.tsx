@@ -25,6 +25,7 @@ export default function HeaderLink({
         variant="buttonLink"
         cursor={"pointer"}
         color={"white.default"}
+        fontSize={{ lg: "2xl", md: "xl", base: "lg" }}
         {...(isRouteActive ? { _before: { width: "100%" } } : {})}
       >
         {isMobile ? <Icon as={icon} boxSize={6} /> : title}
