@@ -17,6 +17,22 @@ export async function getSkillBySlug(slug: string): Promise<Skill | null> {
   }
 }
 
+export async function getSkillsBySlugs(slugs: string[]): Promise<Skill[]> {
+  try {
+    const skillData = await prisma.skill.findMany({
+      where: {
+        slug: {
+          in: slugs,
+        },
+      },
+    });
+    return skillData;
+  } catch (error) {
+    console.error("Error fetching skills data:", error);
+    throw new Error("Failed to fetch skills data");
+  }
+}
+
 export async function getSkillLevel(id: number): Promise<SkillLevel | null> {
   try {
     const skillLevel = await prisma.skillLevel.findFirst({

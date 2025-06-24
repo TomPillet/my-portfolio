@@ -15,6 +15,7 @@ import { useState } from "react";
 import { FaCalendarDays } from "react-icons/fa6";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import Image from "next/image";
+import ExperienceSkills from "@/components/layout/skills/ExperienceSkills";
 
 const FlexMotion = motion.create(Flex);
 
@@ -50,6 +51,24 @@ export default function Experiences() {
         "Etude de SEO (sur une part de la concurrence) et des bonnes pratiques de référencement.",
         "Développement frontend et référencement de sites E-Commerce (domaines : alimentaire et textile).",
       ],
+      skills: [
+        "javascript",
+        "react",
+        "react-native",
+        "nextjs",
+        "nestjs",
+        "wordpress",
+        "chakra-ui",
+        "tailwind",
+        "php",
+        "caprover",
+        "docker",
+        "linux",
+        "git",
+        "prisma",
+        "sql",
+        "mariadb",
+      ],
     },
     {
       startDate: "09-04-2023",
@@ -63,6 +82,17 @@ export default function Experiences() {
         "Maintenance corrective, évolutive et préventive (tests automatisés) d'applications et logiciels d'industrie automobile.",
         "Chargé de l'analyse des besoins utilisateurs et de la maintenance d'une application de management.",
         "Développement d'une application mobile d'évaluation d'extraits de terre par intelligence artificielle.",
+      ],
+      skills: [
+        "javascript",
+        "typescript",
+        "angular",
+        "java",
+        "spring-boot",
+        "tailwind",
+        "docker",
+        "linux",
+        "git",
       ],
     },
     {
@@ -92,6 +122,7 @@ export default function Experiences() {
         "Maintenance corrective et service client de sites E-Commerce.",
         "Formation au pilotage de projet, au DevOps, au leadership et au management d'équipe.",
       ],
+      skills: ["javascript", "prestashop", "php", "linux", "git"],
     },
     {
       startDate: "10-03-2022",
@@ -105,6 +136,15 @@ export default function Experiences() {
         "Chargé du projet de refonte architecturale et graphique d'une application de gestion de contrats régionaux.",
         "Maintenance et assistance utilisateur sur des applications et outils bancaires internes.",
       ],
+      skills: [
+        "javascript",
+        "vuejs",
+        "tailwind",
+        "php",
+        "laravel",
+        "git",
+        "sql",
+      ],
     },
     {
       startDate: "09-06-2021",
@@ -117,6 +157,17 @@ export default function Experiences() {
       details: [
         "Maintenance corrective, évolutive et préventive d'une application d'ERP pour PME.",
         "Conception d'interfaces modernes et responsives sur Figma.",
+      ],
+      skills: [
+        "javascript",
+        "typescript",
+        "angular",
+        "tailwind",
+        "php",
+        "git",
+        "sql",
+        "mysql",
+        "linux",
       ],
     },
     {
@@ -143,6 +194,7 @@ export default function Experiences() {
       details: [
         "Conception et intégration des maquettes pour la refonte d'applications administratives.",
       ],
+      skills: ["javascript", "git", "linux"],
     },
     {
       startDate: "09-03-2019",
@@ -278,6 +330,7 @@ export default function Experiences() {
                           left={2}
                           borderLeft={"1px solid"}
                           borderColor={"light.dirty"}
+                          mb={2}
                         >
                           {step.details.map((item, index) => (
                             <List.Item
@@ -295,6 +348,9 @@ export default function Experiences() {
                             </List.Item>
                           ))}
                         </List.Root>
+                        {step.skills && (
+                          <ExperienceSkills skillsSlugs={step.skills} />
+                        )}
                       </FlexMotion>
                     ) : null}
                   </AnimatePresence>
