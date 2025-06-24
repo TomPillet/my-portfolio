@@ -16,12 +16,13 @@ export default function ExperienceSkills({ skillsSlugs }: Props) {
     getSkillsBySlugs(skillsSlugs).then((res) => {
       setSkills(res);
     });
-  });
+  }, [skillsSlugs]);
 
   return (
-    <Flex flex-wrap={"wrap"} gap={2} fontStyle={"italic"}>
-      {skills.map((skill) => (
+    <Flex flex-wrap={"wrap"} gapX={1} fontStyle={"italic"} flexWrap={"wrap"}>
+      {skills.map((skill, index) => (
         <Link key={skill.id} href={`/competences/${skill.slug}`}>
+          {index !== 0 && "- "}
           {skill.title}
         </Link>
       ))}

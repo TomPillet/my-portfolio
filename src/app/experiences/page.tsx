@@ -51,7 +51,7 @@ export default function Experiences() {
         "Etude de SEO (sur une part de la concurrence) et des bonnes pratiques de référencement.",
         "Développement frontend et référencement de sites E-Commerce (domaines : alimentaire et textile).",
       ],
-      skills: [
+      techSkills: [
         "javascript",
         "react",
         "react-native",
@@ -69,6 +69,13 @@ export default function Experiences() {
         "sql",
         "mariadb",
       ],
+      softSkills: [
+        "team-work",
+        "adaptability",
+        "critical-thinking",
+        "curiosity",
+        "rigor",
+      ],
     },
     {
       startDate: "09-04-2023",
@@ -83,8 +90,7 @@ export default function Experiences() {
         "Chargé de l'analyse des besoins utilisateurs et de la maintenance d'une application de management.",
         "Développement d'une application mobile d'évaluation d'extraits de terre par intelligence artificielle.",
       ],
-      skills: [
-        "javascript",
+      techSkills: [
         "typescript",
         "angular",
         "java",
@@ -93,6 +99,15 @@ export default function Experiences() {
         "docker",
         "linux",
         "git",
+      ],
+      softSkills: [
+        "team-work",
+        "communication",
+        "adaptability",
+        "active-listening",
+        "organization",
+        "rigor",
+        "attention-to-details",
       ],
     },
     {
@@ -120,9 +135,14 @@ export default function Experiences() {
       details: [
         "Intégration de maquettes d'une application de restauration en ligne.",
         "Maintenance corrective et service client de sites E-Commerce.",
-        "Formation au pilotage de projet, au DevOps, au leadership et au management d'équipe.",
       ],
-      skills: ["javascript", "prestashop", "php", "linux", "git"],
+      techSkills: ["prestashop", "php", "linux", "git"],
+      softSkills: [
+        "team-work",
+        "communication",
+        "active-listening",
+        "curiosity",
+      ],
     },
     {
       startDate: "10-03-2022",
@@ -136,7 +156,7 @@ export default function Experiences() {
         "Chargé du projet de refonte architecturale et graphique d'une application de gestion de contrats régionaux.",
         "Maintenance et assistance utilisateur sur des applications et outils bancaires internes.",
       ],
-      skills: [
+      techSkills: [
         "javascript",
         "vuejs",
         "tailwind",
@@ -144,6 +164,14 @@ export default function Experiences() {
         "laravel",
         "git",
         "sql",
+      ],
+      softSkills: [
+        "communication",
+        "critical-thinking",
+        "active-listening",
+        "organization",
+        "rigor",
+        "attention-to-details",
       ],
     },
     {
@@ -158,8 +186,7 @@ export default function Experiences() {
         "Maintenance corrective, évolutive et préventive d'une application d'ERP pour PME.",
         "Conception d'interfaces modernes et responsives sur Figma.",
       ],
-      skills: [
-        "javascript",
+      techSkills: [
         "typescript",
         "angular",
         "tailwind",
@@ -168,6 +195,15 @@ export default function Experiences() {
         "sql",
         "mysql",
         "linux",
+      ],
+      softSkills: [
+        "team-work",
+        "communication",
+        "critical-thinking",
+        "active-listening",
+        "curiosity",
+        "rigor",
+        "attention-to-details",
       ],
     },
     {
@@ -194,7 +230,13 @@ export default function Experiences() {
       details: [
         "Conception et intégration des maquettes pour la refonte d'applications administratives.",
       ],
-      skills: ["javascript", "git", "linux"],
+      techSkills: ["javascript", "git", "linux"],
+      softSkills: [
+        "critical-thinking",
+        "active-listening",
+        "rigor",
+        "attention-to-details",
+      ],
     },
     {
       startDate: "09-03-2019",
@@ -220,7 +262,7 @@ export default function Experiences() {
   };
 
   return (
-    <Container maxW={"7xl"}>
+    <Container maxW={"4xl"}>
       <Flex
         py={{ lg: "120px", base: "100px" }}
         minH={"100dvh"}
@@ -233,45 +275,39 @@ export default function Experiences() {
             Mes expériences
           </Heading>
         </Flex>
-        <Flex
-          flexDir="column"
-          flex={"1"}
-          position={"relative"}
-          gap={12}
-          py={12}
-          w={"100%"}
-        >
+        <Flex flexDir="column" gap={12} py={12} w={"100%"}>
           {steps.map((step, index) => {
             const isStepCurrent = currentStep == index;
             return (
               <Flex
                 key={index}
-                flexDir={"row"}
-                w={"100%"}
+                flexDir={{ md: "row", base: "column" }}
+                maxW={"100%"}
                 gap={4}
-                alignItems={"center"}
+                alignItems={{ md: "center", base: "flex-start" }}
                 onClick={() => goToStep(index)}
                 cursor={isStepCurrent ? "default" : "pointer"}
               >
-                <Flex
-                  flexDir={"column"}
+                <Heading
+                  as="h3"
                   h={"fit"}
-                  w={"160px"}
+                  minW={"100px"}
                   color={isStepCurrent ? "light.default" : "light.dirty"}
-                  fontSize={isStepCurrent ? "4xl" : "2xl"}
+                  fontSize={isStepCurrent ? "3xl" : "2xl"}
                   fontWeight={isStepCurrent ? "700" : "500"}
-                  textAlign={"right"}
+                  textAlign={{ md: "right", base: "left" }}
                 >
-                  <Text>{new Date(step.startDate).getFullYear()}</Text>
-                </Flex>
-                <Flex flexDir={"column"} gap={2} w={"auto"}>
+                  {new Date(step.startDate).getFullYear()}
+                </Heading>
+                <Flex flexDir={"column"} gap={{ md: 2, base: 0 }}>
                   <Heading
                     as="h3"
-                    w={"fit"}
+                    w={"full"}
                     color={isStepCurrent ? "light.default" : "light.dirty"}
                     fontSize={isStepCurrent ? "3xl" : "2xl"}
                     fontWeight={isStepCurrent ? "700" : "500"}
                     textTransform={isStepCurrent ? "uppercase" : "none"}
+                    wordBreak={"break-word"}
                   >
                     {step.title} -{" "}
                     {isStepCurrent ? (
@@ -341,6 +377,7 @@ export default function Experiences() {
                               pl={4}
                               listStyle={"none"}
                               transition={"all 0.3s ease-in-out"}
+                              wordBreak={"break-word"}
                               _hover={{ color: "light.default", pl: 6 }}
                             >
                               <Span mr={2}>.</Span>
@@ -348,8 +385,11 @@ export default function Experiences() {
                             </List.Item>
                           ))}
                         </List.Root>
-                        {step.skills && (
-                          <ExperienceSkills skillsSlugs={step.skills} />
+                        {step.techSkills && (
+                          <ExperienceSkills skillsSlugs={step.techSkills} />
+                        )}
+                        {step.softSkills && (
+                          <ExperienceSkills skillsSlugs={step.softSkills} />
                         )}
                       </FlexMotion>
                     ) : null}
