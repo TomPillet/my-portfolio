@@ -1,5 +1,12 @@
 [
   {
+    "slug": "javascript",
+    "title": "Javascript",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg",
+    "level": "intermediate",
+    "categories": ["front", "back"]
+  },
+  {
     "slug": "typescript",
     "title": "Typescript",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg",
@@ -21,6 +28,13 @@
     "categories": ["front"]
   },
   {
+    "slug": "vuejs",
+    "title": "VueJS",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
+    "level": "junior",
+    "categories": ["front"]
+  },
+  {
     "slug": "nextjs",
     "title": "Next.js",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-plain.svg",
@@ -38,6 +52,13 @@
     "slug": "tailwind",
     "title": "Tailwind",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    "level": "intermediate",
+    "categories": ["front", "design"]
+  },
+  {
+    "slug": "chakra-ui",
+    "title": "ChakraUI",
+    "logoUrl": "/skills/chakra-ui.jpg",
     "level": "intermediate",
     "categories": ["front", "design"]
   },
@@ -136,6 +157,13 @@
     "slug": "wordpress",
     "title": "Wordpress",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg",
+    "level": "junior",
+    "categories": ["cms", "front", "back"]
+  },
+  {
+    "slug": "prestashop",
+    "title": "Prestashop",
+    "logoUrl": "/skills/prestashop.png",
     "level": "junior",
     "categories": ["cms", "front", "back"]
   },
