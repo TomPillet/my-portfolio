@@ -198,8 +198,6 @@ export default function Experiences() {
       ],
       softSkills: [
         "team-work",
-        "communication",
-        "critical-thinking",
         "active-listening",
         "curiosity",
         "rigor",
@@ -386,10 +384,16 @@ export default function Experiences() {
                           ))}
                         </List.Root>
                         {step.techSkills && (
-                          <ExperienceSkills skillsSlugs={step.techSkills} />
+                          <>
+                            <Span>Technologies : </Span>
+                            <ExperienceSkills skillsSlugs={step.techSkills} />
+                          </>
                         )}
                         {step.softSkills && (
-                          <ExperienceSkills skillsSlugs={step.softSkills} />
+                          <>
+                            <Span>Savoir-être : </Span>
+                            <ExperienceSkills skillsSlugs={step.softSkills} />
+                          </>
                         )}
                       </FlexMotion>
                     ) : null}
