@@ -44,7 +44,7 @@ export default function Header() {
       <HeaderLink
         icon={FaTimeline}
         route="/experiences"
-        title="Expériences"
+        title="Parcours"
         isRouteActive={pathname === "/experiences"}
       />
       <HeaderLink

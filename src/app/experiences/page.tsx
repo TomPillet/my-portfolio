@@ -257,7 +257,7 @@ export default function Experiences() {
       >
         <Flex flexDir={"column"} alignItems={"center"} gap={4}>
           <Heading as="h1" textAlign={"center"} variant={"mainTitle"}>
-            Mes expériences
+            Mon parcours
           </Heading>
         </Flex>
         <Flex flexDir="column" gap={12} py={12} w={"100%"}>
