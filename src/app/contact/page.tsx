@@ -51,14 +51,15 @@ export default function Contact() {
         ])
       ) as Record<string, string>;
 
-    setSavedFormData({
+    const newData = {
       firstname,
       lastname,
       email,
       phone,
       title,
       message,
-    });
+    };
+    setSavedFormData(newData);
 
     if (!captcha) {
       toaster.create({
@@ -73,7 +74,7 @@ export default function Contact() {
       id: loadingToasterId,
       title: "Le message est en cours d'envoi...",
     });
-    await sendEmail(savedFormData, captcha).then((res) => {
+    await sendEmail(newData, captcha).then((res) => {
       toaster.remove(loadingToasterId);
       if (res.success) {
         toaster.create({

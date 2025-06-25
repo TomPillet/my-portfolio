@@ -40,7 +40,11 @@ const EmailSchema = z.object({
   firstname: z.string(),
   lastname: z.string(),
   email: z.string().email(),
-  phone: z.nullable(z.string().regex(/^0[1-9]\d{8}$/)),
+  phone: z.union([
+    z.string().length(0),
+    z.string().regex(/^\+?[\d\s\-\(\)]{7,20}$/), // allows spaces, dashes, parentheses
+    z.null(),
+  ]),
   title: z.nullable(z.string()),
   message: z.string(),
 });
