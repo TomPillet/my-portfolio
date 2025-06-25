@@ -182,15 +182,7 @@ export default function Experiences() {
         "Maintenance corrective, évolutive et préventive d'une application d'ERP pour PME.",
         "Conception d'interfaces modernes et responsives sur Figma.",
       ],
-      techSkills: [
-        "typescript",
-        "angular",
-        "tailwind",
-        "php",
-        "git",
-        "sql",
-        "linux",
-      ],
+      techSkills: ["typescript", "angular", "php", "git", "sql", "linux"],
       softSkills: [
         "team-work",
         "active-listening",

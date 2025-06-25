@@ -126,5 +126,26 @@
     "type": "UNIV",
     "etablissement": "iscod",
     "skills": []
+  },
+  {
+    "slug": "perfony",
+    "title": "Perfony",
+    "description": {
+      "sections": [
+        {
+          "title": "",
+          "content": "",
+          "imageUrl": ""
+        }
+      ]
+    },
+    "shortDescription": "Perfony est une application ERP, visant à faciliter la gestion des équipes et projets d'une entreprise.",
+    "imageUrl": "/projects/perfony.png",
+    "gitUrl": "",
+    "hostUrl": "https://www.perfony.com/",
+    "date": "2021",
+    "type": "PRO",
+    "etablissement": "perfony",
+    "skills": ["angular", "typescript", "php", "sql", "git"]
   }
 ]
