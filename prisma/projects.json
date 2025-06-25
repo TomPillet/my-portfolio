@@ -11,7 +11,7 @@
         }
       ]
     },
-    "shortDescription": "Rédaction d'un cahier des charges fonctionnel : développement et implémentation d'un SIRH pour une entreprise européenne.",
+    "shortDescription": "Rédaction d'un cahier des charges fonctionnel sur l'implémentation d'un SIRH pour une société fictive.",
     "imageUrl": "/projects/edc-cahier-charges-fonctionnel.png",
     "gitUrl": "",
     "hostUrl": "",
@@ -19,28 +19,6 @@
     "type": "UNIV",
     "etablissement": "iscod",
     "skills": []
-  },
-  {
-    "slug": "besacraft",
-    "title": "Besacraft",
-    "description": {
-      "sections": [
-        {
-          "title": "",
-          "content": "",
-          "imageUrl": ""
-        }
-      ]
-    },
-    "shortDescription": "Collectif visant à reproduire le Besançon du 18ème siècle sur le jeu Minecraft, en s'armant de scripts Python et de patience.",
-    "imageUrl": "/projects/besacraft.jpg",
-    "gitUrl": "",
-    "hostUrl": "https://besacraft.fr/",
-    "date": "2024",
-    "isActive": true,
-    "type": "PERSO",
-    "etablissement": "besacraft",
-    "skills": ["java"]
   },
   {
     "slug": "infras-map",
@@ -75,7 +53,7 @@
         }
       ]
     },
-    "shortDescription": "Design d'un formulaire d'inscription à une newsletter, en pur HTML/CSS/JS, sur la base d'une maquette de Frontend Mentor.",
+    "shortDescription": "Intégration d'une maquette d'un formulaire d'inscription à une newsletter, en HTML, CSS et JS seulement.",
     "imageUrl": "/projects/newsletter-sign-up.jpg",
     "gitUrl": "https://github.com/TomPillet/design_newsletter-sign-up",
     "hostUrl": "",
@@ -96,7 +74,7 @@
         }
       ]
     },
-    "shortDescription": "Plateforme pour organiser ses livres/films/séries à lire/voir, en Laravel et Vue.js. Projet en pause mais pas abandonné !",
+    "shortDescription": "Plateforme pour organiser ses livres, films et séries à lire ou voir. Projet en pause pour l'instant.",
     "imageUrl": "/projects/pal-pav.jpg",
     "gitUrl": "https://github.com/TomPillet/pal-pav",
     "hostUrl": "",
@@ -118,7 +96,7 @@
         }
       ]
     },
-    "shortDescription": "Rédaction de documents d'audit (route de migration, étude de solutions,...) d'une architecture logicielle d'un complex scolaire.",
+    "shortDescription": "Rédaction de documents d'audit d'une architecture logicielle d'un complex scolaire.",
     "imageUrl": "/projects/edc-archi-logicielle.png",
     "gitUrl": "",
     "hostUrl": "https://drive.google.com/drive/folders/1znF5SLMi0ZGtIqfkADxVAjjvZsfArVgr?usp=sharing",
@@ -143,7 +121,7 @@
     "imageUrl": "/projects/perfony.png",
     "gitUrl": "",
     "hostUrl": "https://www.perfony.com/",
-    "date": "2021",
+    "date": "2022",
     "type": "PRO",
     "etablissement": "perfony",
     "skills": ["angular", "typescript", "php", "sql", "git"]
