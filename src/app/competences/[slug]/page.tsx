@@ -121,7 +121,7 @@ export default async function CompetenceDetails({
               </Heading>
               <Flex flexDir={"row"} flexWrap={"wrap"} gap={4}>
                 {projects.map((project) => (
-                  <Link key={project.id} href={`/projects/${project.slug}`}>
+                  <Link key={project.id} href={`/projets/${project.slug}`}>
                     <Highlight
                       query={project.title}
                       styles={{
