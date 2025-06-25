@@ -13,7 +13,6 @@ export default function ImageWithDominantColor({
   const imgRef = useRef<HTMLImageElement>(null);
 
   const getDominantColor = async (): Promise<string> => {
-    console.log("elo");
     try {
       if (imgRef.current === null) return "";
 
@@ -49,7 +48,6 @@ export default function ImageWithDominantColor({
         if ((r < 10 && g < 10 && b < 10) || (r > 245 && g > 245 && b > 245)) {
           continue;
         }
-        console.log("pixel");
 
         const quantizedR = Math.round(r / 10) * 10;
         const quantizedG = Math.round(r / 10) * 10;

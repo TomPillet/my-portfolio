@@ -9,7 +9,6 @@ export async function getSkillBySlug(slug: string): Promise<Skill | null> {
         slug: slug,
       },
     });
-    console.log(skillData);
     return skillData;
   } catch (error) {
     console.error("Error fetching skill data:", error);

@@ -8,7 +8,6 @@ export async function getTechSkills(): Promise<Skill[]> {
         .filter((category) => category.slug != "softskill")
         .map((category) => category.id);
     });
-    console.log("techSkillsIds", techSkillsIds);
 
     const response = await fetch(`/api/skills?categoriesIds=${techSkillsIds}`, {
       method: "GET",
@@ -27,7 +26,6 @@ export async function getSoftSkills(): Promise<Skill[]> {
         return category.map((category) => category.id);
       }
     );
-    console.log("softSkillId", softSkillId);
     const response = await fetch(`/api/skills?categoriesIds=${softSkillId}`, {
       method: "GET",
     });

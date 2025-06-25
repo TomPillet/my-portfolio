@@ -13,7 +13,6 @@ export async function GET(request: Request) {
 
   try {
     if (categoriesIds && categoriesIds.length > 0) {
-      console.log("categoriesIds", categoriesIds);
       filters.categories = {
         some: {
           categoryId: { in: categoriesIds },
