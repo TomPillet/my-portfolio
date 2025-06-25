@@ -86,7 +86,7 @@ export default function Home() {
                 toujours plus compétent, créatif, polyvalent et rigoureux.
               </Text>
               <Text fontSize={"lg"}>
-                Ce qui m{"'"}anime : être à l'écoute et soucieux de l'
+                Ce qui m{"'"}anime : être à l{"'"}écoute et soucieux de l{"'"}
                 <strong>expérience utilisateur</strong> !
               </Text>
             </Flex>

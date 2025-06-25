@@ -17,7 +17,7 @@ export default function Header() {
     window.addEventListener("scroll", () => {
       setScrollY(window.scrollY);
     });
-  });
+  }, []);
 
   return (
     <Flex

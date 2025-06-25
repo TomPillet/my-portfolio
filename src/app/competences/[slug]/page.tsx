@@ -87,7 +87,7 @@ export default async function CompetenceDetails({
             </Flex>
             <Flex flexDir={"column"} gap={2}>
               <Heading as="h2" variant={"secondTitle"}>
-                Ce que j'en pense
+                Ce que j{"'"}en pense
               </Heading>
               <Text
                 textAlign={"justify"}

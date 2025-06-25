@@ -49,7 +49,7 @@ export default async function CompetenceDetails({
           <Flex flexDir={"column"} gap={8}>
             <Flex flexDir={"column"} gap={2}>
               <Heading as="h2" variant={"secondTitle"}>
-                C'est quoi ?
+                C{"'"}est quoi ?
               </Heading>
               <Text
                 textAlign={"justify"}
