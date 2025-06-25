@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <Container maxW="7xl">
       <Flex
-        py={{ lg: "60px", base: "40px" }}
+        py={{ lg: "100px", base: "60px" }}
         minH={"100dvh"}
         w="full"
         justifyContent="center"
