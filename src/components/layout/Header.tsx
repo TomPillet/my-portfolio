@@ -9,10 +9,11 @@ import HeaderLink from "../ui/HeaderLink";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
-  const [scrollY, setScrollY] = React.useState(0);
+  const [scrollY, setScrollY] = React.useState(1);
   const pathname = usePathname();
 
   useEffect(() => {
+    setScrollY(window.scrollY);
     window.addEventListener("scroll", () => {
       setScrollY(window.scrollY);
     });
