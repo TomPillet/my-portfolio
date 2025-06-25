@@ -66,6 +66,7 @@ export default function Contact() {
         title: "Impossible d'envoyer le message !",
         description: "Veuillez valider le reCAPTCHA.",
         type: "error",
+        duration: 6000,
       });
       return;
     }
@@ -81,6 +82,7 @@ export default function Contact() {
           title: "Message bien envoyé !",
           description: res.message,
           type: "success",
+          duration: 10000,
         });
         setSavedFormData({
           firstname: "",
@@ -98,6 +100,7 @@ export default function Contact() {
           title: "Erreur lors de l'envoi du message !",
           description: res.message,
           type: "error",
+          duration: 6000,
         });
       }
     });
