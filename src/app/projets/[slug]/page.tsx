@@ -10,6 +10,16 @@ interface CompetenceDetailsProps {
   }>;
 }
 
+type ProjectDetailsTexts = {
+  presentation: string;
+  context: string;
+  actors: string;
+  work: string;
+  results: string;
+  following: string;
+  analysis: string;
+};
+
 export default async function CompetenceDetails({
   params,
 }: CompetenceDetailsProps) {
@@ -46,13 +56,7 @@ export default async function CompetenceDetails({
                 textIndent={"2em each-line"}
                 whiteSpace={"pre-line"}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                {(projectData.description as ProjectDetailsTexts).presentation}
               </Text>
             </Flex>
             <Flex flexDir={"column"} gap={2}>
@@ -64,13 +68,7 @@ export default async function CompetenceDetails({
                 textIndent={"2em each-line"}
                 whiteSpace={"pre-line"}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                {(projectData.description as ProjectDetailsTexts).context}
               </Text>
             </Flex>
             <Flex flexDir={"column"} gap={2}>
@@ -82,13 +80,7 @@ export default async function CompetenceDetails({
                 textIndent={"2em each-line"}
                 whiteSpace={"pre-line"}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                {(projectData.description as ProjectDetailsTexts).actors}
               </Text>
             </Flex>
             <Flex flexDir={"column"} gap={2}>
@@ -100,13 +92,7 @@ export default async function CompetenceDetails({
                 textIndent={"2em each-line"}
                 whiteSpace={"pre-line"}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                {(projectData.description as ProjectDetailsTexts).work}
               </Text>
             </Flex>
             <Flex flexDir={"column"} gap={2}>
@@ -118,13 +104,7 @@ export default async function CompetenceDetails({
                 textIndent={"2em each-line"}
                 whiteSpace={"pre-line"}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                {(projectData.description as ProjectDetailsTexts).results}
               </Text>
             </Flex>
             <Flex flexDir={"column"} gap={2}>
@@ -136,13 +116,7 @@ export default async function CompetenceDetails({
                 textIndent={"2em each-line"}
                 whiteSpace={"pre-line"}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                {(projectData.description as ProjectDetailsTexts).following}
               </Text>
             </Flex>
             <Flex flexDir={"column"} gap={2}>
@@ -154,13 +128,7 @@ export default async function CompetenceDetails({
                 textIndent={"2em each-line"}
                 whiteSpace={"pre-line"}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                {(projectData.description as ProjectDetailsTexts).analysis}
               </Text>
             </Flex>
             <Flex
