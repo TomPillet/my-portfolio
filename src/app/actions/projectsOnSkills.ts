@@ -35,6 +35,25 @@ export async function getProjectsBySkills(
   }
 }
 
+export async function getProjectsBySkill(skillId: number): Promise<Project[]> {
+  try {
+    const projectSkills = await prisma.projectsOnSkills
+      .findMany({
+        where: {
+          skillId: skillId,
+        },
+        include: {
+          project: true,
+        },
+      })
+      .then((projects) => projects.map((item) => item.project));
+    return projectSkills;
+  } catch (error) {
+    console.error("Error fetching projects data on skill:", error);
+    throw new Error("Failed to fetch projects data on skill");
+  }
+}
+
 export async function getSkillsByProject(projectId: number): Promise<Skill[]> {
   try {
     const projectSkills = await prisma.projectsOnSkills

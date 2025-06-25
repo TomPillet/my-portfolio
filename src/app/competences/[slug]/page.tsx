@@ -1,6 +1,8 @@
 import { Flex, Heading, Container, Text, Highlight } from "@chakra-ui/react";
 import { getSkillBySlug, getSkillLevel } from "@/app/actions/skillData";
-import { Skill, SkillLevel } from "@prisma/client";
+import { Project, Skill, SkillLevel } from "@prisma/client";
+import { getProjectsBySkill } from "@/app/actions/projectsOnSkills";
+import Link from "next/link";
 
 interface CompetenceDetailsProps {
   params: Promise<{
@@ -22,6 +24,9 @@ export default async function CompetenceDetails({
   const skillData: Skill | null = await getSkillBySlug(slug).then((res) => res);
   const skillLevel: SkillLevel | null = await getSkillLevel(
     skillData?.levelId ?? 0
+  );
+  const projects: Project[] = await getProjectsBySkill(skillData?.id ?? 0).then(
+    (res) => res
   );
 
   return (
@@ -103,6 +108,37 @@ export default async function CompetenceDetails({
               >
                 {(skillData.details as CompetenceDetailsTexts).myJourney}
               </Text>
+            </Flex>
+            <Flex
+              flexDir={"column"}
+              gap={4}
+              id="skills-attached"
+              alignItems={"center"}
+            >
+              {/* TODO: Add button to slide directly here */}
+              <Heading as="h3" variant={"secondTitle"}>
+                Projets rattachés
+              </Heading>
+              <Flex flexDir={"row"} flexWrap={"wrap"} gap={4}>
+                {projects.map((project) => (
+                  <Link key={project.id} href={`/projects/${project.slug}`}>
+                    <Highlight
+                      query={project.title}
+                      styles={{
+                        px: "2",
+                        py: "1",
+                        rounded: "xl",
+                        bg: "light.default",
+                        color: "dark.default",
+                        fontSize: { lg: "xl", base: "sm" },
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {project.title}
+                    </Highlight>
+                  </Link>
+                ))}
+              </Flex>
             </Flex>
           </Flex>
         )}
