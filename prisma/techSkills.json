@@ -1,184 +1,236 @@
 [
   {
     "slug": "javascript",
-    "title": "Javascript",
+    "title": "JavaScript",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg",
     "level": "intermediate",
-    "categories": ["front", "back"]
+    "categories": ["front", "back"],
+    "details": {
+      "myDefinition": "Avec le HTML et le CSS, JavaScript fait naturellement partie des premiers langages de programmation web que j'ai découvert. Aujourd'hui, JavaScript fait et permet tout. Des interfaces complexes, parfois en 3D, jusqu'aux serveurs sécurisés, en passant par les tests automatisés ou encore des solutions de type ORM... Pour moi, JavaScript ne se contente pas de sublimer l'expérience utilisateur, il optimise aussi l'expérience développeur.",
+      "myExperience": "Cette compétence me suit depuis des années dans ma carrière et mes apprentissages. Mes premières fois avec JavaScript se contentaient de simples sites statiques, auxquels il fallait rajouter des interactions basiques (animations, gestion des formulaires, etc.). Très vite, j'ai commencé à exploiter des API, notamment avec Ajax.\n\nEt puis, j'ai découvert le merveilleux monde des frameworks. Ma première expérience sur le sujet renvoie à mon alternance chez Perfony, où j'ai appris ce qu'était Angular et TypeScript. Mes petits projets de bidouille à l'époque m'ont permis d'avoir l'assurance de coder une interface complexe : un tableau de widgets entièrement customisable (taille et placement des widgets, largeur des colonnes de la grille, hauteur des lignes, etc.) pour faciliter l'affichage des données essentielles des équipes et projets des utilisateurs. Résultat : beaucoup de retours positifs sur la feature apportée, qui reste encore aujourd'hui un outil clé de l'application.",
+      "myThought": "Aujourd'hui, j'estime avoir un bon niveau en javascript. Loin du niveau d'un expert bien entendu, mais j'ai déjà eu l'opportunité d'enseigner les bases du langage à une étudiante sur des cours particuliers. Etant certain de vouloir progresser dans le développement web, j'inscris fréquemment JavaScript dans mes séances de veilles technologiques.\n\nJe trouve qu'il peut être simple d'appréhender JavaScript au début, du moins ce fut mon cas. Mais dès qu'on creuse vers les bibliothèques et frameworks, le langage peut apporter un lot de complexités et de possibilités qui dessinent une \"learning curve\" (courbe d'apprentissage) exponentielle.\n\nL'essentiel, pour s'en sortir dès le début avec JavaScript, est de saisir ce qu'est le DOM et peut-être les bases aussi du fonctionnement d'une page, et pourquoi pas d'un navigateur, webs.",
+      "myJourney": "Pour finir, j'estime avoir encore beaucoup à apprendre sur JavaScript. Mais je ne suis pas peu fier d'en être arrivé à ce niveau où je saurai écrire de A à Z une application web : interfaces, animations, requêtes APIs, sécurité des saisies, authentification, cache, tests automatisés... Voilà ce que je sais faire aujourd'hui en JavaScript (et grâce à des technologies annexes), et je sais que je saurai en faire plus demain.\n\nProchaines étapes dans mon expertise du langage : étudier les streams de données (avec Node.js notamment) et les interfaces 3D (avec Three.js)."
+    }
   },
   {
     "slug": "typescript",
-    "title": "Typescript",
+    "title": "TypeScript",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg",
     "level": "junior",
-    "categories": ["front", "back"]
+    "categories": ["front", "back"],
+    "details": {
+      "myDefinition": "Pour faire simple, TypeScript est la suite logique dans l'apprentissage des technologies du web, après avoir acquis les bases de JavaScript. Il sert de surcouche à ce dernier, pour apporter de la détection d'erreurs pendant le développement, un refactoring plus sûr, et une documentation vivante grâce au typage. Il est d'ailleurs essentiel à des frameworks frontend comme Angular\n\nEn quelque sorte, TypeScript est du JavaScript amélioré : on écrit du JS dans un fichier .ts tout en bénéficiant de garde-fous utiles. Et forcément, c'est très intéressant quand on veut faire des applications plus complexes, plus robustes, et donc plus professionnelles.",
+      "myExperience": "La première fois que j'ai rencontré TypeScript, c'était lors de mon alternance chez Perfony, où j'ai travaillé sur leur application développée avec Angular. Plus tard, chez Capgemini, j'ai de nouveau utilisé TypeScript dans des projets Angular, ce qui m'a permis de confirmer son utilité pour faciliter la production de code frontend robuste. Par exemple, TypeScript a été particulièrement utile pour conformiser et sécuriser les données saisies par les utilisateurs grâce à l'implémentation d'objets typés personnalisés.\n\nCes expériences m'ont permis de confirmer l'importance de cette technologie dans le monde des projets webs d'entreprise.",
+      "myThought": "Jusqu'à lors, je n'ai pas exploré toutes les capacités de TypeScript. C'est pourquoi je me place encore comme junior sur le langage, même si j'ai su de par mes expériences et projets personnels consolider mes acquis. Car, en effet, TypeScript est pour moi aujourd'hui un must dans mon écosystème de développement web frontend. Il me permet de mieux organiser mon code et d'anticiper les bugs. Je pense que pour se sentir à l'aise avec TypeScript, il faut être familier avec la programmation orientée objet, et surtout être familier avec JavaScript.",
+      "myJourney": "Mon objectif avec TypeScript est d'en devenir un expert. C'est indéniablement un de mes langages préférés, si ce n'est mon préféré, et je remarque pour autant que je manque encore de connaissances pour oser m'attitrer \"développeur confirmé\" en TypeScript. Cette prise de conscience, je l'ai souvent en tête notamment lorsque je consulte des articles/vidéos qui donnent des conseils sur l'utilisation de cette technologie avancée."
+    }
   },
   {
     "slug": "angular",
     "title": "Angular",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-plain.svg",
     "level": "junior",
-    "categories": ["front"]
+    "categories": ["front"],
+    "details": {
+      "myDefinition": "Angular est un framework de développement frontend, que j'ai en premier découvert lors de mon alternance chez Perfony. Avant cela, je me contentais de coder mes sites webs avec du JavaScript natif, saupoudré de quelques fonctions JQuery, et forcément, j'ai fini par mettre la main sur des limites qu'Angular (et d'autres technologies du genre) parvient à combler.\n\nL'une de ses particularités est de reposer son écosystème sur du TypeScript. A moins d'utiliser les toutes premières versions du framework, il est difficile de développer une application Angular sans connaître un peu TypeScript.\n\nPar ailleurs, en 2025, 8,4% des 1 million de pages web les plus performantes du monde tournent sur Angular, ce dernier atteignant la 5ème position des frameworks web les plus utilisés, avec 80% de satisfaction auprès des développeurs qui l'ont utilisé. Bien qu'il ne soit pas le seul, Angular est ainsi un framework reconnu et capable de développer des applications structurées, maintenables et évolutives.",
+      "myExperience": "Ma première expérience avec Angular remonte à sa version 10, où étant alternant chez Perfony, j'ai pu découvrir en grande partie l'environnement de développement que le framework proposait. Et même si je n'avais aucune expérience en TypeScript ou quelconque framework frontend auparavant, ma solide connaissance des fondamentaux de JavaScript de l'époque ont beaucoup aidé à l'apprentissage de cette technologie.\n\nPerfony m'y a ainsi formé pendant un an : j'ai découvert comment gérer les routes, les guards, l'authentification, le cache, et surtout les composants en Angular (en plus d'en découvrir les concepts pour certains). Cela m'a convaincu par la suite d'intégrer le framework à mes projets personnels ou universitaires, et m'a surtout permis derrière d'être capable de gérer avec aise plusieurs applications Angular chez Capgemini. J'ai en effet pu former un autre alternant sur les concepts de base de l'outil, et participer à des évolutions de version sur des applications au bord de l'obsolescence.",
+      "myThought": "Aujourd'hui, j'ai du mal à me considérer comme au dessus d'un développeur junior en Angular. En premier parce qu'il va de paire, pour moi, que si je me considère comme junior à TypeScript, il en va de même avec Angular. Car, comme je l'ai déjà écrit, Angular est intrinsèquement lié à TypeScript. Ensuite, mes connaissances en Angular ne sont pas tant à jour que cela : depuis les expériences dont j'ai parlé, ont été introduit les \"signals\", les composants standalones par défaut (se privant des \"NgModules\"), des avancées vers du rendu côté serveur et une gestion fine de l'hydratation, etc.\n\nJe m'égare sur des sujets techniques, mais tout ceci vient démontrer que, malgré une montée en compétences rapide sur ce framework, j'ai encore beaucoup à apprendre (et aussi réapprendre). De surcroît, même si j'ai mentionné plusieurs fois l'importance de TypeScript dans Angular, je noterai que je n'avais aucune expérience en ce premier avant d'intégrer ce dernier à mon panel de compétences : ce qui m'a sauvé a été ma compréhension du web, et en particulier de JavaScript.",
+      "myJourney": "Angular a une place imposante dans mon coeur de développeur. Et pourtant, aujourd'hui vous lisez ces lignes sur un site développer avec NextJS, qui intègre la bibliothèque React. Mais je pense qu'avec un peu de formation en profondeur sur cette technologie, je finirai par retourner vers Angular pour des solutions qui requièrent une structure évolutive et robuste."
+    }
   },
   {
     "slug": "react",
     "title": "React",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     "level": "junior",
-    "categories": ["front"]
-  },
-  {
-    "slug": "vuejs",
-    "title": "VueJS",
-    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
-    "level": "junior",
-    "categories": ["front"]
+    "categories": ["front"],
+    "details": {
+      "myDefinition": "React est une bibliothèque Javascript dédiée au rendu d'interfaces frontend. Et même si certains développeurs font l'erreur de dire qu'il s'agit d'un framework (dont moi le premier avant de l'essayer), React n'a pas de structure imposée, est très flexible, et laisse le développeur contrôler le flux de l'application (c'est-à-dire qu'on choisit quand et comment utiliser l'outil pour le rendu des interfaces en appelant des composants et fonctions selon nos besoins).\n\nAlors que j'étais tête dans le guidon sur Angular, j'entendais beaucoup parler de React comme étant LA solution à toutes les applications frontend. Et pour cause : 20 fois plus téléchargé qu'Angular sur npm, possédant la plus grande communauté de développeurs frontend avec une lourde abondance de ressources et supports, presque 42% des développeurs déclarent en 2025 sur Stack Overflow préférer React à toute autre technologie frontend, etc.\n\nPendant longtemps, j'ai vu React comme une compétence peu familière, dérivant beaucoup de l'expérience développeur d'Angular, mais aussi essentielle à tout développeur web. Et lorsque j'ai décidé d'apprendre par moi-même cette technologie, j'ai compris son potentiel, ses avantages, mais aussi ses limites.",
+      "myExperience": "En premier lieu, React s'est inscrit dans ma carrière comme une curiosité, un besoin d'apprendre quelque chose de nouveau. J'ai exploré la bibliothèque d'abord par des projets simples : une todo list, une application pour diriger un robot sur une grille via un script en entrée, une autre pour inscrire des entreprises sur une  (projet:infras-map:), des interfaces design (comme projet:newsletter-sign-up:), etc. Avec ces premiers essais, j'ai fini par me sentir à l'aise avec l'écosystème et comprendre l'intérêt qu'y trouvent ces 42% de développeurs.\n\nPlus tard, lorsque j'ai intégré Cadcom, j'ai été amené à travailler concrètement sur des applications en React, et très souvent plus qu'en React. Car l'idée derrière cette technologie est d'accélérer et de simplifier le développement d'applications web, en fournissant une boîte à outils minimaliste, et en laissant le développeur y rajouter autant de modules que souhaité. Cela permet donc de démarrer petit, et d'enrichir plus tard l'application selon les besoins et la complexité du projet.",
+      "myThought": "Si je devais placer un point négatif à React, c'est la non vigilance aux dépendances que cela peut engendrer. En effet, il arrive souvent quand on développe une application avec React qu'une solution à un problème existe déjà et soit implémentable à notre environnement. Néanmoins, entre les mains d'un développeur inconscient, cela peut amener l'application à avoir une liste de dépendances extrêmement longue et difficile à maintenir.\n\nNéanmoins, de par sa simplicité, React reste je trouve très accessible. En près d'un an, j'ai assimilé ses fondamentaux (cycle de vie, logique, syntaxe), et ceux de modules très utilisés comme ChakraUI et Next.js. Et même si je suis passé par Angular avant, j'aurai pu me lancer directement dans React sans avoir exploré Typescript avant.\n\nComme démontré en amont, c'est aussi une superbe solution pour produire des applications simples rapidement, et envisageable pour des besoins plus larges (à condition d'y réfléchir convenablement).",
+      "myJourney": "Aujourd'hui, je considère React comme faisant partie de mes meilleures compétences ; avec certes un niveau junior, mais proche de l'intermédiaire (capable d'enseigner les bases à autrui). Mon objectif est de gagner en expertise sur cette technologie, que ce soit à travers des projets personnels (le plus souvent créatifs) ou professionnels."
+    }
   },
   {
     "slug": "nextjs",
     "title": "Next.js",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-plain.svg",
     "level": "junior",
-    "categories": ["front", "back"]
-  },
-  {
-    "slug": "react-native",
-    "title": "React Native",
-    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-    "level": "junior",
-    "categories": ["mobile", "front"]
+    "categories": ["front", "back"],
+    "details": {
+      "myDefinition": "Next.js est un framework qui intègre React et vise à proposer un écosystème permettant le développement d'applications fullstack, en JavaScript seulement (bien que TypeScript soit aussi supporté). Bien que j'ai découvert React avant Next.js, c'est principalement au travers du second que j'ai perfectionné mes compétences sur le premier. En effet, idéal par son aspect \"all-in-one\", Next.js est plus pratique que React seul pour des applications web complexes et structurées. Il intègre avec ça tout un tas de fonctionnalités intéressantes : authentification, composants serveurs (natifs à React mais surcouchés par Next.js), sessions, routing par l'architecture des fichiers, compression des médias, référencement automatique, etc.",
+      "myExperience": "Mon introduction à Next.js s'est faite lors de mon expérience chez Cadcom, où nous avions besoin de produire efficacement et rapidement le frontend de sites nécessitant souvent des features réalisables seulement en développement spécifique (donc pas via un CMS comme WordPress). A ce frontend en Next.js, nous y connections un service d'API (un WordPress en headless, ou une application Sylius pour du E-Commerce, par exemple), et n'utilisions l'aspect \"backend/serveur\" de Next.js seulement pour traiter des données sensibles et faire les requêtes API.\n\nBien que cela ne soit pas une mauvaise approche d'utilisation du framework, j'ai eu envie de m'aventurer plus en détails sur l'aspect fullstack de Next.js en développant notamment ce site portfolio. Interfaces UI, services, routing, traitement des données, appels API, référencement... tout est géré ici par Next.js seulement. Et comme c'est compatible avec TypeScript, j'ai pris la liberté de faire appel à ce langage pour l'ensemble du projet (langage qu'on n'utilisait au passage jamais pour les sites de Cadcom).",
+      "myThought": "Next.js fait incontestablement partie des trois technologies web que je maîtrise le plus (avec Angular et React, si on met de côté JavaScript et TypeScript). Mais comme je ne compte pas encore beaucoup de projets à mon actif, et n'ai probablement pas assez creusé le sujet tant le framework est complexe, je ne saurai me donner un niveau supérieur à junior.\n\nJe ne recommanderai pas Next.js à quelqu'un qui n'a jamais touché à React en premier lieu. Même s'il est possible d'apprendre rapidement les fondamentaux du framework, un développeur qui cherche à apprendre tantôt React, tantôt Next.js ne s'y retrouvera guère. D'autant qu'on peut mettre du temps à s'y faire avec plein de concepts, comme ç'a été mon cas avec les structures AppRouter et PagesRouter. La plus récente, AppRouter, est la plus conseillée aujourd'hui car la plus prometteuse (et à jour aussi). Alors que PagesRouter est destinée à être abandonnée, car ces deux solutions ne fonctionnent pas pareillement. Par exemple : AppRouter pousse à l'utilisation de composants serveurs, quand PagesRouter ne fait pas la distinction entre \"client\" et \"server\".",
+      "myJourney": "Finalement, Next.js est un framework que j'affectionne particulièrement. Lorsqu'on arrive à passer un certain pallier de la courbe d'apprentissage, on se familiarise vite avec l'outil et on appréhende plus facilement chaque problème. Et parce qu'il intègre un tas de fonctionnalités pratiques pour gagner du temps, comme le référence automatique, la gestion de sessions, et d'autres, je pense qu'il s'agit d'une compétence que je vais expertiser, en cohésion avec mes objectifs pour React."
+    }
   },
   {
     "slug": "tailwind",
-    "title": "Tailwind",
+    "title": "Tailwind CSS",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     "level": "intermediate",
-    "categories": ["front", "design"]
+    "categories": ["front", "design"],
+    "details": {
+      "myDefinition": "Tailwind CSS, ou Tailwind, est un framework CSS utilitaire, qui fournit une méthodologie et un ensemble d'outils pour construire des interfaces web modernes rapidement, directement dans le code HTML avec des classes personnalisées. L'idée qui me plaît dans cette solution est la possibilité de se séparer des fichiers CSS à maintenir en parallèle du reste, de réduire le risque de \"spaghetti CSS\", tout en encourageant une structure de code claire et lisible. C'est d'autant plus pratique quand on intègre ce framework dans une application React par exemple, surtout si on travaille en équipe, puisqu'on utilisera tous les mêmes classes, qu'elles soient prédéfinies ou personnalisées.",
+      "myExperience": "Dans mon parcours, Tailwind est arrivé sur une période où j'en avais marre d'utiliser Bootstrap (une librairie de styles génériques) et j'hésitais à ne faire que du CSS natif. Cependant, en intégrant des projets avec une lourde code base, comme chez Capgemini, je me suis aperçu qu'il était souvent plus simple de s'y retrouver dans le \"styling\" des composants grâce à Tailwind, à condition qu'il soit utilisé intelligemment. C'était aussi le cas lorsque je léguais mes projets à d'autres équipes de développeurs.",
+      "myThought": "Concrètement, je trouve Tailwind comme étant une excellente solution pour accélérer la production d'interfaces webs modernes. Et ayant toujours été un adepte du CSS, je me suis vite familiarisé à la verbosité des classes de Tailwind, ce qui en fait aujourd'hui un élément incontournable pour tous mes projets fronts. Le framework fait sans hésitation partie de mes meilleures compétences, et avec mon expérience dessus, il m'est facile de m'y attribuer un niveau intermédiaire.\n\nToutefois, je tiens à souligner que comme pour les frameworks JavaScript qui requièrent d'avoir les bases du dit langage, TailwindCSS requiert d'avoir une expérience avec CSS non négligeable : appliquer des propriétés de style en CSS se faisant déjà par des classes (et autres sélecteurs), il est essentiel de comprendre ce que feront les propriétés de style apportées par les classes de Tailwind.",
+      "myJourney": "Tailwind me suit dans mes développements fronts depuis bientôt deux ans, et cela ne s'arrêtera pas de si tôt pour sûr. En effet, le framework me fait fréquemment gagner du temps dans la mise en page et l'habillement de mes interfaces. Pour en devenir un expert, il me faudra malgré tout aborder l'outil plus en profondeur, en explorant par exemple les outils de configuration."
+    }
   },
   {
     "slug": "chakra-ui",
-    "title": "ChakraUI",
+    "title": "Chakra UI",
     "logoUrl": "/skills/chakra-ui.jpg",
     "level": "intermediate",
-    "categories": ["front", "design"]
+    "categories": ["front", "design"],
+    "details": {
+      "myDefinition": "Chakra UI, ou Chakra, est une bibliothèque de composants React, qui vise à fournir un ensemble de composants accessibles, réactifs, personnalisables et modernes. L'idée étant d'accélérer la création d'interfaces utilisateur (spoiler : ça fonctionne bien). Chakra me permet donc de coder la structure de mes pages plus rapidement, en me laissant écrire les propriétés de style directement sur les composants, tels des attributs de ces derniers. Ces composants qui sont d'ailleurs prêts à l'emploi et paramétrés avec des styles par défaut. Avec ceci, il est aussi possible, comme avec Tailwind, de configurer tout le design system d'une application, et même de créer des variants, c'est-à-dire des sortes de classes qui rassemblent plusieurs propriétés CSS. Chakra est aussi très utile pour gérer le responsive d'un site, et optimise drastiquement l'expérience développeur.",
+      "myExperience": "Initialement, j'ai découvert Chakra au cours de mon alternance chez Cadcom, où pour accélérer la production de sites, nous avions choisi d'utiliser Next.js (intégrant pour rappel React), et donc naturellement d'utiliser Chakra UI pour structurer et styliser les contenus. Il nous a d'ailleurs fait gagner beaucoup de temps dans le travail du responsive de nos sites, notamment parce que c'est soit géré automatiquement (pour des interfaces simples et bien pensés), soit paramétrables aisément.\n\nEnfin, par habitude de toujours vouloir aller plus loin, j'ai choisi d'intégrer ce framework à tous mes projets utilisant React pour le frontend. Par exemple, chaque élément d'UI de ce portfolio est développé avec l'aide de Chakra UI, tout comme c'en est le cas pour le design system.",
+      "myThought": "Grâce à mon expérience sur Tailwind, j'ai pu prendre en main assez facilement Chakra et monter rapidement en compétences dessus. C'est pourquoi, même si cela reste une compétence récente sur mon CV, je pense pouvoir m'y attribuer le niveau intermédiaire. Néanmoins, c'est un framework qui nécessite une aisance avec le CSS et React, et n'est donc pas ouvert à quiconque.",
+      "myJourney": "Etant donné que je prévois de poursuivre mon apprentissage de React à moyen terme, je ne vois pas pourquoi j'abandonnerai Chakra, si ce n'est pour le remplacer par une solution similaire. L'idéal sera là aussi d'atteindre un niveau d'expert, capable de construire des interfaces les yeux bandés."
+    }
   },
   {
     "slug": "nestjs",
     "title": "NestJS",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
     "level": "junior",
-    "categories": ["back"]
+    "categories": ["back"],
+    "details": {
+      "myDefinition": "NestJS est un framework permettant de créer des applications backend (donc côté serveur seulement) en Node.JS, supportant TypeScript. Sa structure est d'ailleurs inspirée d'Angular, alliant modularité, robustesse et scalabilité, ce qui explique son attractivité pour des projets complexes d'entreprise. C'est en effet une solution idéale pour les architectures microservices, les APIs REST (ce sur quoi j'ai travaillé) et les applications en temps réel.",
+      "myExperience": "Lors de mon alternance chez Cadcom, j'ai eu l'opportunité de découvrir NestJS, en créant une API REST pour un projet de réseau social privé. Cette expérience m'a permis de perfectionner mes compétences en backend, en créant les endpoints, en testant les routes d'API avec Postman, en gérant l'authentification des utilisateurs et la gestion de leurs rôles avec Keycloack, et en configurant bien entendu les vérifications et traitements de données. Avec ça, NestJS et ce projet m'ont permis de découvrir Prisma, un ORM que j'aborde en détails sur sa page respective, et qui facilite grandement la création et la maintenance de bases de données. ",
+      "myThought": "Bien que mon expérience du framework se résume à la création d'une API REST, cela suffit pour dire qu'avant d'utiliser NestJS, il est nécessaire d'avoir quelques acquis, que ce soit en JavaScript (voire TypeScript), si possible en Node.js aussi, mais surtout des connaissances en logique serveur, et en conception d'API en ce qui concernait mon projet.\n\nC'est un framework qui propose un beau lot de fonctionnalités, mais qui demande du temps pour être maîtrisé je pense, et c'est pourquoi je ne peux m'attribuer un autre niveau que junior.",
+      "myJourney": "Si tantôt je n'ai exploré qu'un maigre pourcentage de ce que NestJS est capable de faire, cela m'a donné envie d'en voir beaucoup plus. D'ailleurs, le fait que sa structure soit inspirée d'Angular me pousse à m'imaginer l'intégrer à l'avenir sur des projets couplant Angular et NestJS pour des besoins ambitieux et scalables. C'est un framework que je me vois bien apprendre un peu plus sur mon temps libre."
+    }
   },
   {
     "slug": "laravel",
     "title": "Laravel",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
     "level": "junior",
-    "categories": ["back"]
+    "categories": ["back"],
+    "details": {
+      "myDefinition": "Laravel est un framework PHP, rival de Symfony, conçu pour le développement d'applications backend. Il est réputé pour son écosystème complet et robuste, ce qui en fait un choix privilégié pour des projets web de toutes tailles, mais surtout pour des systèmes d'entreprise complexes. Un peu comme pour NestJS, Laravel est particulièrement adapté pour le développement d'applications full-stack, les APIs REST, et les services web modernes.",
+      "myExperience": "En tant que développeur au Crédit Agricole, j'ai eu l'opportunité de découvrir Laravel sur un projet de refonte architecturale et graphique d'une application de gestion de contrats régionaux. En plus de la découverte, cela m'a permis de renforcer mes compétences en php, en endpoints d'API, en routes sécurisées par des middlewares, et en systèmes d'authentification et d'autorisation pour les utilisateurs. J'ai pu aussi découvrir le concept d'ORM, avec Eloquent, alors que jusqu'ici j'écrivais des requêtes SQL directement dans les fichiers PHP de mes APIs.\n\nLorsque j'ai cherché à apprendre plus en profondeur Laravel sur mon temps libre (avec projet:pal-pav:), j'ai pu m'essayer un peu à VueJS, notamment grâce à la configuration prête à l'emploi d'InertiaJS, un outil qui compile les templates de VueJS (et React aussi) directement dans Laravel.",
+      "myThought": "Pour bien utiliser Laravel, il est essentiel d'avoir une bonne connaissance de PHP et des concepts de programmation orientée objet. Si on utilise Eloquent (ce qui sera fort possiblement le cas), une compréhension des bases de données relationnelles et de SQL sera bénéfique, ainsi que des connaissances en conception d'APIs pour les projets web modernes.\n\nN'ayant malheureusement pas plus creuser que ça cette technologie, je ne pourrai m'attribuer que le niveau de junior.",
+      "myJourney": "Laravel offre une multitude de fonctionnalités et d'outils qui peuvent prendre du temps à maîtriser pleinement. Bien que je me considère encore à un niveau junior avec ce framework, mon expérience m'a donné envie d'explorer davantage ses capacités. Je me vois bien approfondir mes connaissances de Laravel lors de futurs projets ou même sur mon temps libre, mais cela dépendra de si je ne préfère pas NestJS avant."
+    }
   },
   {
     "slug": "prisma",
     "title": "Prisma",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg",
     "level": "junior",
-    "categories": ["data", "back"]
+    "categories": ["data", "back"],
+    "details": {
+      "myDefinition": "Prisma est un ORM (Object-Relational Mapping) moderne pour les bases de données Node.js et TypeScript. Il simplifie grandement l'interaction avec les bases de données en fournissant une couche d'abstraction intuitive et type-safe, ce qui nous permet de nous concentrer sur la logique métier plutôt que sur les requêtes SQL complexes. Prisma est particulièrement apprécié pour sa facilité d'utilisation, sa performance et sa prise en charge par différents frameworks backend comme NestJS.",
+      "myExperience": "En alternance chez Cadcom, j'ai découvert Prisma en l'utilisant pour créer et gérer la base de données d'une API REST sur NestJS. Cela m'a permis de perfectionner mes compétences en modélisation de données et en gestion de bases de données relationnelles. Avec Prisma, j'ai pu définir des schémas de base de données clairs et concis, générer des migrations, et interagir avec la base de données de manière type-safe, ce qui a grandement réduit les erreurs courantes liées aux requêtes SQL.\n\nAujourd'hui, j'utilise aussi Prisma sur tous mes projets web personnels, car en plus de représenter un gain de temps dans la production d'une base de données, cela permet aussi de garantir une meilleure robustesse de celle-ci.",
+      "myThought": "Bien évidemment, pour être à l'aise avec Prisma, il est utile d'être à l'aise avec les bases de données relationnelles et SQL. Une connaissance préalable de TypeScript et de Node.js est également bénéfique, car Prisma tire pleinement parti des fonctionnalités de TypeScript pour offrir une expérience de développement robuste et sécurisée.\n\nPrisma est relativement facile à prendre en main si on a les prérequis, mais il offre quand même une multitude de fonctionnalités qui peuvent prendre du temps à maîtriser pleinement. Rien que les commandes de son CLI ont été complexes pendant un temps pour moi.",
+      "myJourney": "Mon expérience avec Prisma m'a donné envie d'explorer davantage ses capacités et de l'intégrer dans de futurs projets pour tirer parti de son potentiel. Cela m'a aussi donné envie d'explorer d'autres ORMs (comme Eloquent de Laravel). L'idée finale n'est pas de devenir un expert en cette technologie, mais plutôt de me former plus en profondeur sur la gestion de bases de données, sans passer par du SQL brut."
+    }
   },
   {
     "slug": "php",
     "title": "PHP",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-plain.svg",
     "level": "intermediate",
-    "categories": ["back"]
+    "categories": ["back"],
+    "details": {
+      "myDefinition": "PHP est un langage de script côté serveur largement utilisé pour le développement web : 77% à 79% des sites web utilisent PHP, notamment grâce aux CMS comme WordPress et aux frameworks comme Laravel. Connu pour sa simplicité et sa flexibilité, PHP s'intègre facilement avec HTML et est compatible avec de nombreuses bases de données. C'est d'ailleurs souvent le premier langage côté serveur qui est étudié par tout développeur web en devenir.",
+      "myExperience": "Sur l'ensemble de mes expériences, PHP était utilisé dans une écrasante majorité des projets. Perfony, Crédit Agricole, BWA, et Cadcom : c'est l'un des langages que j'ai le plus côtoyé, à chaque fois dans des environnements de développement qui diffèrent.\n\nChez Perfony, j'ai utilisé un PHP coordonné par un framework se rapprochant d'une version de symfony simplifiée, pour maintenir l'API, construire des Controllers, et parfois écrire des requêtes SQL brutes. Puis, chez les équipes du Crédit Agricole, j'ai alterné entre projets d'évolutions sur Laravel et projets de maintenance sur de vieilles applications qui tournent encore aujourd'hui sur du vieux PHP. Ma relation avec le langage ici était donc principalement centré sur la modernisation du code, parfois malgré les contraintes de devoir rester sur des technologies anciennes. Enfin, chez BWA et Cadcom, j'ai travaillé avec PHP dans le but de personnaliser des plugins et thèmes de sites PrestaShop et WordPress, selon des besoins clients souvent spécifiques et complexes, ou impossibles, à intégrer avec les outils par défaut.\n\nMes expériences chez Cadcom et Perfony ont d'ailleurs été les plus fructifiantes sur le sujet, en me permettant d'explorer la manipulation de fichiers, le traitement des données pour du contrôle et de la saisie automatique, la création d'endpoints d'API, les interactions directes avec des bases de données, etc. ",
+      "myThought": "Travailler avec PHP a été pour moi une tâche complexe au départ, puisqu'il n'y a pas vraiment d'équivalent lorsqu'on ne connaît que HTML, CSS et JavaScript. Mais comme tout développeur doit savoir s'adapter, c'est en faisant que j'ai appris à utiliser à bon escient PHP, et avec mes expériences, je peux aujourd'hui me considérer comme étant au niveau intermédiaire de ma maîtrise du langage.\n\nSi je devais donner des conseils à quiconque souhaitant apprendre PHP pour développer des applications côté serveur, ou même juste créer des plugins personnalisés sur WordPress, je recommanderai tout de même d'avoir des connaissances en programmation orientée objet (en n'importe quel langage) et sur le développement web et les interactions client-serveur. S'y connaitre en gestion de bases de données et en API REST est aussi utile mais peut s'apprendre en faisant si on est rigoureux.",
+      "myJourney": "PHP m'a accompagné sur les trois quarts de ma carrière, sous différentes formes, et je pense pouvoir encore beaucoup capitaliser dessus. En effet, contrairement à ce que peuvent penser certaines personnes, PHP est un langage qui se modernise avec le temps. De plus, refuser d'avoir ce langage dans ses bagages reviendrait à refuser de travailler pour un peu moins de 80% des sites et applications qui composent internet aujourd'hui.\n\nAttention tout de même, avec la popularité grandissante de JavaScript côté serveur, les tendances pourraient évoluer, et c'est pourquoi je pense me centrer sur les deux langages et une partie de leur lot de technologies pour les prochaines années, afin de garder une polyvalence d'action et d'influence sur le marché du web."
+    }
   },
   {
     "slug": "java",
     "title": "Java",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-plain.svg",
     "level": "junior",
-    "categories": ["software"]
-  },
-  {
-    "slug": "spring-boot",
-    "title": "Spring Boot",
-    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
-    "level": "junior",
-    "categories": ["back", "software"]
+    "categories": ["software"],
+    "details": {
+      "myDefinition": "Java est un langage de programmation polyvalent et orienté objet, réputé pour sa portabilité, sa robustesse et sa sécurité. Il est largement utilisé pour développer des applications d'entreprise, des applications mobiles Android avec Kotlin, et même des systèmes embarqués. Java est un choix populaire, qu'il fallait que j'intègre à mon lot de compétences, ne serait-ce que par curiosité d'étudier un langage dédié à faire du logiciel. Il peut en plus être utilisé pour faire du web, notamment avec sa librairie Spring qui propose un lot important d'outils et de fonctionnalités intéressants.",
+      "myExperience": "D'abord initié au langage durant ma licence, j'y ai appris à faire des logiciels simples pour notamment aborder la programmation orientée objet, l'algorithmie simple et l'administration réseau en connectant des machines entre elles via une même application. Toujours dans les études, cette fois-ci durant mon mastère, j'ai pu découvrir la construction d'API REST et les interactions avec les bases de données, notamment grâce aux outils Spring et Hibernate.\n\nLors de mon alternance chez Capgemini, je travaillais sur des applications Angular et Java. Et en ce qui concernait Java, j'ai pu appliquer ce que j'ai appris en cours par de la maintenance d'APIs, mais aussi en apprendre plus en découvrant les tests automatisés avec JUnit. Certaines de ces applications étaient ensuite intégrées à des systèmes embarquées pour une grande marque d'industrie automobile européenne.",
+      "myThought": "Ce que j'aime avec Java, c'est qu'il est constitué d'une communauté large et d'une bibliothèque de solutions riche. Son écosystème mature permet ainsi le développement de logiciels modernes. Si j'avais un regret à formuler, ce serait de ne pas m'être intéressé au langage plus tôt, car j'ai l'impression d'avoir encore beaucoup à découvrir. Mais ce n'est pas un regret justifié, car pour s'armer de Java, il faut avoir en tête les concepts de programmation orientée objet, de structures de données, et pourquoi pas aussi des notions en algorithmie. C'est un langage complexe, qui nécessite beaucoup de pratique pour être maîtrisé, et c'est pour cette raison que j'en reste aujourd'hui au niveau de junior.",
+      "myJourney": "Java est sans nul doute le langage que je choisirai à court, voire moyen terme, pour développer des solutions logicielles. Non par habitude seulement, mais surtout par envie d'en apprendre plus et d'augmenter mon niveau de compétences sur le sujet, jusqu'à ce que je sois satisfait de ce que j'aurai acquis."
+    }
   },
   {
     "slug": "sql",
     "title": "SQL",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg",
     "level": "intermediate",
-    "categories": ["data", "back"]
-  },
-  {
-    "slug": "mysql",
-    "title": "MySQL",
-    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
-    "level": "intermediate",
-    "categories": ["data", "infrastructure"]
-  },
-  {
-    "slug": "mariadb",
-    "title": "Mariadb",
-    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original.svg",
-    "level": "intermediate",
-    "categories": ["data", "infrastructure"]
+    "categories": ["data", "back"],
+    "details": {
+      "myDefinition": "SQL est un langage de programmation conçu pour gérer et manipuler des bases de données relationnelles. Il est largement utilisé pour interagir avec des bases de données, permettant aux utilisateurs de créer, lire, mettre à jour et supprimer des enregistrements. SQL est apprécié pour sa puissance, sa flexibilité et sa capacité à gérer des quantités massives de données de manière efficace.",
+      "myExperience": "Lors de mes expériences professionnelles et personnelles, j'ai utilisé SQL pour interagir avec des bases de données dans divers projets, notamment ceux de Perfony, du Crédit Agricole et de Cadcom. Ces entreprises, travaillant sur des domaines variés, m'ont permis de renforcer mes compétences en conception de bases de données, en écriture de requêtes complexes, en structure des données, et en optimisation des performances. J'ai ainsi eu l'occasion de travailler avec plusieurs systèmes de gestion de bases de données relationnelles tels que MySQL et MariaDB, ou encore des ORM comme Eloquent et Prisma.",
+      "myThought": "Pour bien utiliser SQL, il est utile d'avoir une compréhension de base des concepts de bases de données relationnelles, des principes de normalisation des données, et des bonnes pratiques de conception de schémas de bases de données. Une connaissance des commandes SQL de base (SELECT, INSERT, UPDATE, DELETE) est essentielle, ainsi que la compréhension des fonctions d'agrégation et des clauses de jointure.\n\nEn bref, avec l'expérience, je pense avoir un niveau intermédiaire, ou très proche de l'intermédiaire, en SQL. Je trouve d'ailleurs qu'il est utile aussi de savoir faire des diagrammes de classe, des diagrammes UML, pour faciliter les étapes de conception de nos structures de données.",
+      "myJourney": "Mon expérience avec SQL m'a donné envie d'explorer davantage ses capacités et de l'utiliser pour des projets plus complexes et innovants à l'avenir. Mais je sais aussi que le SQL, et les systèmes de base de données en général, ne se résument pas aux systèmes relationnelles, en explorant les autres types de systèmes."
+    }
   },
   {
     "slug": "git",
     "title": "Git",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-plain.svg",
     "level": "intermediate",
-    "categories": ["devops", "infrastructure"]
+    "categories": ["devops", "infrastructure"],
+    "details": {
+      "myDefinition": "Git est un système de contrôle de version distribué, largement utilisé pour le suivi des modifications du code source lors du développement de logiciels. Il est essentiel lorsqu'on veut travailler à plusieurs, et même seul ne serait-ce que pour faciliter la maintenance de notre projet. Au quotidien, Git ne me sert d'ailleurs pas qu'à garder un historique des évolutions de mes applications, puisque je l'utilise aussi pour avoir une trace de mes notes de cours.\n\nGit se dérive aujourd'hui en plusieurs solutions et interfaces : les plus connues étant GitHub, GitLab et Bitbucket. Pour ma part, j'ai conservé l'habitude d'utiliser GitHub pour mes projets personnels, mais je sais que GitLab est à priori une bonne solution lorsque l'on souhaite avoir accès à une suite DevOps plus complète que celle proposée sur GitHub, intégrée directement dans l'application.",
+      "myExperience": "Lors de mes expériences professionnelles et projets personnels, j'ai utilisé Git pour gérer le code source et collaborer avec d'autres développeurs. Travailler dès le départ avec Git m'a permis de rapidement maîtriser l'ensemble des concepts clés (commits, branches, merges, issues, cherry pick,...) et de m'habituer à toujours avoir un historique bien composé. En effet, à chacune de mes expériences en entreprise, j'ai assimilé Git à plus qu'un outil de versionning, mais aussi à un moyen de documenter la code base. C'est d'ailleurs l'un des compliments qui m'était donné de recevoir de la part de collègues développeurs.\n\nMa seule expérience professionnelle où Git n'était pas utilisé fut celle chez BWA. En effet, aucun projet n'utilisait de système de contrôle de version, pas même les développements spécifiques. Lorsque l'entreprise a cherché à intégrer Git à ses projets ne tournant pas sur PrestaShop, j'ai participé à la mise en place des CI/CD avec des pipelines.",
+      "myThought": "Bien que Git soit relativement facile à apprendre pour les opérations de base, il offre des fonctionnalités avancées qui peuvent prendre du temps à maîtriser pleinement : comme c'est le cas pour les pipelines de CI/CD. Mais il n'y a je pense pas meilleure approche pour s'y mesurer que d'apprendre en faisant, de préférence par le biais des lignes de commande.\n\nLes interfaces utilisant Git sont utiles dans cet apprentissage, mais certaines peuvent nous perdre quand on s'y connaît peu. Ce fut mon cas avec mes premiers projets sur GitLab, où j'ai pu m'apercevoir qu'il propose plus de fonctionnalités, et donc plus de complexité, que GitHub. Néanmoins, ayant l'habitude d'utiliser Git depuis plusieurs années, je considère avoir un niveau intermédiaire sur le sujet, voire confirmé (mais restons raisonnables), étant par exemple un véritable adepte des \"Conventional Commits\".",
+      "myJourney": "Git s'inscrit depuis toujours dans mon parcours comme étant la solution parfaite pour faire du versionning (comme ce doit être le cas pour l'écrasante majorité des développeurs). C'est pourquoi je ne me vois pas abandonner de si tôt cette technologie, d'autant plus que je suis convaincu de ne pas en avoir fait le tour d'avoir encore beaucoup de choses à découvrir, que ce soit des fonctionnalités entières, ou des cas d'utilisation particulièrement rares mais intéressants."
+    }
   },
   {
     "slug": "docker",
     "title": "Docker",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg",
     "level": "junior",
-    "categories": ["devops", "infrastructure", "network"]
-  },
-  {
-    "slug": "caprover",
-    "title": "CapRover",
-    "logoUrl": "/skills/caprover.png",
-    "level": "junior",
-    "categories": ["devops", "infrastructure", "network"]
+    "categories": ["devops", "infrastructure", "network"],
+    "details": {
+      "myDefinition": "Docker est une plateforme de conteneurisation qui permet de créer, déployer et exécuter des applications dans des conteneurs. Les conteneurs permettent d'empaqueter une application avec toutes ses dépendances dans une unité standardisée, ce qui facilite le déploiement et l'exécution dans différents environnements. Docker est populaire, et apprécié pour sa légèreté, sa portabilité et son efficacité. Et en ce qui me concerne, j'en suis fan ! Je l'utilise pour mes projets personnels, et professionnels quand c'est possible.",
+      "myExperience": "N'ayant découvert Docker que récemment, précisément avec mon alternance chez Cadcom, je suis longtemps resté sur les bases de la technologie. Nous l'utilisions principalement pour créer et gérer des environnements de développement répétitifs : par exemple pour avoir en un clic une base de données mariadb et une application phpmyadmin qui tournent en local. En ce qui concerne le déploiement de nos applications et sites web, nous préférions utiliser Caprover, qui exécute un rôle similaire à Kubernetes mais avec plus de simplicité (et donc aussi moins de features).\n\nDocker m'a aussi été introduit au cours de mon mastère, où j'ai pu consolider les fondamentaux, mais aussi aborder des concepts plus complexes comme les réseaux de conteneurs, l'orchestration de ces derniers (avec Swarm, Kubernetes ou Caprover que j'ai déjà cité), l'éciture de Dockerfiles, et la gestion de volumes persistants.",
+      "myThought": "Sur mes expériences, Docker a toujours été une plus value intéressante pour m'éviter par exemple des conflits de versions entre projets Java ou Node.js. Néanmoins, je trouve que Docker n'est pas simple à prendre en main. Il est utile d'avoir une compréhension de base des concepts de virtualisation et des bonnes pratiques de développement et de déploiement d'applications. Et si l'on s'intéresse aux réseaux et à l'orchestration de conteneurs, notamment pour des applications web multi-services, avoir une connaissance plus profonde du fonctionnement d'un serveur informatique (exposition des ports, paramétrage de NGINX, etc.) s'avère très utile.\n\n Ainsi, par manque d'expérience sur Docker, je ne peux m'attribuer un autre niveau que junior, même si j'ai compris les concepts de base, l'écriture de Dockerfiles, ai déjà utilisé des outils d'orchestration, ai géré des volumes... Docker est complexe et apporte un lot de fonctionnalités qui requièrent du temps pour être globalement maîtrisées.",
+      "myJourney": "Un peu comme pour Git, Docker fait partie des outils pour lesquels je ne pense pas trouver d'équivalent de si tôt. Même si elle m'accompagne depuis moins longtemps, cette technologie devient essentielle à mes projets de développement web et logiciel. Il me reste encore beaucoup à apprendre dessus, notamment en ce qui concerne l'orchestration avec Kubernetes, qui permet de faire des projets beaucoup plus complexes que ce que j'ai été en mesure de faire jusqu'à aujourd'hui."
+    }
   },
   {
     "slug": "linux",
     "title": "Linux",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-plain.svg",
     "level": "intermediate",
-    "categories": ["os", "infrastructure"]
+    "categories": ["os", "infrastructure"],
+    "details": {
+      "myDefinition": "Linux est un système d'exploitation open source largement utilisé pour les serveurs (plus de 70% sont sur Linux en 2025), les ordinateurs de bureau, et les systèmes embarqués. Connu pour sa stabilité, sa sécurité et sa flexibilité, Linux est apprécié pour sa capacité à être personnalisé et adapté à une grande variété de tâches et d'environnements.",
+      "myExperience": "Ma première expérience avec Linux remonte à la fin de mon DUT, où alors que je cherchais à générer une animation 3D avec Blender, je me suis rendu compte que Windows prenait beaucoup trop de ressources que ce que j'aurai souhaité. J'ai donc reparamétrer mon ordinateur pour qu'il puisse être utilisé par deux systèmes d'exploitation selon mes besoins : une partition du disque dur permettant de faire tourner Fedora (une distribution de Linux assez populaire), et l'autre partition pour Windows.\n\nCette première expérience m'a permis d'être tout de suite à l'aise dans l'environnement de développement de Perfony, puisque nous travaillions sur des machines paramétrées sur Ubuntu (une autre distribution de Linux encore plus populaire). Sur le reste de mes expériences professionnels, je n'ai jamais été amené à retravailler sur une distribution de Linux. Toutefois, il était très fréquent d'utiliser WSL, un outil permettant de faire tourner quelques distributions de Linux sur Windows, afin d'avoir des environnements de développement plus pratiques pour nous les développeurs.",
+      "myThought": "De par mes expériences personnelles et professionnelles sur Linux, je me permets aujourd'hui de revendiquer un niveau intermédiaire. Mais, il ne faut pas oublier que cela reste un système d'exploitation relativement complexe, surtout selon la distribution. En effet, certaines sont proposées avec tout un lot de fonctionnalités pré paramétrées (ce sont des distributions prêtes à l'emploi donc), alors que d'autres, comme Arch Linux, donnent un système entièrement (presque) vierge et donc modulable au souhait de l'utilisateur.\n\nCe n'est pas une technologie à la portée de tous selon notre choix de distribution. Il est préférable, en tant que novice, de s'orienter vers des solutions prêtes à l'emploi, comme Ubuntu ou Fedora.",
+      "myJourney": "En ce qui me concerne, je suis un aficionados de Linux. Et comme j'aime bien interagir avec ma machine par invite de commandes, je prévois de m'essayer à l'installation et au paramétrage d'un système Arch Linux sur ma machine personnelle. Cela me permettra de mieux comprendre le fonctionnement en profondeur d'un noyau Unix, et d'avoir la main sur le moindre processus employé."
+    }
   },
   {
     "slug": "wordpress",
     "title": "Wordpress",
     "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg",
     "level": "junior",
-    "categories": ["cms", "front", "back"]
+    "categories": ["cms", "front", "back"],
+    "details": {
+      "myDefinition": "WordPress est un système de gestion de contenu (CMS) open source largement utilisé pour créer et gérer des sites web. Il est réputé pour sa facilité d'utilisation et d'intégration, sa flexibilité et son vaste écosystème de thèmes et de plugins (l'avantage de l'open source en somme), ce qui en fait un choix populaire pour les blogs, les sites d'entreprise et même les E-Commerces grâce au plugin WooCommerce.",
+      "myExperience": "Après une première expérience sur le CMS PrestaShop, je redoutais un peu ma découverte de WordPress en intégrant les équipes de Cadcom. Néanmoins, mes appréhensions ont été vite dissipées grâce à la simplicité de l'outil. En effet, comparé à PrestaShop, lorsqu'on démarre un projet sur WordPress, nous avons une boîte à outils avec tout l'essentiel pour créer des pages, du contenu, et styliser le tout.\n\nChez Cadcom, les sites sur WordPress que nous produisions ne se contentés pas de ces premiers outils : nous avions une liste définie de plugins essentiels pour répondre à divers besoins. Et si un besoin se montrait trop spécifique, nous n'avions plus qu'à coder un plugin qui saura y répondre. Je pense notamment à ce projet où les équipes marketing du groupe avaient besoin d'une solution pour faciliter un travail qui nécessitait jusqu'à lors de remplir des centaines de formulaires à la main. Par le pouvoir de l'automatisation, j'ai participé à alléger leur charge de travail, en développant un plugin capable d'intégrer l'ensemble des données d'un Excel à une base de données, remplaçant ainsi la fastidieuse tâche de saisie manuelle des données les unes après les autres, sur des formulaires parfois imposants.\n\nJ'ai aussi été surpris de découvrir que l'on pouvait utiliser WordPress comme simple application backend. En effet, mes derniers clichés sur la technologie ont été anéanti lorsque nous avons intégré le CMS en headless à un projet de refonte graphique d'un site de l'agence. Je me souviens même que mon tuteur d'apprentissage m'a recommandé d'étudier cette approche pour monter mon portfolio, mais j'ai préféré m'en tenir à une stack plus monolithique pour l'heure.",
+      "myThought": "Ainsi, WordPress offre une grande variété de fonctionnalités, allant de la gestion de contenu simple à des solutions E-Commerce complexes. Ce large panel des possibilités m'amène à penser que je n'ai qu'un niveau junior sur l'outil, même si je sais coder et intégrer des plugins personnalisés : rappelons que cela reste du code PHP qui utilise l'API de WordPress.\n\nSi un novice cherche à se lancer dans WordPress, il pourrait le faire sans avoir toutes les bases du web, mais je trouve qu'il reste utile d'avoir une certaine compréhension de HTML, CSS, et surtout PHP si on s'intéresse au backend et à la création de thèmes et plugins personnalisés. De surcroît, une connaissance des bonnes pratiques en matière de SEO et de sécurité est également bénéfique pour créer des sites web performants et sécurisés, surtout quand on veut s'essayer à la création d'E-Commerce.",
+      "myJourney": "Comme mon expérience avec WordPress ne s'est pas résumé à produire des pages et du contenu à styliser, cela m'a donné envie d'explorer davantage ses capacités et de l'utiliser pour des projets plus ambitieux à l'avenir. Pourquoi pas par exemple proposer plus tard sur le marché des plugins et thèmes qui répondront peut-être aux problématiques de certains utilisateurs ?\n\nTravailler avec WordPress m'a aussi fait réaliser qu'il est plus simple que je ne le pensais de participer à un projet Open Source. Même si je ne suis pas certain qu'il s'agit d'une technologie qui va me suivre longtemps, il est certain qu'elle aura une influence positive sur mon parcours de développeur web."
+    }
   },
   {
     "slug": "prestashop",
     "title": "Prestashop",
     "logoUrl": "/skills/prestashop.png",
     "level": "junior",
-    "categories": ["cms", "front", "back"]
-  },
-  {
-    "slug": "godot",
-    "title": "Godot",
-    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/godot/godot-original.svg",
-    "level": "junior",
-    "categories": ["game"]
-  },
-  {
-    "slug": "ue4",
-    "title": "Unreal Engine 4",
-    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original.svg",
-    "level": "junior",
-    "categories": ["game"]
+    "categories": ["cms", "front", "back"],
+    "details": {
+      "myDefinition": "PrestaShop est un CMS commerceopen source qui permet de créer et de gérer des sites E-Commerce de manière efficace. Il est connu pour sa flexibilité, sa modularité et son large éventail de fonctionnalités intégrées par défaut et dédiées au E-Commerce, ce qui en fait un choix populaire pour les entreprises de toutes tailles. A noter par ailleurs que PrestaShop est aussi français.",
+      "myExperience": "J'ai découvert PrestaShop en intégrant les équipes de BWA, alors que je n'avais jusque là encore jamais touché à un CMS. J'avais néanmoins acquis les bases de PHP au cours de mon alternance chez Perfony, ce qui a été utile lorsque j'ai eu besoin de procéder à des maintenances sur du backend.\n\nPour en revenir à mon expérience sur PrestaShop, j'ai eu pour mission chez BWA d'intégrer des maquettes en faisant évoluer une copie du thème initial de l'agence, pour le compte d'un restaurant qui visait à moderniser son système de commande et de réservation en ligne. Malheureusement, le projet n'a jamais fini par voir le jour, même après mon départ de l'entreprise.",
+      "myThought": "Après cette expérience, je n'ai jamais retouché à PrestaShop. En effet, le CMS fait partie des rares technologies qui ne m'ont pas convaincu par l'utilisation. Peut-être parce que je n'avais justement aucune expérience des CMS et que je réfléchissais trop comme un développeur qui pond des lignes de code, mais j'ai trouvé l'outil complexe à appréhender, surtout pour du développement frontend.",
+      "myJourney": "A défaut d'avoir un niveau junior sur cette technologie, cela m'a permis de comprendre que faire du développement d'interfaces avec un CMS (et en particulier PrestaShop) n'était pas pour moi. Par contre, j'ai bien apprécié la logique backend de PrestaShop, et si je devais un jour m'y replonger, je privilégierai des projets orientés backend que frontend."
+    }
   }
 ]

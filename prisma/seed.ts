@@ -162,6 +162,7 @@ async function createSkillsModel(
       slug: skill.slug,
       title: skill.title,
       logoUrl: skill.logoUrl,
+      details: skill.details,
       level:
         skill.level.length > 0
           ? { connect: { id: levelIdBySlug[skill.level] } }

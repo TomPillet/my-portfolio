@@ -4,62 +4,116 @@
     "title": "Travail d'équipe",
     "logoUrl": "/skills/team-work.svg",
     "level": "",
-    "categories": ["softskill"]
+    "categories": ["softskill"],
+    "details": {
+      "myDefinition": "Pour moi, le travail d'équipe, c'est la capacité à coopérer efficacement avec d'autres personnes en poursuivant un objectif commun. Cela implique la répartition des rôles, la coordination des efforts, la mise en commun des idées et le respect mutuel, tout en acceptant que les résultats soient le fruit d'un collectif plutôt que d'une initiative individuelle.",
+      "myExperience": " J'ai toujours su m'intégrer à un groupe de travail, essayer d'aider si c'est en mon pouvoir, ou parfois même seulement essayer d'aider sans avoir nécessairement les compétences parfaites : on réfléchit toujours plus vite à plusieurs que seul ! Cela vaut pareillement pour la demande d'aide quand on est soi-même coincé sur un sujet : avoir un esprit d'équipe, c'est penser ensemble. Mais j'ai aussi constaté que l'efficacité d'une équipe dépend énormément de la communication et de la clarté des responsabilités. ",
+      "myThought": "Grâce à mes expériences où j'ai fréquemment travaillé avec d'autres développeurs et des chefs de projet, je pense que c'est une compétence que j'ai beaucoup développée, mais qu'il faut constamment entretenir par notamment la remise en question de notre travail et de notre comportement.",
+      "myJourney": "En tant que développeur junior, je compte évoluer dans des équipes techniques pluridisciplinaires (backend, frontend, UX, QA…). Ma capacité à m'intégrer rapidement, à comprendre les logiques collectives et à participer activement aux réunions (scrum, daily, rétro) sera essentielle pour progresser et gagner en responsabilités."
+    }
   },
   {
     "slug": "communication",
     "title": "Communication",
     "logoUrl": "/skills/communication.svg",
     "level": "",
-    "categories": ["softskill"]
+    "categories": ["softskill"],
+    "details": {
+      "myDefinition": "La communication, dans le métier de développeur web, c'est la capacité à exprimer clairement un besoin, un blocage, une solution ou une intention, aussi bien en interne (équipe, tech lead) qu'en externe (client, product owner). Elle doit être structurée, concise et adaptée au niveau technique de l'interlocuteur.",
+      "myExperience": "Il m'est déjà arrivé dans mes expériences de jouer un rôle de facilitateur en reformulant des besoins client ou en synthétisant des idées discutées en réunion (notamment chez Capgemini et dans les équipes du Crédit Agricole).\n\nDans un contexte plus académique, j'ai déjà eu à présenter des projets techniques, tout en vulgarisant des concepts sans perdre en conformité et en rigueur dans mes propos.",
+      "myThought": "Je pense avoir une bonne base en communication écrite comme orale, ce qui m'aide à poser les bonnes questions ou à expliquer mon point de vue. En revanche, je dois encore améliorer ma concision et mon assurance à l'oral dans des contextes professionnels formels.",
+      "myJourney": "À l'avenir, la communication sera cruciale pour comprendre les spécifications, participer activement aux réunions Agile, et documenter correctement mon travail. Elle sera aussi importante si je veux un jour encadrer des juniors, enseigner et former, ou faire le lien entre des profils techniques et fonctionnels."
+    }
   },
   {
     "slug": "adaptability",
     "title": "Adaptabilité",
     "logoUrl": "/skills/adaptability.svg",
     "level": "",
-    "categories": ["softskill"]
+    "categories": ["softskill"],
+    "details": {
+      "myDefinition": "L'adaptabilité, c'est la capacité à évoluer avec souplesse dans des environnements changeants : nouvelles technologies, nouveaux langages, changements de priorités ou d'outils. Pour un développeur web, cela signifie être prêt à apprendre en continu et à réagir positivement aux imprévus techniques ou organisationnels.\n\nPour rappel, le monde du développement web est un monde très dynamique. C'est pourquoi il est important de toujours faire une veille technologique des langages et outils que l'on utilise, tout en restant curieux aussi de nouvelles tendances et technologies.",
+      "myExperience": "J'ai déjà eu à changer d'approche en cours de projet, à réécrire une structure de projet en changeant de stack, ou à prendre en main des librairies et frameworks que je ne connaissais pas. Ce fut le cas par exemple en intégrant BWA (avec Prestashop) ou le Crédit Agricole (avec Laravel). Ces situations m'ont appris à rester calme, curieux et méthodique.",
+      "myThought": " Je suis plutôt à l'aise face au changement. J'ai une certaine capacité à apprendre rapidement et à ajuster ma manière de faire en fonction des contraintes. Tout ça à condition de relever mon principal défi qui est de ne pas m'éparpiller lorsque je fais face à trop de nouveautés en peu de temps.",
+      "myJourney": "Dans les premières années de ma carrière, l'adaptabilité sera déterminante pour faire mes preuves. Les entreprises attendent des juniors qu'ils puissent apprendre vite et s'approprier les méthodes en place. C'est aussi une qualité qui peut me permettre de me spécialiser plus tard selon les opportunités (DevOps, mobile, IA…) et de monter en grade."
+    }
   },
   {
     "slug": "critical-thinking",
     "title": "Esprit critique",
     "logoUrl": "/skills/critical-thinking.svg",
     "level": "",
-    "categories": ["softskill"]
+    "categories": ["softskill"],
+    "details": {
+      "myDefinition": "L'esprit critique, dans le développement web, c'est savoir remettre en question une solution, identifier les points faibles d'une architecture, ou encore évaluer la pertinence d'un outil par rapport au besoin réel. Cela suppose de ne pas suivre aveuglément la tendance ou la documentation officielle, mais de réfléchir avec discernement. En ce qui me concerne, j'ai toujours besoin de comprendre un concept, une fonctionnalité avant de l'appliquer.",
+      "myExperience": "J'ai souvent pris l'initiative de comparer différentes approches dans mes projets (frameworks, API, architecture). C'est par exemple un travail qui fut nécessaire le jour où je devais rédiger un rapport de SEO pour Cadcom, puisque pour y parvenir, j'ai commencé par comparer divers outils d'analyse, afin d'identifier vers le(s)quel(s) je devais favoriser.\n\nCet esprit de comparaison m'a aussi parfois permis d'éviter certains pièges et d'optimiser des solutions, comme ce fut le cas dans des projets de refonte au Crédit Agricole, chez Cadcom et même chez Capgemini.",
+      "myThought": "J'ai un bon instinct analytique, que j'applique souvent dans mes choix techniques. Mais j'ai parfois tendance à sur-réfléchir ou à chercher l'implémentation « parfaite », ce qui peut me faire perdre du temps au lieu d'opter pour une solution simple et fonctionnelle. Un bon conseil ? Mieux vaut fait que parfait.",
+      "myJourney": "En entreprise, je devrai apprendre à combiner esprit critique et pragmatisme. Cette compétence me servira à détecter les incohérences, à challenger les choix d'implémentation, et à construire des solutions robustes à long terme."
+    }
   },
   {
     "slug": "active-listening",
     "title": "Ecoute active",
     "logoUrl": "/skills/active-listening.svg",
     "level": "",
-    "categories": ["softskill"]
+    "categories": ["softskill"],
+    "details": {
+      "myDefinition": "L'écoute active est essentielle pour comprendre des besoins, recevoir un feedback, ou collaborer efficacement. Pour un développeur web, c'est comprendre ce que l'utilisateur ou le client attend, même au-delà de ce qui est exprimé.",
+      "myExperience": "Lors de l'ensemble de mes expériences, j'ai assisté à des réunions de cadrage de projet, à des discussions de groupe, où j'ai appris à poser des questions ouvertes, à reformuler les besoins, et à me rendre disponible aux autres. Cela m'a parfois permis d'éviter des malentendus, même si cela reste une compétence complexe à maîtriser, surtout quand on manque de confiance en soi.",
+      "myThought": "Je m'efforce d'écouter attentivement, mais je peux parfois me concentrer sur la solution technique sans suffisamment entendre le besoin sous-jacent. Etant junior, je travaille à mieux intégrer cette écoute dans la phase d'analyse et à adopter une méthodologie plus concrète et sûre qui me permettra de mieux identifier les défis et objectifs.",
+      "myJourney": "Cette compétence sera essentielle dans mes futures relations avec des product owners, UX designers ou clients finaux. Elle sera un atout si je souhaite m'orienter vers des postes de lead, de consultant ou de développeur fullstack à l'interface entre la technique et le fonctionnel."
+    }
   },
   {
     "slug": "curiosity",
     "title": "Curiosité",
     "logoUrl": "/skills/curiosity.svg",
     "level": "",
-    "categories": ["softskill"]
+    "categories": ["softskill"],
+    "details": {
+      "myDefinition": "La curiosité est le moteur de l'apprentissage continu. En tant que développeur web, cela signifie s'intéresser à de nouveaux langages, frameworks, outils, bonnes pratiques, mais aussi à des domaines connexes (accessibilité, sécurité, performance, design…).",
+      "myExperience": "J'ai régulièrement élargi mon champ de compétences : apprendre React de moi-même, creuser les fonctionnalités de Next.js et Chakra UI, installer des distributions Linux sur mon ordinateur, paramétrer mon propre VPS… Cette ouverture me permet de mieux comprendre les enjeux globaux des projets professionnels auxquels je participe, et de consolider par la même occasion mes compétences, et donc de représenter avec le temps une plus value pour les entreprises.",
+      "myThought": "Je suis naturellement curieux, ce qui me pousse à explorer sans cesse. Mais cela peut aussi être un piège, car je dois apprendre à hiérarchiser mes apprentissages et ne pas tout vouloir apprendre en même temps.",
+      "myJourney": "Ma curiosité me servira pour rester pertinent dans un secteur qui évolue très vite. Elle me permettra de ne pas rester figé sur une stack et d'envisager des spécialisations ou de futures responsabilités techniques."
+    }
   },
   {
     "slug": "organization",
     "title": "Organisation",
     "logoUrl": "/skills/organization.svg",
     "level": "",
-    "categories": ["softskill"]
+    "categories": ["softskill"],
+    "details": {
+      "myDefinition": "L'organisation consiste à planifier son travail, à répartir ses priorités, et à structurer ses tâches pour avancer efficacement. En tant que développeur, cela se traduit par une bonne gestion du temps, des sprints, des tickets, du Git de nos projets, et de la documentation.",
+      "myExperience": "J'ai expérimenté plusieurs méthodes d'organisation (Agile, Monday, Jira, Git flow…) dans mes projets professionnels et personnels. Cela m'a souvent permis de maintenir une productivité quasi constante, même sur des projets longs ou complexes.",
+      "myThought": "Je suis naturellement méthodique, surtout quand j'ai des outils adaptés. Mais je dois encore apprendre à mieux estimer le temps nécessaire à chaque tâche, et surtout à ajuster mes priorités en fonction des imprévus. Pour y parvenir, jusqu'à lors j'aime bien utiliser les issues de GitHub.",
+      "myJourney": "L'organisation sera indispensable pour tenir les délais, documenter correctement, et livrer un travail maintenable. Elle sera aussi utile si je veux évoluer vers la gestion de projet ou prendre la responsabilité de modules dans une équipe."
+    }
   },
   {
     "slug": "rigor",
     "title": "Rigueur",
     "logoUrl": "/skills/rigor.svg",
     "level": "",
-    "categories": ["softskill"]
+    "categories": ["softskill"],
+    "details": {
+      "myDefinition": "La rigueur, en développement, c'est la précision dans l'écriture du code, le respect des normes, des conventions (vive les \"Conventional Commits\" !), des tests, et la capacité à maintenir un haut niveau de qualité dans le travail livré.",
+      "myExperience": "J'ai toujours pris soin de produire un code propre, bien structuré, commenté et testé (ce doit être le compliment que l'on m'a le plus partagé sur mes expériences). J'ai aussi appris l'importance de faire des revues de code quand c'est possible, d'appliquer des lintings (avec des plugins dans VSCode par exemple), ou de suivre des guidelines de projet (je préfère souvent les projets avec des cahiers des charges bien définis).",
+      "myThought": "Je suis exigeant avec moi-même, parfois trop. Je relis souvent mon code, je fais attention à la lisibilité, et je cherche la cohérence. Mon défi actuel est de garder cette rigueur sans tomber dans le perfectionnisme excessif. L'avantage est que je vois bien qu'avec la pratique, je me fais plus confiance, et donc relâche un peu la pression sur ce besoin que tout soit trop parfait.",
+      "myJourney": "Cette qualité fera la différence dans un environnement d'équipe, où la maintenabilité et la lisibilité du code priment. Elle sera essentielle pour construire des produits durables, scalables, et bien documentés, et peut-être même accéder à des postes de responsable d'équipe et de projets."
+    }
   },
   {
     "slug": "attention-to-details",
     "title": "Sens du détails",
     "logoUrl": "/skills/attention-to-details.svg",
     "level": "",
-    "categories": ["softskill"]
+    "categories": ["softskill"],
+    "details": {
+      "myDefinition": "Avoir le sens du détail, c'est être attentif aux petites choses qui font une grande différence : une marge mal alignée, une faute dans un texte, une variable mal nommée, ou une interaction peu fluide. Cela concerne autant le front que le back.",
+      "myExperience": "En front-end, j'ai souvent peaufiné mes interfaces, veillé aux animations, à l'accessibilité, ou à la clarté des messages d'erreur. En back, je suis attentif à la structure des fichiers, au bon typage de mes objets et à la cohérence du code.",
+      "myThought": "Je remarque souvent les imperfections ou les points d'amélioration, et j'essaie d'y remédier. Mais je dois aussi apprendre à ne pas perdre de temps sur des détails non essentiels au bon moment d'un projet. L'idéal dans mon cas est de noter de côté ce que je relève, de sorte à pouvoir chasser l'idée de ma tête, et d'y revenir plus tard lorsque j'aurai du temps.",
+      "myJourney": "Ce sens du détail me donnera une valeur ajoutée dans les projets où l'UX, et même la DX, sont critiques. Il peut aussi me distinguer dans la qualité des livrables, ou m'orienter vers des rôles proches du design system, de l'architecture logicielle ou de l'audit qualité."
+    }
   }
 ]

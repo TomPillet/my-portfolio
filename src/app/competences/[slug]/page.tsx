@@ -1,5 +1,4 @@
 import { Flex, Heading, Container, Text, Highlight } from "@chakra-ui/react";
-import Image from "next/image";
 import { getSkillBySlug, getSkillLevel } from "@/app/actions/skillData";
 import { Skill, SkillLevel } from "@prisma/client";
 
@@ -8,6 +7,13 @@ interface CompetenceDetailsProps {
     slug: string;
   }>;
 }
+
+type CompetenceDetailsTexts = {
+  myDefinition: string;
+  myExperience: string;
+  myThought: string;
+  myJourney: string;
+};
 
 export default async function CompetenceDetails({
   params,
@@ -54,56 +60,48 @@ export default async function CompetenceDetails({
               <Heading as="h2" variant={"secondTitle"}>
                 Ma définition
               </Heading>
-              <Text textAlign={"center"}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <Text
+                textAlign={"justify"}
+                textIndent={"2em each-line"}
+                whiteSpace={"pre-line"}
+              >
+                {(skillData.details as CompetenceDetailsTexts).myDefinition}
               </Text>
             </Flex>
             <Flex flexDir={"column"} gap={2}>
               <Heading as="h2" variant={"secondTitle"}>
                 Mon expérience
               </Heading>
-              <Text textAlign={"center"}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <Text
+                textAlign={"justify"}
+                textIndent={"2em each-line"}
+                whiteSpace={"pre-line"}
+              >
+                {(skillData.details as CompetenceDetailsTexts).myExperience}
               </Text>
             </Flex>
             <Flex flexDir={"column"} gap={2}>
               <Heading as="h2" variant={"secondTitle"}>
                 Ce que j'en pense
               </Heading>
-              <Text textAlign={"center"}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <Text
+                textAlign={"justify"}
+                textIndent={"2em each-line"}
+                whiteSpace={"pre-line"}
+              >
+                {(skillData.details as CompetenceDetailsTexts).myThought}
               </Text>
             </Flex>
             <Flex flexDir={"column"} gap={2}>
               <Heading as="h2" variant={"secondTitle"}>
-                insertion dans mon parcours
+                Insertion dans mon parcours
               </Heading>
-              <Text textAlign={"center"}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <Text
+                textAlign={"justify"}
+                textIndent={"2em each-line"}
+                whiteSpace={"pre-line"}
+              >
+                {(skillData.details as CompetenceDetailsTexts).myJourney}
               </Text>
             </Flex>
           </Flex>

@@ -61,6 +61,7 @@ model Skill {
     slug        String      @unique
     title       String
     logoUrl     String
+    details     Json        @default("{}")
 
     level       SkillLevel?  @relation(fields: [levelId], references: [id])
     levelId     Int?

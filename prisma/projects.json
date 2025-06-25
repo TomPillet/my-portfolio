@@ -40,28 +40,7 @@
     "isActive": true,
     "type": "PERSO",
     "etablissement": "besacraft",
-    "skills": ["java", "python"]
-  },
-  {
-    "slug": "mini-rpg-godot",
-    "title": "Mini RPG",
-    "description": {
-      "sections": [
-        {
-          "title": "",
-          "content": "",
-          "imageUrl": ""
-        }
-      ]
-    },
-    "shortDescription": "Création d'un mini jeu RPG en 2D dans le but de découvrir les bases du moteur Godot.",
-    "imageUrl": "/projects/mini-rpg-godot.jpg",
-    "gitUrl": "https://github.com/TomPillet/tampoulet.github.io",
-    "hostUrl": "https://tampoulet.github.io/",
-    "date": "2020",
-    "type": "PERSO",
-    "etablissement": "",
-    "skills": ["godot"]
+    "skills": ["java"]
   },
   {
     "slug": "infras-map",
@@ -125,7 +104,7 @@
     "isActive": true,
     "type": "PERSO",
     "etablissement": "",
-    "skills": ["laravel", "vuejs", "php", "tailwind"]
+    "skills": ["laravel", "php", "tailwind"]
   },
   {
     "slug": "audit-architecture-logicielle",
