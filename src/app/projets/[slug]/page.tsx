@@ -141,7 +141,12 @@ export default async function CompetenceDetails({
               <Heading as="h3" variant={"secondTitle"}>
                 Compétences rattachées
               </Heading>
-              <Flex flexDir={"row"} flexWrap={"wrap"} gap={4}>
+              <Flex
+                flexDir={"row"}
+                flexWrap={"wrap"}
+                gap={4}
+                justifyContent={"center"}
+              >
                 {skills.map((skill) => (
                   <Link key={skill.id} href={`/competences/${skill.slug}`}>
                     <Highlight
