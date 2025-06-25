@@ -35,7 +35,7 @@ export default async function CompetenceDetails({
       >
         <Flex flexDir={"column"} alignItems={"center"} gap={4}>
           <Heading as="h1" textAlign={"center"} variant={"mainTitle"}>
-            {slug}
+            {skillData && skillData.title}
           </Heading>
           {skillLevel && (
             <Highlight
