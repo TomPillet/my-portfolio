@@ -107,6 +107,7 @@ export async function sendEmail(
     await transporter.sendMail({
       from: process.env.MAIL_USER,
       to: process.env.MAIL_TO,
+      replyTo: data.email,
       subject: data.title ?? `Echange avec ${data.firstname} ${data.lastname}`,
       text: `Nom: ${data.lastname}\nEmail: ${data.email}\nMessage: ${data.message}`,
       html: `
