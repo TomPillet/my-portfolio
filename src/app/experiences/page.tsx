@@ -147,7 +147,7 @@ export default function Experiences() {
       location: "Besançon",
       logo: "/etablissements/ca.png",
       url: "https://www.credit-agricole.fr/",
-      title: "Analyse développeur Laravel",
+      title: "Analyste développeur Laravel",
       details: [
         "Chargé du projet de refonte architecturale et graphique d'une application de gestion de contrats régionaux.",
         "Maintenance et assistance utilisateur sur des applications et outils bancaires internes.",
