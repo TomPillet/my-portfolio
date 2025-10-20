@@ -118,8 +118,28 @@ export default function Contact() {
         gap={8}
       >
         <Flex flexDir={"column"}>
-          <Heading as="h1" variant={"mainTitle"} mb={{ md: 8, base: 4 }}>
-            Contactez-moi
+          <Heading as="h1" variant={"secondTitle"} mb={8}>
+            Retrouvez-moi sur :
+          </Heading>
+          <Flex alignItems={"center"} justifyContent={"center"} gap={4}>
+            <Link target="_blank" href="https://github.com/TomPillet">
+              <CustomButton>
+                <Icon as={FaGithub} />
+              </CustomButton>
+            </Link>
+            <Link
+              target="_blank"
+              href="https://www.linkedin.com/in/tom-pillet/"
+            >
+              <CustomButton>
+                <Icon as={FaLinkedin} />
+              </CustomButton>
+            </Link>
+          </Flex>
+        </Flex>
+        <Flex flexDir={"column"}>
+          <Heading as="h2" variant={"secondTitle"} mb={{ md: 8, base: 4 }}>
+            Ou contactez-moi !
           </Heading>
           <Form action={handleSendEmail}>
             <Grid
@@ -233,26 +253,6 @@ export default function Contact() {
               </CustomButton>
             </Grid>
           </Form>
-        </Flex>
-        <Flex flexDir={"column"}>
-          <Heading as="h2" variant={"secondTitle"} mb={8}>
-            Et retrouvez-moi sur...
-          </Heading>
-          <Flex alignItems={"center"} justifyContent={"center"} gap={4}>
-            <Link target="_blank" href="https://github.com/TomPillet">
-              <CustomButton>
-                <Icon as={FaGithub} />
-              </CustomButton>
-            </Link>
-            <Link
-              target="_blank"
-              href="https://www.linkedin.com/in/tom-pillet/"
-            >
-              <CustomButton>
-                <Icon as={FaLinkedin} />
-              </CustomButton>
-            </Link>
-          </Flex>
         </Flex>
       </Flex>
     </Container>
