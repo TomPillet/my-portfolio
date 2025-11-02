@@ -21,7 +21,7 @@ export default function Competences() {
   return (
     <Container maxW={"7xl"}>
       <Flex
-        py={{ lg: "120px", base: "100px" }}
+        py={{ lg: "150px", base: "120px" }}
         minH={"100dvh"}
         w="full"
         flexDir={"column"}

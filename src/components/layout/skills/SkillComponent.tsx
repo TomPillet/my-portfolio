@@ -46,9 +46,6 @@ export function SkillComponent({
           "& .skill-projects": {
             opacity: 1,
           },
-          "& .skill-title:before": {
-            width: "100%",
-          },
         }}
       >
         <Box
@@ -85,16 +82,6 @@ export function SkillComponent({
                 fontSize={{ lg: "2xl", sm: "xl", base: "md" }}
                 className="skill-title"
                 pos={"relative"}
-                _before={{
-                  width: 0,
-                  height: "2px",
-                  bg: "dark.default",
-                  pos: "absolute",
-                  bottom: "-2px",
-                  left: 0,
-                  content: '""',
-                  transition: "all 0.4s ease-in-out",
-                }}
               >
                 {skill?.title}
               </Heading>

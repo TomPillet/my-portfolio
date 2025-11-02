@@ -7,6 +7,7 @@ import { FaTableList, FaTimeline } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
 import HeaderLink from "../ui/HeaderLink";
 import { usePathname } from "next/navigation";
+import ShinyText from "@/reactbits/text-animations/ShinyText/ShinyText";
 
 export default function Header() {
   const [scrollY, setScrollY] = React.useState(1);
@@ -25,40 +26,54 @@ export default function Header() {
       w="full"
       pos="fixed"
       zIndex={1}
-      justifyContent="space-around"
+      direction={"column"}
       bg={scrollY > 0 ? "dark.default" : "transparent"}
       transition={"all 0.2s ease-in-out"}
     >
-      <HeaderLink
-        icon={IoIosHome}
-        route="/"
-        title="Accueil"
-        isRouteActive={pathname === "/"}
-      />
-      <HeaderLink
-        icon={FaStar}
-        route="/competences"
-        title="Compétences"
-        isRouteActive={pathname.includes("/competences")}
-      />
-      <HeaderLink
-        icon={FaTimeline}
-        route="/experiences"
-        title="Parcours"
-        isRouteActive={pathname === "/experiences"}
-      />
-      <HeaderLink
-        icon={FaTableList}
-        route="/projets"
-        title="Projets"
-        isRouteActive={pathname.includes("/projets")}
-      />
-      <HeaderLink
-        icon={IoIosMail}
-        route="/contact"
-        title="Contact"
-        isRouteActive={pathname === "/contact"}
-      />
+      <Flex h="fit" w="full" justifyContent="space-around">
+        <HeaderLink
+          icon={IoIosHome}
+          route="/"
+          title="Accueil"
+          isRouteActive={pathname === "/"}
+        />
+        <HeaderLink
+          icon={FaStar}
+          route="/competences"
+          title="Compétences"
+          isRouteActive={pathname.includes("/competences")}
+        />
+        <HeaderLink
+          icon={FaTimeline}
+          route="/experiences"
+          title="Parcours"
+          isRouteActive={pathname === "/experiences"}
+        />
+        <HeaderLink
+          icon={FaTableList}
+          route="/projets"
+          title="Projets"
+          isRouteActive={pathname.includes("/projets")}
+        />
+        <HeaderLink
+          icon={IoIosMail}
+          route="/contact"
+          title="Contact"
+          isRouteActive={pathname === "/contact"}
+        />
+      </Flex>
+
+      {pathname !== "/" && (
+        <Flex
+          w="full"
+          pb={4}
+          justifyContent="center"
+          color={"white.default"}
+          fontSize={{ lg: "2xl", md: "xl", base: "lg" }}
+        >
+          <ShinyText text="Tom Pillet-Gaulon - Développeur web fullstack"></ShinyText>
+        </Flex>
+      )}
     </Flex>
   );
 }

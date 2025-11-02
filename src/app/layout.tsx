@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Ubuntu, DM_Sans } from "next/font/google";
 import { Provider } from "@/chakra/provider";
+import Header from "@/components/layout/Header";
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
-import Header from "@/components/layout/Header";
 
 const ubuntu = Ubuntu({
   weight: ["300", "400", "500", "700"],
@@ -17,9 +17,8 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
-// TODO: must be dynamic according to each page (check SeoHeaders in other projects)
 export const metadata: Metadata = {
-  title: "Tom Pillet-Gaulon - Portfolio d'un développeur",
+  title: "Tom Pillet-Gaulon - Développeur web à Besançon",
   description:
     "Bienvenue sur mon portfolio ! Je suis Tom Pillet-Gaulon, développeur web fullstack et ingénieur informatique à Besançon, en France.",
 };

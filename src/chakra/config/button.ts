@@ -15,7 +15,7 @@ export const buttonRecipe = defineRecipe({
     variant: {
       buttonLink: {
         position: "relative",
-        paddingY: "24px !important",
+        paddingY: "16px !important",
         background: "transparent",
         color: "rgb(229, 229, 229)",
         border: "none",
