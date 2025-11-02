@@ -7,7 +7,8 @@ const pseudoNavStyles = {
   width: "0%",
   height: "100%",
   transition: "all 0.3s ease-in-out",
-  // backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,.01), transparent)",
+  backgroundImage:
+    "linear-gradient(to bottom, rgba(255,255,255,.01), transparent)",
 };
 
 export const buttonRecipe = defineRecipe({

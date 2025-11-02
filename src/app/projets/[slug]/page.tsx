@@ -38,7 +38,7 @@ export default async function CompetenceDetails({
         minH={"100dvh"}
         w="full"
         flexDir={"column"}
-        gap={8}
+        gap={12}
       >
         <Flex flexDir={"column"} alignItems={"center"} gap={4}>
           <Heading as="h1" textAlign={"center"} variant={"mainTitle"}>

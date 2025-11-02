@@ -17,7 +17,6 @@ export const headingRecipe = defineRecipe({
         fontWeight: "700",
         lineHeight: "1",
         textAlign: "center",
-        textTransform: "uppercase",
       },
       skinnyTitle: {
         color: "light.default",
