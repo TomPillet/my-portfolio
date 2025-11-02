@@ -1,0 +1,64 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: my-portfolio-db
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-portfolio}
+      MYSQL_USER: ${MYSQL_USER:-portfolio_user}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-portfolio_password}
+    ports:
+      - "${MYSQL_PORT:-3306}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - portfolio-network
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "root",
+          "-p${MYSQL_ROOT_PASSWORD:-rootpassword}",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-portfolio-app
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    environment:
+      DB_URL: mysql://${MYSQL_USER:-portfolio_user}:${MYSQL_PASSWORD:-portfolio_password}@db:3306/${MYSQL_DATABASE:-portfolio}
+      NODE_ENV: ${NODE_ENV:-production}
+      NEXT_PUBLIC_RECAPTCHA_PUBLIC_KEY: ${NEXT_PUBLIC_RECAPTCHA_PUBLIC_KEY}
+      RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY}
+      MAIL_HOST: ${MAIL_HOST}
+      MAIL_PORT: ${MAIL_PORT:-587}
+      MAIL_USER: ${MAIL_USER}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+      MAIL_TO: ${MAIL_TO}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - portfolio-network
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  portfolio-network:
+    driver: bridge
