@@ -23,7 +23,16 @@ import { FaAngleRight } from "react-icons/fa";
 import CustomButton from "@/components/ui/CustomButton";
 
 export default function Home() {
-  const keySkills = ["React", "NextJS", "Nest", "PHP", "Java"];
+  const keySkills = [
+    "Angular",
+    "React",
+    "NextJS",
+    "Javascript",
+    "Nest",
+    "Typescript",
+    "PHP",
+    "Java",
+  ];
   const cvUrl =
     "https://drive.google.com/file/d/1p4ZT75-VEdRZHwvGWj36p_PGZevZcy68/view?usp=sharing";
 
@@ -36,7 +45,7 @@ export default function Home() {
         justifyContent="center"
         alignItems={"center"}
         flexDir={"column"}
-        gap={16}
+        gap={24}
       >
         <Grid
           gridTemplateAreas={{
@@ -125,7 +134,18 @@ export default function Home() {
             </Flex>
           </GridItem>
           <GridItem gridArea={"links"} w={"full"}>
-            <Flex w="full" justifyContent={"center"} pt={4}>
+            <Flex w="full" justifyContent={"space-around"} pt={4}>
+              <Link href="#moreOnMe" rel="noopener noreferrer">
+                <Magnet padding={50} disabled={false} magnetStrength={2}>
+                  <CustomButton py={2} transform={"scale(1.1)"}>
+                    <ShinyText
+                      text="En savoir plus sur moi"
+                      speed={2}
+                      className={"primary-color"}
+                    />
+                  </CustomButton>
+                </Magnet>
+              </Link>
               <Link href={cvUrl} target="_blank" rel="noopener noreferrer">
                 <Magnet padding={50} disabled={false} magnetStrength={2}>
                   <CustomButton py={2} transform={"scale(1.1)"}>
@@ -142,7 +162,7 @@ export default function Home() {
           </GridItem>
         </Grid>
 
-        <Flex w={"full"} flexDir={"column"} alignItems={"center"} gap={8}>
+        <Flex w={"full"} flexDir={"column"} alignItems={"center"} gap={12}>
           <HStack w={"full"}>
             <Separator
               flex="1"
@@ -150,7 +170,12 @@ export default function Home() {
               borderColor={"light.dirty"}
               size="lg"
             />
-            <Heading flexShrink="0" as="h2" variant={"secondTitle"}>
+            <Heading
+              flexShrink="0"
+              as="h2"
+              variant={"secondTitle"}
+              textTransform={"uppercase"}
+            >
               Compétences clés
             </Heading>
             <Separator
@@ -167,13 +192,13 @@ export default function Home() {
             alignItems={"center"}
             justifyContent={"space-around"}
             flexWrap={"wrap"}
-            gap={{ lg: 8, base: 4 }}
+            gap={6}
           >
             <Flex
               flexDir={"row"}
               flexWrap={"wrap"}
               justifyContent={"center"}
-              gap={{ lg: 8, base: 4 }}
+              gap={6}
             >
               {keySkills.map((competence, index) => (
                 <Box
@@ -248,6 +273,169 @@ export default function Home() {
                 <Icon as={FaAngleRight} ml={1} color={"primary.default"} />
               </Flex>
             </Link>
+          </Flex>
+        </Flex>
+
+        <Flex
+          id="moreOnMe"
+          w={"full"}
+          flexDir={"column"}
+          alignItems={"center"}
+          gap={8}
+        >
+          <HStack w={"full"}>
+            <Separator
+              flex="1"
+              variant="solid"
+              borderColor={"light.dirty"}
+              size="lg"
+            />
+            <Heading
+              flexShrink="0"
+              as="h2"
+              variant={"secondTitle"}
+              textTransform={"uppercase"}
+            >
+              A propos de moi
+            </Heading>
+            <Separator
+              flex="1"
+              variant="solid"
+              borderColor={"light.dirty"}
+              size="lg"
+            />
+          </HStack>
+
+          <Flex flexDir={"column"} gap={2} px={16}>
+            <Heading as="h2" variant={"secondTitle"}>
+              Mes valeurs
+            </Heading>
+            <Text
+              fontSize={"lg"}
+              textAlign={"justify"}
+              textIndent={"2em each-line"}
+              whiteSpace={"pre-line"}
+            >
+              En tant que développeur, je valorise{" "}
+              <strong>
+                l{"'"}
+                autonomie
+              </strong>{" "}
+              et <strong>la polyvalence</strong> : ma capacité à prendre en
+              charge un projet de bout en bout reflète mon goût pour la
+              responsabilité et la vision globale du produit.
+              <br />
+              <br />
+              De nature éclectique et aspirant à un monde à l{"'"}équilibre, je
+              crois profondément en{" "}
+              <strong>la montée en compétences constante</strong> et en{" "}
+              <strong>la curiosité intellectuelle</strong>. Je fais refléter cet
+              aspect de moi y compris dans mon travail, en utilisant par exemple
+              au quotidien Linux et des applications open-source, en programmant
+              mon propre serveur mail pour apprendre à être plus indépendant
+              numériquement, ce qui témoigne d{"'"}une recherche de{" "}
+              <strong>maîtrise</strong> et d{"'"}
+              <strong>efficacité</strong> en privilégiant les outils qui offrent
+              contrôle et flexibilité.
+              <br />
+              <br />
+              Sur le plan humain, je valorise toujours{" "}
+              <strong>la communication</strong>,{" "}
+              <strong>la transparence</strong> et{" "}
+              <strong>le travail d{"'"}équipe</strong>, qui sont pour moi des
+              valeurs clés dans la réussite d{"'"}un projet. Je ne rechigne
+              jamais sur la qualité du code et des directives de développement,
+              considérant que bien faire et cadrer les choses dès le départ est
+              un investissement pour l{"'"}avenir. Mon aspiration à devenir Chef
+              de Projet révèle un intérêt pour{" "}
+              <strong>la dimension collective du travail</strong>, où la
+              réussite se mesure autant à la qualité technique qu
+              {"'"}à la capacité de fédérer et de guider une équipe vers un
+              objectif commun.
+            </Text>
+          </Flex>
+
+          <Flex flexDir={"column"} gap={2} px={16}>
+            <Heading as="h2" variant={"secondTitle"}>
+              Mon projet professionnel
+            </Heading>
+            <Text
+              fontSize={"lg"}
+              textAlign={"justify"}
+              textIndent={"2em each-line"}
+              whiteSpace={"pre-line"}
+            >
+              Mon parcours en <strong>développement web</strong>, forgé à
+              travers trois années d{"'"}alternance, m{"'"}a permis de maîtriser
+              l{"'"}ensemble de la chaîne de production d{"'"}une application
+              web, du code au déploiement. Actuellement en{" "}
+              <strong>Master Big Data et IA à l{"'"}ISCOD</strong>, et en
+              alternance chez <strong>Everysens</strong> où je travaille ma
+              vision globale du produit, je construis activement les compétences
+              nécessaires pour évoluer ultérieurement vers un rôle de{" "}
+              <strong>Chef de Projet en informatique</strong>.
+              <br />
+              <br />
+              Mon objectif est de combiner mon expertise technique en
+              <strong>développement full-stack</strong> avec ma compréhension
+              croissante des enjeux du <strong>Big Data</strong> et de l{"'"}
+              <strong>Intelligence Artificielle</strong>. Je souhaite à terme
+              piloter des <strong>projets transverses</strong> où technologie
+              web, analyse de données et IA convergent pour créer des solutions
+              innovantes.
+              <br />
+              <br />J{"'"}ai conscience d{"'"}avoir encore beaucoup à apprendre,
+              tant sur le plan technique que managérial, et c{"'"}est cette
+              perspective <strong>d{"'"}évolution continue</strong> qui nourrit
+              continuellement ma motivation et guide mes choix de formation et d
+              {"'"}expériences professionnelles.
+              <br />
+              <br />
+              Mon expérience actuelle chez Everysens m{"'"}offre l{"'"}
+              opportunité de mettre à l{"'"}épreuve ces compétences sur des
+              <strong>projets d{"'"}envergure internationale</strong>,
+              renforçant ainsi ma capacité à gérer des défis complexes et à
+              collaborer efficacement au sein d{"'"}une équipe dynamique.
+            </Text>
+          </Flex>
+
+          <Flex flexDir={"column"} gap={2} px={16}>
+            <Heading as="h2" variant={"secondTitle"}>
+              Mes centres d{"'"}intérêt
+            </Heading>
+            <Text
+              fontSize={"lg"}
+              textAlign={"justify"}
+              textIndent={"2em each-line"}
+              whiteSpace={"pre-line"}
+            >
+              Mes centres d{"'"}intérêt reflètent une{" "}
+              <strong>curiosité profonde</strong> et un besoin de{" "}
+              <strong>comprendre les mécanismes en profondeur</strong>. Je suis
+              particulièrement attiré par <strong>les sciences</strong>,
+              notamment l{"'"}
+              astronomie et la physique, domaines où chaque découverte révèle de
+              nouvelles questions et nourrit ma soif de compréhension. Cette
+              approche analytique s{"'"}étend naturellement à ma pratique du
+              développement : j{"'"}aime maîtriser de A à Z les outils et
+              frameworks que j{"'"}utilise, ce qui explique mon intérêt pour
+              <strong>Linux</strong> et ma volonté constante de diversifier mes
+              compétences techniques.
+              <br />
+              <br />
+              Je trouve également inspiration et détente dans{" "}
+              <strong>les arts</strong> : cinéma, lecture, musique et même
+              théâtre (autant en tant que comédien que spectateur). Sans omettre
+              aussi <strong>les jeux vidéo</strong>, avec une prédilection dans
+              ces derniers pour les titres qui allient{" "}
+              <strong>réflexion stratégique</strong> et{" "}
+              <strong>immersion</strong>. J{"'"}
+              apprécie autant les FPS compétitifs qui demandent précision et
+              réactivité, que les jeux de gestion et de stratégie où l{"'"}
+              optimisation et la planification sont essentielles, ou encore les
+              expériences narratives riches qui me plongent dans des univers
+              travaillés.
+            </Text>
           </Flex>
         </Flex>
       </Flex>
