@@ -24,6 +24,7 @@ export function SkillComponent({
 }: SkillComponentProps) {
   return (
     <Link
+      id="removeMe"
       style={{ display: "block", width: width, height: height }}
       href={`/competences/${skill?.slug}`}
     >
