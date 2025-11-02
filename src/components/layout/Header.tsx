@@ -66,12 +66,13 @@ export default function Header() {
       {pathname !== "/" && (
         <Flex
           w="full"
-          pb={4}
+          pb={2}
           justifyContent="center"
           color={"white.default"}
           fontSize={{ lg: "2xl", md: "xl", base: "lg" }}
+          letterSpacing={3}
         >
-          <ShinyText text="Tom Pillet-Gaulon - Développeur web fullstack"></ShinyText>
+          <ShinyText text="Tom Pillet-Gaulon | Développeur web fullstack"></ShinyText>
         </Flex>
       )}
     </Flex>
