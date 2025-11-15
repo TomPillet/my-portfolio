@@ -392,7 +392,7 @@ export default function Home() {
               <br />
               <br />
               Mon expérience actuelle chez Everysens m{"'"}offre l{"'"}
-              opportunité de mettre à l{"'"}épreuve ces compétences sur des
+              opportunité de mettre à l{"'"}épreuve ces compétences sur des{" "}
               <strong>projets d{"'"}envergure internationale</strong>,
               renforçant ainsi ma capacité à gérer des défis complexes et à
               collaborer efficacement au sein d{"'"}une équipe dynamique.
